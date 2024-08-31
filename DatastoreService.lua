@@ -155,3 +155,9 @@ Attemps to unequip an item for the player
 @return boolean -- Whether or not the item was unequipped
 @return string? -- If the item was not unequipped, a message as to why is returned
 ]=]
+
+local function RandomFunction()
+    -- Test
+end
+
+RandomFunction()
