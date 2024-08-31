@@ -4,6 +4,16 @@ A storage for creators, also containing some important types
 ]=]
 
 --[=[
+@interface CraftingFilterParams
+@within SharedCreators
+.Search string -- The string used to filter by item name
+.PageNumber number -- The page used to decide where to return once results are filtered
+.SlotsPerPage number -- The amount of slots that are registered by page, should always be 10
+.CraftingType CraftingType -- The type of crafting recipe to filter by
+The parameters used to filter crafting
+]=]
+
+--[=[
 @interface InventoryFilterParams
 @within SharedCreators
 .Search string -- The string used to filter by item name
@@ -15,13 +25,10 @@ The parameters used to filter the inventory
 ]=]
 
 --[=[
-@interface CraftingFilterParams
+@function CraftingFilterParams.new
 @within SharedCreators
-.Search string -- The string used to filter by item name
-.PageNumber number -- The page used to decide where to return once results are filtered
-.SlotsPerPage number -- The amount of slots that are registered by page, should always be 10
-.CraftingType CraftingType -- The type of crafting recipe to filter by
-The parameters used to filter crafting
+
+@return CraftingFilterParams
 ]=]
 
 --[=[
@@ -29,11 +36,4 @@ The parameters used to filter crafting
 @within SharedCreators
 
 @return InventoryFilterParams
-]=]
-
---[=[
-@function CraftingFilterParams.new
-@within SharedCreators
-
-@return CraftingFilterParams
 ]=]

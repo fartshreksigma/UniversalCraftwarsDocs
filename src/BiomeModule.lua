@@ -23,27 +23,27 @@ An RBXScriptSignal which fires when the biome is changed
 ]=]
 
 --[=[
-@prop CurrentBiome Biome
-@within BiomeHandler
-The current biome
-]=]
-
---[=[
 @prop BiomeStartTick number
 @within BiomeHandler
 The time the biome started according to ticK()
 ]=]
 
 --[=[
-@prop EnableBiomeTick boolean
+@prop CurrentBiome Biome
 @within BiomeHandler
-Whether or not the game with attempt to change the biome
+The current biome
 ]=]
 
 --[=[
 @prop CurrentBiomeData ExtraBiomeData
 @within BiomeHandler
 The extra data about the current biome
+]=]
+
+--[=[
+@prop EnableBiomeTick boolean
+@within BiomeHandler
+Whether or not the game with attempt to change the biome
 ]=]
 
 --[=[

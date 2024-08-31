@@ -10,21 +10,18 @@ A class used to denote typically damage type
 ]=]
 
 --[=[
-@type Rarity "Rare" | "None"
-@within CustomTypes
-A rarity used to denote how rare an item is to aquire
-]=]
-
---[=[
 @type CraftingType "Default" | "Furniture" | "Shop"
 @within CustomTypes
 A type of crafting
 ]=]
 
 --[=[
-@type Item number
+@interface ExtraItemGiveData
 @within CustomTypes
-An item by its ID
+.Crafted boolean? -- Whether or not the item was crafted
+.AdminSpawned boolean? -- Whether or not this item was from an admin
+.ChatNotify boolean?
+Extra data about why or how an item was given / taken
 ]=]
 
 --[=[
@@ -42,16 +39,19 @@ An item found within an inventory, containing an ID and amount
 ]=]
 
 --[=[
+@type Item number
+@within CustomTypes
+An item by its ID
+]=]
+
+--[=[
 @type ProfileKey string | number
 @within CustomTypes
 A ProfileKey for use in datastores, being either a players name or userid
 ]=]
 
 --[=[
-@interface ExtraItemGiveData
+@type Rarity "Rare" | "None"
 @within CustomTypes
-.Crafted boolean? -- Whether or not the item was crafted
-.AdminSpawned boolean? -- Whether or not this item was from an admin
-.ChatNotify boolean?
-Extra data about why or how an item was given / taken
+A rarity used to denote how rare an item is to aquire
 ]=]
