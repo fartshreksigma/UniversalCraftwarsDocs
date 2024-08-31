@@ -19,30 +19,35 @@ A biome, typically used in the biome handler
 --[=[
 @prop BiomeChanged RBXScriptSignal
 @within BiomeHandler
+@readonly
 An RBXScriptSignal which fires when the biome is changed
 ]=]
 
 --[=[
 @prop BiomeStartTick number
 @within BiomeHandler
+@readonly
 The time the biome started according to ticK()
 ]=]
 
 --[=[
 @prop CurrentBiome Biome
 @within BiomeHandler
+@readonly
 The current biome
 ]=]
 
 --[=[
 @prop CurrentBiomeData ExtraBiomeData
 @within BiomeHandler
+@readonly
 The extra data about the current biome
 ]=]
 
 --[=[
 @prop EnableBiomeTick boolean
 @within BiomeHandler
+@readonly
 Whether or not the game with attempt to change the biome
 ]=]
 
@@ -60,6 +65,7 @@ Sets the current biome to the specified one
 --[=[
 @within BiomeHandler
 @function TickBiome
+@private
 
 @return boolean -- Whether or not the biome was set from Overworld
 

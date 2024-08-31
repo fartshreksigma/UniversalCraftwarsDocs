@@ -12,4 +12,15 @@ A storage for the template in order for other scripts to access it
 .Cash number -- The amount of cash the player has
 .EXP number -- The amount of EXP the player has
 .EquippedItems {Item} -- The items the player has equipped
+
+The template which is used for profilestore generation and as a placeholder type for profile data
+]=]
+
+--[=[
+@within DatastoreTemplateService
+@method GetTemplate
+
+@return DataTemplate -- The template for data
+
+Returns the template for data
 ]=]

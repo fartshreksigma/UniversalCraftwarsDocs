@@ -1,0 +1,23 @@
+[docusaurus]
+url = "https://eryn.io"
+tagline = "Promise implementation for Roblox"
+
+[[classOrder]]
+section = "Datastore"
+classes = ["DatastoreService", "DatastoreTemplateService"]
+
+[[classOrder]]
+section = "Biomes"
+classes = ["BiomeHandler"]
+
+[[classOrder]]
+section = "Types"
+classes = ["CustomTypes"]
+
+[[classOrder]]
+section = "Creators"
+classes = ["SharedCreators"]
+
+[[classOrder]]
+section = "FilterParams"
+classes = ["InventoryFilterParams", "CraftingFilterParams"]
