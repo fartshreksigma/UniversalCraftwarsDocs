@@ -171,7 +171,7 @@ Globally updates the chosen profile to a new set of data
 
 ```lua
 DatastoreService:GlobalUpdateProfile("builderman", {Cash = -131, Rank = 1000})
--- Attempt to globaly update buildermans Cash and Rank dataa
+-- Attempt to globaly update buildermans Cash and Rank data
 ```
 
 :::caution
