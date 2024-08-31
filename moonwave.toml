@@ -1,6 +1,32 @@
 [docusaurus]
 url = "https://eryn.io"
-tagline = "Promise implementation for Roblox"
+tagline = "Universal Craftwars Documentation"
+
+[[navbar.items]]
+href = "https://discord.gg/rGuvu8bPZW"
+label = "Discord"
+position = "right"
+
+[[navbar.items]]
+href = "https://www.roblox.com/games/17741993263/Universal-Craftwars-Revaluation-WIP"
+label = "Roblox"
+position = "right"
+
+[home]
+enabled = true
+includeReadme = true
+
+[[home.features]]
+title = "What Are We?"
+description = "Universal Craftwars is a game developed by Universal Productions on the game platform Roblox. The game itself is based on the Craftwars genre by developer Nacker."
+
+[[home.features]]
+title = "Why Documentation?"
+description = "The intent of this documentation is to help provide Players a more under the hood look at the game without access to the source code, whilst also providing documentation for developers to refer to while creating."
+
+[[home.features]]
+title = "How To Play"
+description = "The link to the Roblox game is available on the top right of the screen, along with the games Discord server. The Discord server also can provide you with information such as updates and sneakpeaks."
 
 [[classOrder]]
 section = "Datastore"
