@@ -47,3 +47,7 @@ classes = ["SharedCreators"]
 [[classOrder]]
 section = "FilterParams"
 classes = ["InventoryFilterParams", "CraftingFilterParams"]
+
+[[classOrder]]
+section = "Libraries"
+classes = ["Cmdr"]

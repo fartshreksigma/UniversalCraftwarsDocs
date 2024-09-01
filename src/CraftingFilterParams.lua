@@ -22,7 +22,7 @@ The page used to decide where to return once results are filtered
 @prop SlotsPerPage number
 @within CraftingFilterParams
 
-The amount of slots that are registed by page, should always be 10
+The amount of slots that are registered on the page, should always be 10
 ]=]
 
 --[=[

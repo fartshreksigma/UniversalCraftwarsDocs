@@ -23,4 +23,14 @@ The template which is used for profilestore generation and as a placeholder type
 @return DataTemplate -- The template for data
 
 Returns the template for data
+
+```lua
+local DataTemplate = DatastoreTemplateService:GetTemplate()
+
+for Key, Value in pairs(DataTemplate) do
+    print(Key, Value)
+end
+-- Prints every Key and Value pair in the Data Template
+```
+
 ]=]
