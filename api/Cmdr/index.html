@@ -1,0 +1,799 @@
+<!doctype html>
+<html lang="en" dir="ltr" class="plugin-moonwave plugin-id-moonwave">
+<head>
+<meta charset="UTF-8">
+<meta name="generator" content="Docusaurus v2.3.1">
+<title data-rh="true">Cmdr | UniversalCraftwarsDocs</title><meta data-rh="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" property="og:url" content="https://eryn.io/UniversalCraftwarsDocs/api/Cmdr"><meta data-rh="true" name="docusaurus_locale" content="en"><meta data-rh="true" name="docusaurus_tag" content="default"><meta data-rh="true" name="docsearch:language" content="en"><meta data-rh="true" name="docsearch:docusaurus_tag" content="default"><meta data-rh="true" property="og:title" content="Cmdr | UniversalCraftwarsDocs"><meta data-rh="true" name="description" content="The [Cmdr](https://eryn.io/Cmdr/) library, which is a powerful and easy to use command bar tool."><meta data-rh="true" property="og:description" content="The [Cmdr](https://eryn.io/Cmdr/) library, which is a powerful and easy to use command bar tool."><link data-rh="true" rel="canonical" href="https://eryn.io/UniversalCraftwarsDocs/api/Cmdr"><link data-rh="true" rel="alternate" href="https://eryn.io/UniversalCraftwarsDocs/api/Cmdr" hreflang="en"><link data-rh="true" rel="alternate" href="https://eryn.io/UniversalCraftwarsDocs/api/Cmdr" hreflang="x-default"><link rel="stylesheet" href="/UniversalCraftwarsDocs/assets/css/styles.e1adec2f.css">
+<link rel="preload" href="/UniversalCraftwarsDocs/assets/js/runtime~main.8776e5db.js" as="script">
+<link rel="preload" href="/UniversalCraftwarsDocs/assets/js/main.534b27d3.js" as="script">
+</head>
+<body class="navigation-with-keyboard">
+<script>!function(){function e(e){document.documentElement.setAttribute("data-theme",e)}var t=function(){var e=null;try{e=localStorage.getItem("theme")}catch(e){}return e}();null!==t?e(t):window.matchMedia("(prefers-color-scheme: dark)").matches?e("dark"):(window.matchMedia("(prefers-color-scheme: light)").matches,e("light"))}()</script><div id="__docusaurus">
+<div role="region" aria-label="Skip to main content"><a class="skipToContent_fXgn" href="#docusaurus_skipToContent_fallback">Skip to main content</a></div><nav aria-label="Main" class="navbar navbar--fixed-top"><div class="navbar__inner"><div class="navbar__items"><button aria-label="Toggle navigation bar" aria-expanded="false" class="navbar__toggle clean-btn" type="button"><svg width="30" height="30" viewBox="0 0 30 30" aria-hidden="true"><path stroke="currentColor" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2" d="M4 7h22M4 15h22M4 23h22"></path></svg></button><a class="navbar__brand" href="/UniversalCraftwarsDocs/"><b class="navbar__title text--truncate">UniversalCraftwarsDocs</b></a><a class="navbar__item navbar__link" href="/UniversalCraftwarsDocs/docs/intro">Docs</a><a aria-current="page" class="navbar__item navbar__link navbar__link--active" href="/UniversalCraftwarsDocs/api/">API</a></div><div class="navbar__items navbar__items--right"><a href="https://discord.gg/rGuvu8bPZW" target="_blank" rel="noopener noreferrer" class="navbar__item navbar__link">Discord<svg width="13.5" height="13.5" aria-hidden="true" viewBox="0 0 24 24" class="iconExternalLink_nPIU"><path fill="currentColor" d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"></path></svg></a><a href="https://www.roblox.com/games/17741993263/Universal-Craftwars-Revaluation-WIP" target="_blank" rel="noopener noreferrer" class="navbar__item navbar__link">Roblox<svg width="13.5" height="13.5" aria-hidden="true" viewBox="0 0 24 24" class="iconExternalLink_nPIU"><path fill="currentColor" d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"></path></svg></a><a href="https://github.com/fartshreksigma/UniversalCraftwarsDocs" target="_blank" rel="noopener noreferrer" class="navbar__item navbar__link">GitHub<svg width="13.5" height="13.5" aria-hidden="true" viewBox="0 0 24 24" class="iconExternalLink_nPIU"><path fill="currentColor" d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"></path></svg></a><div class="toggle_vylO colorModeToggle_DEke"><button class="clean-btn toggleButton_gllP toggleButtonDisabled_aARS" type="button" disabled="" title="Switch between dark and light mode (currently light mode)" aria-label="Switch between dark and light mode (currently light mode)" aria-live="polite"><svg viewBox="0 0 24 24" width="24" height="24" class="lightToggleIcon_pyhR"><path fill="currentColor" d="M12,9c1.65,0,3,1.35,3,3s-1.35,3-3,3s-3-1.35-3-3S10.35,9,12,9 M12,7c-2.76,0-5,2.24-5,5s2.24,5,5,5s5-2.24,5-5 S14.76,7,12,7L12,7z M2,13l2,0c0.55,0,1-0.45,1-1s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S1.45,13,2,13z M20,13l2,0c0.55,0,1-0.45,1-1 s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S19.45,13,20,13z M11,2v2c0,0.55,0.45,1,1,1s1-0.45,1-1V2c0-0.55-0.45-1-1-1S11,1.45,11,2z M11,20v2c0,0.55,0.45,1,1,1s1-0.45,1-1v-2c0-0.55-0.45-1-1-1C11.45,19,11,19.45,11,20z M5.99,4.58c-0.39-0.39-1.03-0.39-1.41,0 c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0s0.39-1.03,0-1.41L5.99,4.58z M18.36,16.95 c-0.39-0.39-1.03-0.39-1.41,0c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0c0.39-0.39,0.39-1.03,0-1.41 L18.36,16.95z M19.42,5.99c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06c-0.39,0.39-0.39,1.03,0,1.41 s1.03,0.39,1.41,0L19.42,5.99z M7.05,18.36c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06 c-0.39,0.39-0.39,1.03,0,1.41s1.03,0.39,1.41,0L7.05,18.36z"></path></svg><svg viewBox="0 0 24 24" width="24" height="24" class="darkToggleIcon_wfgR"><path fill="currentColor" d="M9.37,5.51C9.19,6.15,9.1,6.82,9.1,7.5c0,4.08,3.32,7.4,7.4,7.4c0.68,0,1.35-0.09,1.99-0.27C17.45,17.19,14.93,19,12,19 c-3.86,0-7-3.14-7-7C5,9.07,6.81,6.55,9.37,5.51z M12,3c-4.97,0-9,4.03-9,9s4.03,9,9,9s9-4.03,9-9c0-0.46-0.04-0.92-0.1-1.36 c-0.98,1.37-2.58,2.26-4.4,2.26c-2.98,0-5.4-2.42-5.4-5.4c0-1.81,0.89-3.42,2.26-4.4C12.92,3.04,12.46,3,12,3L12,3z"></path></svg></button></div><div class="searchBox_ZlJk"><div class="navbar__search"><span aria-label="expand searchbar" role="button" class="search-icon" tabindex="0"></span><input type="search" id="search_input_react" placeholder="Loading..." aria-label="Search" class="navbar__search-input search-bar" disabled=""></div></div></div></div><div role="presentation" class="navbar-sidebar__backdrop"></div></nav><div id="docusaurus_skipToContent_fallback" class="main-wrapper mainWrapper_z2l0 docPageContainer_wNNk"><div class="docPage_Dpn1"><div class="docSidebarContainer_o_re"><div class="sidebar_njMd"><nav aria-label="Docs sidebar" class="menu thin-scrollbar menu_SIkG"><ul class="theme-doc-sidebar-menu menu__list"><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="menu__link menu__link--sublist menu__link--sublist-caret" aria-expanded="false" href="/UniversalCraftwarsDocs/api/DatastoreService">Datastore</a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="menu__link menu__link--sublist menu__link--sublist-caret" aria-expanded="false" href="/UniversalCraftwarsDocs/api/BiomeHandler">Biomes</a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="menu__link menu__link--sublist menu__link--sublist-caret" aria-expanded="false" href="/UniversalCraftwarsDocs/api/CustomTypes">Types</a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="menu__link menu__link--sublist menu__link--sublist-caret" aria-expanded="false" href="/UniversalCraftwarsDocs/api/SharedCreators">Creators</a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="menu__link menu__link--sublist menu__link--sublist-caret" aria-expanded="false" href="/UniversalCraftwarsDocs/api/InventoryFilterParams">FilterParams</a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item"><div class="menu__list-item-collapsible"><a class="menu__link menu__link--sublist menu__link--sublist-caret menu__link--active" aria-expanded="true" href="/UniversalCraftwarsDocs/api/Cmdr">Libraries</a></div><ul style="display:block;overflow:visible;height:auto" class="menu__list"><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link menu__link--active" aria-current="page" tabindex="0" href="/UniversalCraftwarsDocs/api/Cmdr">​Cmdr</a></li></ul></li></ul></nav></div></div><main class="docMainContainer_HJE1"><div class="container padding-vert--lg"><div class="row"><div class="col docItemCol_MU3C"><div class="docItemContainer_Wv98"><article><div class="member_J0w1 markdown"><div class="tocCollapsible_ETCw theme-doc-toc-mobile tocMobile_oUs_"><button type="button" class="clean-btn tocCollapsibleButton_TO0P">On this page</button></div><header><h1 class="docTitle_mZRt" style="text-decoration:none"><span style="display:inline-block">Cmdr</span></h1><div class="luaClassTags_EipM"></div><div>
+<p>The <a href="https://eryn.io/Cmdr/" target="_blank">Cmdr</a> library, which is a powerful and easy to use command bar tool.</p>
+</div></header><h2 class="anchor anchorWithStickyNavbar_LWe7" id="types">Types<a href="#types" class="hash-link" aria-label="Direct link to Types" title="Direct link to Types">​</a></h2><div class="divider_rE5g"></div><h3 class="anchor anchorWithStickyNavbar_LWe7" id="bindableResource"><code style="text-decoration:none">bindableResource</code><a href="#bindableResource" class="hash-link" aria-label="Direct link to bindableResource" title="Direct link to bindableResource">​</a></h3><div class="repositoryDetailsContainer_BPdw"><a class="sourceButton_sEho" href="https://github.com/fartshreksigma/UniversalCraftwarsDocs/blob/master/src/CMDR.lua#L13"><div class="sourceButtonText_Vh0m">&lt;/&gt;</div></a></div><div class="memberString_GwaU"><code class="purple_ieR2">type</code> <code>bindableResource<!-- --> = </code> <code class="blue_P4bS"><a style="text-decoration:underline;color:inherit" href="https://developer.roblox.com/en-us/api-reference/class/Chat" target="_blank" rel="noopener noreferrer">&quot;Chat&quot;<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound" style="color:gray;vertical-align:middle;margin-left:2px"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></code></div><div>
+<p>Frankly, I have no idea as to the purpose of this type, potentially for things like StarterGui:SetCore()?</p>
+</div><div class="divider_rE5g"></div><h3 class="anchor anchorWithStickyNavbar_LWe7" id="brickColor"><code style="text-decoration:none">brickColor</code><a href="#brickColor" class="hash-link" aria-label="Direct link to brickColor" title="Direct link to brickColor">​</a></h3><div class="repositoryDetailsContainer_BPdw"><a class="sourceButton_sEho" href="https://github.com/fartshreksigma/UniversalCraftwarsDocs/blob/master/src/CMDR.lua#L20"><div class="sourceButtonText_Vh0m">&lt;/&gt;</div></a></div><div class="memberString_GwaU"><code class="purple_ieR2">type</code> <code>brickColor<!-- --> = </code> <code class="blue_P4bS"><a style="text-decoration:underline;color:inherit" href="https://developer.roblox.com/en-us/api-reference/datatype/BrickColor" target="_blank" rel="noopener noreferrer">BrickColor<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound" style="color:gray;vertical-align:middle;margin-left:2px"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></code></div><div>
+<p>Represents a <a href="https://create.roblox.com/docs/reference/engine/datatypes/BrickColor" target="_blank">BrickColor</a> DataType.</p>
+</div><div class="divider_rE5g"></div><h3 class="anchor anchorWithStickyNavbar_LWe7" id="brickColors"><code style="text-decoration:none">brickColors</code><a href="#brickColors" class="hash-link" aria-label="Direct link to brickColors" title="Direct link to brickColors">​</a></h3><div class="repositoryDetailsContainer_BPdw"><a class="sourceButton_sEho" href="https://github.com/fartshreksigma/UniversalCraftwarsDocs/blob/master/src/CMDR.lua#L27"><div class="sourceButtonText_Vh0m">&lt;/&gt;</div></a></div><div class="memberString_GwaU"><code class="purple_ieR2">type</code> <code>brickColors<!-- --> = </code> <code class="purple_ieR2">{</code><code class="blue_P4bS"><a style="text-decoration:underline;color:inherit" href="/UniversalCraftwarsDocs/api/Cmdr#brickColor">brickColor</a></code><code class="purple_ieR2">}</code></div><div>
+<p>Represents a group of <a href="https://create.roblox.com/docs/reference/engine/datatypes/BrickColor" target="_blank">BrickColors</a>.</p>
+</div><div class="divider_rE5g"></div><h3 class="anchor anchorWithStickyNavbar_LWe7" id="color3"><code style="text-decoration:none">color3</code><a href="#color3" class="hash-link" aria-label="Direct link to color3" title="Direct link to color3">​</a></h3><div class="repositoryDetailsContainer_BPdw"><a class="sourceButton_sEho" href="https://github.com/fartshreksigma/UniversalCraftwarsDocs/blob/master/src/CMDR.lua#L34"><div class="sourceButtonText_Vh0m">&lt;/&gt;</div></a></div><div class="memberString_GwaU"><code class="purple_ieR2">type</code> <code>color3<!-- --> = </code> <code class="blue_P4bS"><a style="text-decoration:underline;color:inherit" href="https://developer.roblox.com/en-us/api-reference/datatype/Color3" target="_blank" rel="noopener noreferrer">Color3<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound" style="color:gray;vertical-align:middle;margin-left:2px"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></code></div><div>
+<p>Represents a <a href="https://create.roblox.com/docs/reference/engine/datatypes/Color3" target="_blank">Color3</a> value, made up of a sequence of <a href="https://en.wikipedia.org/wiki/RGB_color_model#:~:text=The%20RGB%20color%20model%20is,red%2C%20green%2C%20and%20blue" target="_blank">RGB</a> values</p>
+</div><div class="divider_rE5g"></div><h3 class="anchor anchorWithStickyNavbar_LWe7" id="color3s"><code style="text-decoration:none">color3s</code><a href="#color3s" class="hash-link" aria-label="Direct link to color3s" title="Direct link to color3s">​</a></h3><div class="repositoryDetailsContainer_BPdw"><a class="sourceButton_sEho" href="https://github.com/fartshreksigma/UniversalCraftwarsDocs/blob/master/src/CMDR.lua#L41"><div class="sourceButtonText_Vh0m">&lt;/&gt;</div></a></div><div class="memberString_GwaU"><code class="purple_ieR2">type</code> <code>color3s<!-- --> = </code> <code class="purple_ieR2">{</code><code class="blue_P4bS"><a style="text-decoration:underline;color:inherit" href="/UniversalCraftwarsDocs/api/Cmdr#color3">color3</a></code><code class="purple_ieR2">}</code></div><div>
+<p>Represents a group of <a href="https://create.roblox.com/docs/reference/engine/datatypes/Color3" target="_blank">Color3s</a>, made up of sequences of <a href="https://en.wikipedia.org/wiki/RGB_color_model#:~:text=The%20RGB%20color%20model%20is,red%2C%20green%2C%20and%20blue" target="_blank">RGB</a> values</p>
+</div><div class="divider_rE5g"></div><h3 class="anchor anchorWithStickyNavbar_LWe7" id="hexColor3"><code style="text-decoration:none">hexColor3</code><a href="#hexColor3" class="hash-link" aria-label="Direct link to hexColor3" title="Direct link to hexColor3">​</a></h3><div class="repositoryDetailsContainer_BPdw"><a class="sourceButton_sEho" href="https://github.com/fartshreksigma/UniversalCraftwarsDocs/blob/master/src/CMDR.lua#L48"><div class="sourceButtonText_Vh0m">&lt;/&gt;</div></a></div><div class="memberString_GwaU"><code class="purple_ieR2">type</code> <code>hexColor3<!-- --> = </code> <code class="blue_P4bS">string</code></div><div>
+<p>Represents a <a href="https://en.wikipedia.org/wiki/Web_colors#Hex_triplet" target="_blank">Hexadecimal Color Code</a>, being similiar to a color3 just differently formatted</p>
+</div><div class="divider_rE5g"></div><h3 class="anchor anchorWithStickyNavbar_LWe7" id="hexColor3s"><code style="text-decoration:none">hexColor3s</code><a href="#hexColor3s" class="hash-link" aria-label="Direct link to hexColor3s" title="Direct link to hexColor3s">​</a></h3><div class="repositoryDetailsContainer_BPdw"><a class="sourceButton_sEho" href="https://github.com/fartshreksigma/UniversalCraftwarsDocs/blob/master/src/CMDR.lua#L55"><div class="sourceButtonText_Vh0m">&lt;/&gt;</div></a></div><div class="memberString_GwaU"><code class="purple_ieR2">type</code> <code>hexColor3s<!-- --> = </code> <code class="purple_ieR2">{</code><code class="blue_P4bS"><a style="text-decoration:underline;color:inherit" href="/UniversalCraftwarsDocs/api/Cmdr#hexColor3">hexColor3</a></code><code class="purple_ieR2">}</code></div><div>
+<p>Represents a group of <a href="https://en.wikipedia.org/wiki/Web_colors#Hex_triplet" target="_blank">Hexadecimal Color Codes</a>, being similiar to color3s just differently formatted</p>
+</div><div class="divider_rE5g"></div><h3 class="anchor anchorWithStickyNavbar_LWe7" id="command"><code style="text-decoration:none">command</code><a href="#command" class="hash-link" aria-label="Direct link to command" title="Direct link to command">​</a></h3><div class="repositoryDetailsContainer_BPdw"><a class="sourceButton_sEho" href="https://github.com/fartshreksigma/UniversalCraftwarsDocs/blob/master/src/CMDR.lua#L62"><div class="sourceButtonText_Vh0m">&lt;/&gt;</div></a></div><div class="memberString_GwaU"><code class="purple_ieR2">type</code> <code>command<!-- --> = </code> <code class="blue_P4bS">CmdrCommand</code></div><div>
+<p>Represents a command name that has been registered with the Cmdr registry</p>
+</div><div class="divider_rE5g"></div><h3 class="anchor anchorWithStickyNavbar_LWe7" id="commands"><code style="text-decoration:none">commands</code><a href="#commands" class="hash-link" aria-label="Direct link to commands" title="Direct link to commands">​</a></h3><div class="repositoryDetailsContainer_BPdw"><a class="sourceButton_sEho" href="https://github.com/fartshreksigma/UniversalCraftwarsDocs/blob/master/src/CMDR.lua#L69"><div class="sourceButtonText_Vh0m">&lt;/&gt;</div></a></div><div class="memberString_GwaU"><code class="purple_ieR2">type</code> <code>commands<!-- --> = </code> <code class="purple_ieR2">{</code><code class="blue_P4bS"><a style="text-decoration:underline;color:inherit" href="/UniversalCraftwarsDocs/api/Cmdr#command">command</a></code><code class="purple_ieR2">}</code></div><div>
+<p>Represents a group of command names that have been registered with the Cmdr registry</p>
+</div><div class="divider_rE5g"></div><h3 class="anchor anchorWithStickyNavbar_LWe7" id="conditionFunction"><code style="text-decoration:none">conditionFunction</code><a href="#conditionFunction" class="hash-link" aria-label="Direct link to conditionFunction" title="Direct link to conditionFunction">​</a></h3><div class="repositoryDetailsContainer_BPdw"><a class="sourceButton_sEho" href="https://github.com/fartshreksigma/UniversalCraftwarsDocs/blob/master/src/CMDR.lua#L76"><div class="sourceButtonText_Vh0m">&lt;/&gt;</div></a></div><div class="memberString_GwaU"><code class="purple_ieR2">type</code> <code>conditionFunction<!-- --> = </code> <code class="blue_P4bS">string</code></div><div>
+<p>A condition for a function, the only current option is startsWith, likely used to determine conditions for custom commands</p>
+</div><div class="divider_rE5g"></div><h3 class="anchor anchorWithStickyNavbar_LWe7" id="duration"><code style="text-decoration:none">duration</code><a href="#duration" class="hash-link" aria-label="Direct link to duration" title="Direct link to duration">​</a></h3><div class="repositoryDetailsContainer_BPdw"><a class="sourceButton_sEho" href="https://github.com/fartshreksigma/UniversalCraftwarsDocs/blob/master/src/CMDR.lua#L83"><div class="sourceButtonText_Vh0m">&lt;/&gt;</div></a></div><div class="memberString_GwaU"><code class="purple_ieR2">type</code> <code>duration<!-- --> = </code> <code class="blue_P4bS">number</code></div><div>
+<p>A duration inputted with a format such as 5d for 5 days, which is then converted to a number</p>
+</div><div class="divider_rE5g"></div><h3 class="anchor anchorWithStickyNavbar_LWe7" id="durations"><code style="text-decoration:none">durations</code><a href="#durations" class="hash-link" aria-label="Direct link to durations" title="Direct link to durations">​</a></h3><div class="repositoryDetailsContainer_BPdw"><a class="sourceButton_sEho" href="https://github.com/fartshreksigma/UniversalCraftwarsDocs/blob/master/src/CMDR.lua#L90"><div class="sourceButtonText_Vh0m">&lt;/&gt;</div></a></div><div class="memberString_GwaU"><code class="purple_ieR2">type</code> <code>durations<!-- --> = </code> <code class="purple_ieR2">{</code><code class="blue_P4bS"><a style="text-decoration:underline;color:inherit" href="/UniversalCraftwarsDocs/api/Cmdr#duration">duration</a></code><code class="purple_ieR2">}</code></div><div>
+<p>A collection of durations inputted with formats such as 5d for 5 days, which are then converted to numbers</p>
+</div><div class="divider_rE5g"></div><h3 class="anchor anchorWithStickyNavbar_LWe7" id="json"><code style="text-decoration:none">json</code><a href="#json" class="hash-link" aria-label="Direct link to json" title="Direct link to json">​</a></h3><div class="repositoryDetailsContainer_BPdw"><a class="sourceButton_sEho" href="https://github.com/fartshreksigma/UniversalCraftwarsDocs/blob/master/src/CMDR.lua#L97"><div class="sourceButtonText_Vh0m">&lt;/&gt;</div></a></div><div class="memberString_GwaU"><code class="purple_ieR2">type</code> <code>json<!-- --> = </code> <code class="purple_ieR2">{</code><span><code>[</code><code class="blue_P4bS">primative</code><code>]</code></span><code>: </code><span><code>[</code><code class="blue_P4bS">primative</code><code>]</code></span><code class="purple_ieR2">}</code></div><div>
+<p>A JSON decoded table which was inputed into the command bar in an encoded format</p>
+</div><div class="divider_rE5g"></div><h3 class="anchor anchorWithStickyNavbar_LWe7" id="mathOperator"><code style="text-decoration:none">mathOperator</code><a href="#mathOperator" class="hash-link" aria-label="Direct link to mathOperator" title="Direct link to mathOperator">​</a></h3><div class="repositoryDetailsContainer_BPdw"><a class="sourceButton_sEho" href="https://github.com/fartshreksigma/UniversalCraftwarsDocs/blob/master/src/CMDR.lua#L104"><div class="sourceButtonText_Vh0m">&lt;/&gt;</div></a></div><div class="memberString_GwaU"><code class="purple_ieR2">type</code> <code>mathOperator<!-- --> = </code> <code class="blue_P4bS">Operator</code></div><div>
+<p>Common math operators such as <code>+</code>, <code>-</code>, <code>*</code>, <code>/</code>, <code>**</code>, and <code>%</code></p>
+</div><div class="divider_rE5g"></div><h3 class="anchor anchorWithStickyNavbar_LWe7" id="player"><code style="text-decoration:none">player</code><a href="#player" class="hash-link" aria-label="Direct link to player" title="Direct link to player">​</a></h3><div class="repositoryDetailsContainer_BPdw"><a class="sourceButton_sEho" href="https://github.com/fartshreksigma/UniversalCraftwarsDocs/blob/master/src/CMDR.lua#L114"><div class="sourceButtonText_Vh0m">&lt;/&gt;</div></a></div><div class="memberString_GwaU"><code class="purple_ieR2">type</code> <code>player<!-- --> = </code> <code class="blue_P4bS"><a style="text-decoration:underline;color:inherit" href="https://developer.roblox.com/en-us/api-reference/class/Player" target="_blank" rel="noopener noreferrer">Player<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound" style="color:gray;vertical-align:middle;margin-left:2px"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></code></div><div>
+<p>A player who is currently in the server, inputted by their name</p>
+<div class="admonition admonition-tip alert alert--success">
+  <div class="admonition-heading">
+    <h5><span class="admonition-icon"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="16" viewBox="0 0 12 16">
+          <path d="M6.5 0C3.48 0 1 2.19 1 5c0 .92.55 2.25 1 3 1.34 2.25 1.78 2.78 2 4v1h5v-1c.22-1.22.66-1.75 2-4 .45-.75 1-2.08 1-3 0-2.81-2.48-5-5.5-5zm3.64 7.48c-.25.44-.47.8-.67 1.11-.86 1.41-1.25 2.06-1.45 3.23-.02.05-.02.11-.02.17H5c0-.06 0-.13-.02-.17-.2-1.17-.59-1.83-1.45-3.23-.2-.31-.42-.67-.67-1.11C2.44 6.78 2 5.65 2 5c0-2.2 2.02-4 4.5-4 1.22 0 2.36.42 3.22 1.19C10.55 2.94 11 3.94 11 5c0 .66-.44 1.78-.86 2.48zM4 14h5c-.23 1.14-1.3 2-2.5 2s-2.27-.86-2.5-2z"></path>
+        </svg></span>tip</h5>
+  </div>
+  <div class="admonition-content">
+    <p>You can use <code>.</code> for it to use the executor, <code>*</code> for all players, <code>**</code> for others, and <code>?</code> for random</p>
+  </div>
+</div>
+</div><div class="divider_rE5g"></div><h3 class="anchor anchorWithStickyNavbar_LWe7" id="players"><code style="text-decoration:none">players</code><a href="#players" class="hash-link" aria-label="Direct link to players" title="Direct link to players">​</a></h3><div class="repositoryDetailsContainer_BPdw"><a class="sourceButton_sEho" href="https://github.com/fartshreksigma/UniversalCraftwarsDocs/blob/master/src/CMDR.lua#L124"><div class="sourceButtonText_Vh0m">&lt;/&gt;</div></a></div><div class="memberString_GwaU"><code class="purple_ieR2">type</code> <code>players<!-- --> = </code> <code class="purple_ieR2">{</code><code class="blue_P4bS"><a style="text-decoration:underline;color:inherit" href="/UniversalCraftwarsDocs/api/Cmdr#player">player</a></code><code class="purple_ieR2">}</code></div><div>
+<p>A group of players who are in the server</p>
+<div class="admonition admonition-info alert alert--info">
+  <div class="admonition-heading">
+    <h5><span class="admonition-icon"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="16" viewBox="0 0 14 16">
+          <path d="M7 2.3c3.14 0 5.7 2.56 5.7 5.7s-2.56 5.7-5.7 5.7A5.71 5.71 0 0 1 1.3 8c0-3.14 2.56-5.7 5.7-5.7zM7 1C3.14 1 0 4.14 0 8s3.14 7 7 7 7-3.14 7-7-3.14-7-7-7zm1 3H6v5h2V4zm0 6H6v2h2v-2z"></path>
+        </svg></span>info</h5>
+  </div>
+  <div class="admonition-content">
+    <p>Prefixing a player type with <code>%</code> will instead use the teamPlayers type</p>
+  </div>
+</div>
+</div><div class="divider_rE5g"></div><h3 class="anchor anchorWithStickyNavbar_LWe7" id="playerId"><code style="text-decoration:none">playerId</code><a href="#playerId" class="hash-link" aria-label="Direct link to playerId" title="Direct link to playerId">​</a></h3><div class="repositoryDetailsContainer_BPdw"><a class="sourceButton_sEho" href="https://github.com/fartshreksigma/UniversalCraftwarsDocs/blob/master/src/CMDR.lua#L134"><div class="sourceButtonText_Vh0m">&lt;/&gt;</div></a></div><div class="memberString_GwaU"><code class="purple_ieR2">type</code> <code>playerId<!-- --> = </code> <code class="blue_P4bS">number</code></div><div>
+<p>Inputs a player by their full username, and returns their UserId</p>
+<div class="admonition admonition-tip alert alert--success">
+  <div class="admonition-heading">
+    <h5><span class="admonition-icon"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="16" viewBox="0 0 12 16">
+          <path d="M6.5 0C3.48 0 1 2.19 1 5c0 .92.55 2.25 1 3 1.34 2.25 1.78 2.78 2 4v1h5v-1c.22-1.22.66-1.75 2-4 .45-.75 1-2.08 1-3 0-2.81-2.48-5-5.5-5zm3.64 7.48c-.25.44-.47.8-.67 1.11-.86 1.41-1.25 2.06-1.45 3.23-.02.05-.02.11-.02.17H5c0-.06 0-.13-.02-.17-.2-1.17-.59-1.83-1.45-3.23-.2-.31-.42-.67-.67-1.11C2.44 6.78 2 5.65 2 5c0-2.2 2.02-4 4.5-4 1.22 0 2.36.42 3.22 1.19C10.55 2.94 11 3.94 11 5c0 .66-.44 1.78-.86 2.48zM4 14h5c-.23 1.14-1.3 2-2.5 2s-2.27-.86-2.5-2z"></path>
+        </svg></span>tip</h5>
+  </div>
+  <div class="admonition-content">
+    <p>You can use <code>.</code> for it to use the executor, <code>*</code> for all players, <code>**</code> for others, and <code>?</code> for random</p>
+  </div>
+</div>
+</div><div class="divider_rE5g"></div><h3 class="anchor anchorWithStickyNavbar_LWe7" id="playerIds"><code style="text-decoration:none">playerIds</code><a href="#playerIds" class="hash-link" aria-label="Direct link to playerIds" title="Direct link to playerIds">​</a></h3><div class="repositoryDetailsContainer_BPdw"><a class="sourceButton_sEho" href="https://github.com/fartshreksigma/UniversalCraftwarsDocs/blob/master/src/CMDR.lua#L144"><div class="sourceButtonText_Vh0m">&lt;/&gt;</div></a></div><div class="memberString_GwaU"><code class="purple_ieR2">type</code> <code>playerIds<!-- --> = </code> <code class="purple_ieR2">{</code><code class="blue_P4bS"><a style="text-decoration:underline;color:inherit" href="/UniversalCraftwarsDocs/api/Cmdr#playerId">playerId</a></code><code class="purple_ieR2">}</code></div><div>
+<p>A group of players UserIds</p>
+<div class="admonition admonition-info alert alert--info">
+  <div class="admonition-heading">
+    <h5><span class="admonition-icon"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="16" viewBox="0 0 14 16">
+          <path d="M7 2.3c3.14 0 5.7 2.56 5.7 5.7s-2.56 5.7-5.7 5.7A5.71 5.71 0 0 1 1.3 8c0-3.14 2.56-5.7 5.7-5.7zM7 1C3.14 1 0 4.14 0 8s3.14 7 7 7 7-3.14 7-7-3.14-7-7-7zm1 3H6v5h2V4zm0 6H6v2h2v-2z"></path>
+        </svg></span>info</h5>
+  </div>
+  <div class="admonition-content">
+    <p>Prefixing with <code>#</code> will instead use a players UserId over name</p>
+  </div>
+</div>
+</div><div class="divider_rE5g"></div><h3 class="anchor anchorWithStickyNavbar_LWe7" id="stringType"><code style="text-decoration:none">stringType</code><a href="#stringType" class="hash-link" aria-label="Direct link to stringType" title="Direct link to stringType">​</a></h3><div class="repositoryDetailsContainer_BPdw"><a class="sourceButton_sEho" href="https://github.com/fartshreksigma/UniversalCraftwarsDocs/blob/master/src/CMDR.lua#L154"><div class="sourceButtonText_Vh0m">&lt;/&gt;</div></a></div><div class="memberString_GwaU"><code class="purple_ieR2">type</code> <code>stringType<!-- --> = </code> <code class="blue_P4bS">string</code></div><div>
+<p>A string primative, due to conflicting with unrelated mentions of the string datatype this has been renamed from string to stringType</p>
+<div class="admonition admonition-tip alert alert--success">
+  <div class="admonition-heading">
+    <h5><span class="admonition-icon"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="16" viewBox="0 0 12 16">
+          <path d="M6.5 0C3.48 0 1 2.19 1 5c0 .92.55 2.25 1 3 1.34 2.25 1.78 2.78 2 4v1h5v-1c.22-1.22.66-1.75 2-4 .45-.75 1-2.08 1-3 0-2.81-2.48-5-5.5-5zm3.64 7.48c-.25.44-.47.8-.67 1.11-.86 1.41-1.25 2.06-1.45 3.23-.02.05-.02.11-.02.17H5c0-.06 0-.13-.02-.17-.2-1.17-.59-1.83-1.45-3.23-.2-.31-.42-.67-.67-1.11C2.44 6.78 2 5.65 2 5c0-2.2 2.02-4 4.5-4 1.22 0 2.36.42 3.22 1.19C10.55 2.94 11 3.94 11 5c0 .66-.44 1.78-.86 2.48zM4 14h5c-.23 1.14-1.3 2-2.5 2s-2.27-.86-2.5-2z"></path>
+        </svg></span>tip</h5>
+  </div>
+  <div class="admonition-content">
+    <p>You can surround a string which contains spaces with <code>"</code> in order for it to take the whole string instead of just the first word</p>
+  </div>
+</div>
+</div><div class="divider_rE5g"></div><h3 class="anchor anchorWithStickyNavbar_LWe7" id="numberType"><code style="text-decoration:none">numberType</code><a href="#numberType" class="hash-link" aria-label="Direct link to numberType" title="Direct link to numberType">​</a></h3><div class="repositoryDetailsContainer_BPdw"><a class="sourceButton_sEho" href="https://github.com/fartshreksigma/UniversalCraftwarsDocs/blob/master/src/CMDR.lua#L161"><div class="sourceButtonText_Vh0m">&lt;/&gt;</div></a></div><div class="memberString_GwaU"><code class="purple_ieR2">type</code> <code>numberType<!-- --> = </code> <code class="blue_P4bS">number</code></div><div>
+<p>A number primative, due to conflicting names with a primative type, it has been renamed from number to numberType</p>
+</div><div class="divider_rE5g"></div><h3 class="anchor anchorWithStickyNavbar_LWe7" id="integer"><code style="text-decoration:none">integer</code><a href="#integer" class="hash-link" aria-label="Direct link to integer" title="Direct link to integer">​</a></h3><div class="repositoryDetailsContainer_BPdw"><a class="sourceButton_sEho" href="https://github.com/fartshreksigma/UniversalCraftwarsDocs/blob/master/src/CMDR.lua#L168"><div class="sourceButtonText_Vh0m">&lt;/&gt;</div></a></div><div class="memberString_GwaU"><code class="purple_ieR2">type</code> <code>integer<!-- --> = </code> <code class="blue_P4bS">number</code></div><div>
+<p>An integer, meaning a number which has no decimal portion</p>
+</div><div class="divider_rE5g"></div><h3 class="anchor anchorWithStickyNavbar_LWe7" id="positiveInteger"><code style="text-decoration:none">positiveInteger</code><a href="#positiveInteger" class="hash-link" aria-label="Direct link to positiveInteger" title="Direct link to positiveInteger">​</a></h3><div class="repositoryDetailsContainer_BPdw"><a class="sourceButton_sEho" href="https://github.com/fartshreksigma/UniversalCraftwarsDocs/blob/master/src/CMDR.lua#L175"><div class="sourceButtonText_Vh0m">&lt;/&gt;</div></a></div><div class="memberString_GwaU"><code class="purple_ieR2">type</code> <code>positiveInteger<!-- --> = </code> <code class="blue_P4bS">number</code></div><div>
+<p>An integer which is greater than 0</p>
+</div><div class="divider_rE5g"></div><h3 class="anchor anchorWithStickyNavbar_LWe7" id="nonNegativeInteger"><code style="text-decoration:none">nonNegativeInteger</code><a href="#nonNegativeInteger" class="hash-link" aria-label="Direct link to nonNegativeInteger" title="Direct link to nonNegativeInteger">​</a></h3><div class="repositoryDetailsContainer_BPdw"><a class="sourceButton_sEho" href="https://github.com/fartshreksigma/UniversalCraftwarsDocs/blob/master/src/CMDR.lua#L182"><div class="sourceButtonText_Vh0m">&lt;/&gt;</div></a></div><div class="memberString_GwaU"><code class="purple_ieR2">type</code> <code>nonNegativeInteger<!-- --> = </code> <code class="blue_P4bS">number</code></div><div>
+<p>An integer which is greater than or equal to 0</p>
+</div><div class="divider_rE5g"></div><h3 class="anchor anchorWithStickyNavbar_LWe7" id="byte"><code style="text-decoration:none">byte</code><a href="#byte" class="hash-link" aria-label="Direct link to byte" title="Direct link to byte">​</a></h3><div class="repositoryDetailsContainer_BPdw"><a class="sourceButton_sEho" href="https://github.com/fartshreksigma/UniversalCraftwarsDocs/blob/master/src/CMDR.lua#L189"><div class="sourceButtonText_Vh0m">&lt;/&gt;</div></a></div><div class="memberString_GwaU"><code class="purple_ieR2">type</code> <code>byte<!-- --> = </code> <code class="blue_P4bS">number</code></div><div>
+<p>A 16 bit number, being between 0 and 255</p>
+</div><div class="divider_rE5g"></div><h3 class="anchor anchorWithStickyNavbar_LWe7" id="digit"><code style="text-decoration:none">digit</code><a href="#digit" class="hash-link" aria-label="Direct link to digit" title="Direct link to digit">​</a></h3><div class="repositoryDetailsContainer_BPdw"><a class="sourceButton_sEho" href="https://github.com/fartshreksigma/UniversalCraftwarsDocs/blob/master/src/CMDR.lua#L196"><div class="sourceButtonText_Vh0m">&lt;/&gt;</div></a></div><div class="memberString_GwaU"><code class="purple_ieR2">type</code> <code>digit<!-- --> = </code> <code class="blue_P4bS">number</code></div><div>
+<p>A single digit number, being between 0 and 9</p>
+</div><div class="divider_rE5g"></div><h3 class="anchor anchorWithStickyNavbar_LWe7" id="booleanType"><code style="text-decoration:none">booleanType</code><a href="#booleanType" class="hash-link" aria-label="Direct link to booleanType" title="Direct link to booleanType">​</a></h3><div class="repositoryDetailsContainer_BPdw"><a class="sourceButton_sEho" href="https://github.com/fartshreksigma/UniversalCraftwarsDocs/blob/master/src/CMDR.lua#L207"><div class="sourceButtonText_Vh0m">&lt;/&gt;</div></a></div><div class="memberString_GwaU"><code class="purple_ieR2">type</code> <code>booleanType<!-- --> = </code> <code class="blue_P4bS">boolean</code></div><div>
+<p>A boolean value, containing either true or false, due to conflicting names with a commonly used primative, this has been renamed from boolean to booleanType</p>
+<div class="admonition admonition-info alert alert--info">
+  <div class="admonition-heading">
+    <h5><span class="admonition-icon"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="16" viewBox="0 0 14 16">
+          <path d="M7 2.3c3.14 0 5.7 2.56 5.7 5.7s-2.56 5.7-5.7 5.7A5.71 5.71 0 0 1 1.3 8c0-3.14 2.56-5.7 5.7-5.7zM7 1C3.14 1 0 4.14 0 8s3.14 7 7 7 7-3.14 7-7-3.14-7-7-7zm1 3H6v5h2V4zm0 6H6v2h2v-2z"></path>
+        </svg></span>info</h5>
+  </div>
+  <div class="admonition-content">
+    <p>
+      Other options than <code>true</code> and <code>false</code> can be inputed, being <code>t</code>, <code>yes</code>, <code>y</code>, <code>on</code>, <code>enable</code>, <code>enabled</code>,
+      <code>1</code>, and <code>+</code>, for true, and <code>f</code>, <code>no</code>, <code>n</code>, <code>off</code>, <code>disable</code>, <code>disabled</code>, <code>0</code>, and <code>-</code> for false
+    </p>
+  </div>
+</div>
+</div><div class="divider_rE5g"></div><h3 class="anchor anchorWithStickyNavbar_LWe7" id="stringTypes"><code style="text-decoration:none">stringTypes</code><a href="#stringTypes" class="hash-link" aria-label="Direct link to stringTypes" title="Direct link to stringTypes">​</a></h3><div class="repositoryDetailsContainer_BPdw"><a class="sourceButton_sEho" href="https://github.com/fartshreksigma/UniversalCraftwarsDocs/blob/master/src/CMDR.lua#L214"><div class="sourceButtonText_Vh0m">&lt;/&gt;</div></a></div><div class="memberString_GwaU"><code class="purple_ieR2">type</code> <code>stringTypes<!-- --> = </code> <code class="purple_ieR2">{</code><code class="blue_P4bS"><a style="text-decoration:underline;color:inherit" href="/UniversalCraftwarsDocs/api/Cmdr#stringType">stringType</a></code><code class="purple_ieR2">}</code></div><div>
+<p>A group of string primatives, due to conflicting with unrelated mentions of the string datatype this has been renamed from strings to stringTypes</p>
+</div><div class="divider_rE5g"></div><h3 class="anchor anchorWithStickyNavbar_LWe7" id="numberTypes"><code style="text-decoration:none">numberTypes</code><a href="#numberTypes" class="hash-link" aria-label="Direct link to numberTypes" title="Direct link to numberTypes">​</a></h3><div class="repositoryDetailsContainer_BPdw"><a class="sourceButton_sEho" href="https://github.com/fartshreksigma/UniversalCraftwarsDocs/blob/master/src/CMDR.lua#L221"><div class="sourceButtonText_Vh0m">&lt;/&gt;</div></a></div><div class="memberString_GwaU"><code class="purple_ieR2">type</code> <code>numberTypes<!-- --> = </code> <code class="purple_ieR2">{</code><code class="blue_P4bS"><a style="text-decoration:underline;color:inherit" href="/UniversalCraftwarsDocs/api/Cmdr#numberType">numberType</a></code><code class="purple_ieR2">}</code></div><div>
+<p>A group of number primatives, due to conflicting names with a primative type, it has been renamed from numbers to numberTypes</p>
+</div><div class="divider_rE5g"></div><h3 class="anchor anchorWithStickyNavbar_LWe7" id="integers"><code style="text-decoration:none">integers</code><a href="#integers" class="hash-link" aria-label="Direct link to integers" title="Direct link to integers">​</a></h3><div class="repositoryDetailsContainer_BPdw"><a class="sourceButton_sEho" href="https://github.com/fartshreksigma/UniversalCraftwarsDocs/blob/master/src/CMDR.lua#L228"><div class="sourceButtonText_Vh0m">&lt;/&gt;</div></a></div><div class="memberString_GwaU"><code class="purple_ieR2">type</code> <code>integers<!-- --> = </code> <code class="purple_ieR2">{</code><code class="blue_P4bS"><a style="text-decoration:underline;color:inherit" href="/UniversalCraftwarsDocs/api/Cmdr#integer">integer</a></code><code class="purple_ieR2">}</code></div><div>
+<p>A group of integers, meaning numbers with no decimal portion</p>
+</div><div class="divider_rE5g"></div><h3 class="anchor anchorWithStickyNavbar_LWe7" id="positiveIntegers"><code style="text-decoration:none">positiveIntegers</code><a href="#positiveIntegers" class="hash-link" aria-label="Direct link to positiveIntegers" title="Direct link to positiveIntegers">​</a></h3><div class="repositoryDetailsContainer_BPdw"><a class="sourceButton_sEho" href="https://github.com/fartshreksigma/UniversalCraftwarsDocs/blob/master/src/CMDR.lua#L235"><div class="sourceButtonText_Vh0m">&lt;/&gt;</div></a></div><div class="memberString_GwaU"><code class="purple_ieR2">type</code> <code>positiveIntegers<!-- --> = </code> <code class="purple_ieR2">{</code><code class="blue_P4bS"><a style="text-decoration:underline;color:inherit" href="/UniversalCraftwarsDocs/api/Cmdr#positiveInteger">positiveInteger</a></code><code class="purple_ieR2">}</code></div><div>
+<p>A group of integers which are greater than 0</p>
+</div><div class="divider_rE5g"></div><h3 class="anchor anchorWithStickyNavbar_LWe7" id="nonNegativeIntegers"><code style="text-decoration:none">nonNegativeIntegers</code><a href="#nonNegativeIntegers" class="hash-link" aria-label="Direct link to nonNegativeIntegers" title="Direct link to nonNegativeIntegers">​</a></h3><div class="repositoryDetailsContainer_BPdw"><a class="sourceButton_sEho" href="https://github.com/fartshreksigma/UniversalCraftwarsDocs/blob/master/src/CMDR.lua#L242"><div class="sourceButtonText_Vh0m">&lt;/&gt;</div></a></div><div class="memberString_GwaU"><code class="purple_ieR2">type</code> <code>nonNegativeIntegers<!-- --> = </code> <code class="purple_ieR2">{</code><code class="blue_P4bS"><a style="text-decoration:underline;color:inherit" href="/UniversalCraftwarsDocs/api/Cmdr#nonNegativeInteger">nonNegativeInteger</a></code><code class="purple_ieR2">}</code></div><div>
+<p>A group of integers which are greater than or equal to 0</p>
+</div><div class="divider_rE5g"></div><h3 class="anchor anchorWithStickyNavbar_LWe7" id="bytes"><code style="text-decoration:none">bytes</code><a href="#bytes" class="hash-link" aria-label="Direct link to bytes" title="Direct link to bytes">​</a></h3><div class="repositoryDetailsContainer_BPdw"><a class="sourceButton_sEho" href="https://github.com/fartshreksigma/UniversalCraftwarsDocs/blob/master/src/CMDR.lua#L249"><div class="sourceButtonText_Vh0m">&lt;/&gt;</div></a></div><div class="memberString_GwaU"><code class="purple_ieR2">type</code> <code>bytes<!-- --> = </code> <code class="purple_ieR2">{</code><code class="blue_P4bS"><a style="text-decoration:underline;color:inherit" href="/UniversalCraftwarsDocs/api/Cmdr#byte">byte</a></code><code class="purple_ieR2">}</code></div><div>
+<p>A group of 16 bit numbers, being between 0 and 255</p>
+</div><div class="divider_rE5g"></div><h3 class="anchor anchorWithStickyNavbar_LWe7" id="digits"><code style="text-decoration:none">digits</code><a href="#digits" class="hash-link" aria-label="Direct link to digits" title="Direct link to digits">​</a></h3><div class="repositoryDetailsContainer_BPdw"><a class="sourceButton_sEho" href="https://github.com/fartshreksigma/UniversalCraftwarsDocs/blob/master/src/CMDR.lua#L256"><div class="sourceButtonText_Vh0m">&lt;/&gt;</div></a></div><div class="memberString_GwaU"><code class="purple_ieR2">type</code> <code>digits<!-- --> = </code> <code class="purple_ieR2">{</code><code class="blue_P4bS"><a style="text-decoration:underline;color:inherit" href="/UniversalCraftwarsDocs/api/Cmdr#digit">digit</a></code><code class="purple_ieR2">}</code></div><div>
+<p>A group of single digit numbers, being between 0 and 9</p>
+</div><div class="divider_rE5g"></div><h3 class="anchor anchorWithStickyNavbar_LWe7" id="booleanTypes"><code style="text-decoration:none">booleanTypes</code><a href="#booleanTypes" class="hash-link" aria-label="Direct link to booleanTypes" title="Direct link to booleanTypes">​</a></h3><div class="repositoryDetailsContainer_BPdw"><a class="sourceButton_sEho" href="https://github.com/fartshreksigma/UniversalCraftwarsDocs/blob/master/src/CMDR.lua#L263"><div class="sourceButtonText_Vh0m">&lt;/&gt;</div></a></div><div class="memberString_GwaU"><code class="purple_ieR2">type</code> <code>booleanTypes<!-- --> = </code> <code class="purple_ieR2">{</code><code class="blue_P4bS"><a style="text-decoration:underline;color:inherit" href="/UniversalCraftwarsDocs/api/Cmdr#booleanType">booleanType</a></code><code class="purple_ieR2">}</code></div><div>
+<p>A group of boolean values, containing either true or false, due to conflicting names with a commonly used primative, this has been renamed from booleans to booleanTypes</p>
+</div><div class="divider_rE5g"></div><h3 class="anchor anchorWithStickyNavbar_LWe7" id="storedKey"><code style="text-decoration:none">storedKey</code><a href="#storedKey" class="hash-link" aria-label="Direct link to storedKey" title="Direct link to storedKey">​</a></h3><div class="repositoryDetailsContainer_BPdw"><a class="sourceButton_sEho" href="https://github.com/fartshreksigma/UniversalCraftwarsDocs/blob/master/src/CMDR.lua#L273"><div class="sourceButtonText_Vh0m">&lt;/&gt;</div></a></div><div class="memberString_GwaU"><code class="purple_ieR2">type</code> <code>storedKey<!-- --> = </code> <code class="blue_P4bS">string</code></div><div>
+<p>A stored value within Cmdr</p>
+<div class="admonition admonition-info alert alert--info">
+  <div class="admonition-heading">
+    <h5><span class="admonition-icon"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="16" viewBox="0 0 14 16">
+          <path d="M7 2.3c3.14 0 5.7 2.56 5.7 5.7s-2.56 5.7-5.7 5.7A5.71 5.71 0 0 1 1.3 8c0-3.14 2.56-5.7 5.7-5.7zM7 1C3.14 1 0 4.14 0 8s3.14 7 7 7 7-3.14 7-7-3.14-7-7-7zm1 3H6v5h2V4zm0 6H6v2h2v-2z"></path>
+        </svg></span>info</h5>
+  </div>
+  <div class="admonition-content">
+    <p>The string used to query for storedKey types must begin with either <code>.</code> <code>$</code> or <code>$.</code></p>
+  </div>
+</div>
+</div><div class="divider_rE5g"></div><h3 class="anchor anchorWithStickyNavbar_LWe7" id="storedKeys"><code style="text-decoration:none">storedKeys</code><a href="#storedKeys" class="hash-link" aria-label="Direct link to storedKeys" title="Direct link to storedKeys">​</a></h3><div class="repositoryDetailsContainer_BPdw"><a class="sourceButton_sEho" href="https://github.com/fartshreksigma/UniversalCraftwarsDocs/blob/master/src/CMDR.lua#L280"><div class="sourceButtonText_Vh0m">&lt;/&gt;</div></a></div><div class="memberString_GwaU"><code class="purple_ieR2">type</code> <code>storedKeys<!-- --> = </code> <code class="purple_ieR2">{</code><code class="blue_P4bS"><a style="text-decoration:underline;color:inherit" href="/UniversalCraftwarsDocs/api/Cmdr#storedKey">storedKey</a></code><code class="purple_ieR2">}</code></div><div>
+<p>A group of stored keys</p>
+</div><div class="divider_rE5g"></div><h3 class="anchor anchorWithStickyNavbar_LWe7" id="team"><code style="text-decoration:none">team</code><a href="#team" class="hash-link" aria-label="Direct link to team" title="Direct link to team">​</a></h3><div class="repositoryDetailsContainer_BPdw"><a class="sourceButton_sEho" href="https://github.com/fartshreksigma/UniversalCraftwarsDocs/blob/master/src/CMDR.lua#L287"><div class="sourceButtonText_Vh0m">&lt;/&gt;</div></a></div><div class="memberString_GwaU"><code class="purple_ieR2">type</code> <code>team<!-- --> = </code> <code class="blue_P4bS"><a style="text-decoration:underline;color:inherit" href="https://developer.roblox.com/en-us/api-reference/class/Team" target="_blank" rel="noopener noreferrer">Team<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound" style="color:gray;vertical-align:middle;margin-left:2px"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></code></div><div>
+<p>A team, identified by it's name</p>
+</div><div class="divider_rE5g"></div><h3 class="anchor anchorWithStickyNavbar_LWe7" id="teams"><code style="text-decoration:none">teams</code><a href="#teams" class="hash-link" aria-label="Direct link to teams" title="Direct link to teams">​</a></h3><div class="repositoryDetailsContainer_BPdw"><a class="sourceButton_sEho" href="https://github.com/fartshreksigma/UniversalCraftwarsDocs/blob/master/src/CMDR.lua#L294"><div class="sourceButtonText_Vh0m">&lt;/&gt;</div></a></div><div class="memberString_GwaU"><code class="purple_ieR2">type</code> <code>teams<!-- --> = </code> <code class="purple_ieR2">{</code><code class="blue_P4bS"><a style="text-decoration:underline;color:inherit" href="/UniversalCraftwarsDocs/api/Cmdr#team">team</a></code><code class="purple_ieR2">}</code></div><div>
+<p>A group of teams, identified by names</p>
+</div><div class="divider_rE5g"></div><h3 class="anchor anchorWithStickyNavbar_LWe7" id="teamPlayers"><code style="text-decoration:none">teamPlayers</code><a href="#teamPlayers" class="hash-link" aria-label="Direct link to teamPlayers" title="Direct link to teamPlayers">​</a></h3><div class="repositoryDetailsContainer_BPdw"><a class="sourceButton_sEho" href="https://github.com/fartshreksigma/UniversalCraftwarsDocs/blob/master/src/CMDR.lua#L301"><div class="sourceButtonText_Vh0m">&lt;/&gt;</div></a></div><div class="memberString_GwaU"><code class="purple_ieR2">type</code> <code>teamPlayers<!-- --> = </code> <code class="purple_ieR2">{</code><code class="blue_P4bS"><a style="text-decoration:underline;color:inherit" href="https://developer.roblox.com/en-us/api-reference/class/Player" target="_blank" rel="noopener noreferrer">Player<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound" style="color:gray;vertical-align:middle;margin-left:2px"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></code><code class="purple_ieR2">}</code></div><div>
+<p>An array of the players within a team</p>
+</div><div class="divider_rE5g"></div><h3 class="anchor anchorWithStickyNavbar_LWe7" id="teamColor"><code style="text-decoration:none">teamColor</code><a href="#teamColor" class="hash-link" aria-label="Direct link to teamColor" title="Direct link to teamColor">​</a></h3><div class="repositoryDetailsContainer_BPdw"><a class="sourceButton_sEho" href="https://github.com/fartshreksigma/UniversalCraftwarsDocs/blob/master/src/CMDR.lua#L308"><div class="sourceButtonText_Vh0m">&lt;/&gt;</div></a></div><div class="memberString_GwaU"><code class="purple_ieR2">type</code> <code>teamColor<!-- --> = </code> <code class="blue_P4bS"><a style="text-decoration:underline;color:inherit" href="https://developer.roblox.com/en-us/api-reference/datatype/BrickColor" target="_blank" rel="noopener noreferrer">BrickColor<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound" style="color:gray;vertical-align:middle;margin-left:2px"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></code></div><div>
+<p>The BrickColor used in it's TeamColor property</p>
+</div><div class="divider_rE5g"></div><h3 class="anchor anchorWithStickyNavbar_LWe7" id="teamColors"><code style="text-decoration:none">teamColors</code><a href="#teamColors" class="hash-link" aria-label="Direct link to teamColors" title="Direct link to teamColors">​</a></h3><div class="repositoryDetailsContainer_BPdw"><a class="sourceButton_sEho" href="https://github.com/fartshreksigma/UniversalCraftwarsDocs/blob/master/src/CMDR.lua#L315"><div class="sourceButtonText_Vh0m">&lt;/&gt;</div></a></div><div class="memberString_GwaU"><code class="purple_ieR2">type</code> <code>teamColors<!-- --> = </code> <code class="purple_ieR2">{</code><code class="blue_P4bS"><a style="text-decoration:underline;color:inherit" href="/UniversalCraftwarsDocs/api/Cmdr#teamColor">teamColor</a></code><code class="purple_ieR2">}</code></div><div>
+<p>A group of BrickColors, used in the corresponding teams TeamColor</p>
+</div><div class="divider_rE5g"></div><h3 class="anchor anchorWithStickyNavbar_LWe7" id="typeType"><code style="text-decoration:none">typeType</code><a href="#typeType" class="hash-link" aria-label="Direct link to typeType" title="Direct link to typeType">​</a></h3><div class="repositoryDetailsContainer_BPdw"><a class="sourceButton_sEho" href="https://github.com/fartshreksigma/UniversalCraftwarsDocs/blob/master/src/CMDR.lua#L322"><div class="sourceButtonText_Vh0m">&lt;/&gt;</div></a></div><div class="memberString_GwaU"><code class="purple_ieR2">type</code> <code>typeType<!-- --> = </code> <code class="blue_P4bS">CmdrType</code></div><div>
+<p>A type used within Cmdr, the representing string is type, however to avoid conflicts typeType is used to define it</p>
+</div><div class="divider_rE5g"></div><h3 class="anchor anchorWithStickyNavbar_LWe7" id="typeTypes"><code style="text-decoration:none">typeTypes</code><a href="#typeTypes" class="hash-link" aria-label="Direct link to typeTypes" title="Direct link to typeTypes">​</a></h3><div class="repositoryDetailsContainer_BPdw"><a class="sourceButton_sEho" href="https://github.com/fartshreksigma/UniversalCraftwarsDocs/blob/master/src/CMDR.lua#L329"><div class="sourceButtonText_Vh0m">&lt;/&gt;</div></a></div><div class="memberString_GwaU"><code class="purple_ieR2">type</code> <code>typeTypes<!-- --> = </code> <code class="purple_ieR2">{</code><code class="blue_P4bS"><a style="text-decoration:underline;color:inherit" href="/UniversalCraftwarsDocs/api/Cmdr#typeType">typeType</a></code><code class="purple_ieR2">}</code></div><div>
+<p>A group of types used within Cmdr, typeTypes is used to represent the type as types may conflict</p>
+</div><div class="divider_rE5g"></div><h3 class="anchor anchorWithStickyNavbar_LWe7" id="url"><code style="text-decoration:none">url</code><a href="#url" class="hash-link" aria-label="Direct link to url" title="Direct link to url">​</a></h3><div class="repositoryDetailsContainer_BPdw"><a class="sourceButton_sEho" href="https://github.com/fartshreksigma/UniversalCraftwarsDocs/blob/master/src/CMDR.lua#L339"><div class="sourceButtonText_Vh0m">&lt;/&gt;</div></a></div><div class="memberString_GwaU"><code class="purple_ieR2">type</code> <code>url<!-- --> = </code> <code class="blue_P4bS">string</code></div><div>
+<p>A <a href="https://en.wikipedia.org/wiki/URL" target="_blank">URL</a> used to identify a website</p>
+<div class="admonition admonition-info alert alert--info">
+  <div class="admonition-heading">
+    <h5><span class="admonition-icon"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="16" viewBox="0 0 14 16">
+          <path d="M7 2.3c3.14 0 5.7 2.56 5.7 5.7s-2.56 5.7-5.7 5.7A5.71 5.71 0 0 1 1.3 8c0-3.14 2.56-5.7 5.7-5.7zM7 1C3.14 1 0 4.14 0 8s3.14 7 7 7 7-3.14 7-7-3.14-7-7-7zm1 3H6v5h2V4zm0 6H6v2h2v-2z"></path>
+        </svg></span>info</h5>
+  </div>
+  <div class="admonition-content">
+    <p>The URL must begin with either <code>https://</code> or <code>http://</code></p>
+  </div>
+</div>
+</div><div class="divider_rE5g"></div><h3 class="anchor anchorWithStickyNavbar_LWe7" id="urls"><code style="text-decoration:none">urls</code><a href="#urls" class="hash-link" aria-label="Direct link to urls" title="Direct link to urls">​</a></h3><div class="repositoryDetailsContainer_BPdw"><a class="sourceButton_sEho" href="https://github.com/fartshreksigma/UniversalCraftwarsDocs/blob/master/src/CMDR.lua#L346"><div class="sourceButtonText_Vh0m">&lt;/&gt;</div></a></div><div class="memberString_GwaU"><code class="purple_ieR2">type</code> <code>urls<!-- --> = </code> <code class="purple_ieR2">{</code><code class="blue_P4bS"><a style="text-decoration:underline;color:inherit" href="/UniversalCraftwarsDocs/api/Cmdr#url">url</a></code><code class="purple_ieR2">}</code></div><div>
+<p>A group of URLs used to identify websites</p>
+</div><div class="divider_rE5g"></div><h3 class="anchor anchorWithStickyNavbar_LWe7" id="userInput"><code style="text-decoration:none">userInput</code><a href="#userInput" class="hash-link" aria-label="Direct link to userInput" title="Direct link to userInput">​</a></h3><div class="repositoryDetailsContainer_BPdw"><a class="sourceButton_sEho" href="https://github.com/fartshreksigma/UniversalCraftwarsDocs/blob/master/src/CMDR.lua#L353"><div class="sourceButtonText_Vh0m">&lt;/&gt;</div></a></div><div class="memberString_GwaU"><code class="purple_ieR2">type</code> <code>userInput<!-- --> = </code> <code class="blue_P4bS"><a style="text-decoration:underline;color:inherit" href="https://developer.roblox.com/en-us/api-reference/enum/UserInputType" target="_blank" rel="noopener noreferrer">UserInputType<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound" style="color:gray;vertical-align:middle;margin-left:2px"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></code></div><div>
+<p>An Enum.UserInputType representing a button press such as mouse click</p>
+</div><div class="divider_rE5g"></div><h3 class="anchor anchorWithStickyNavbar_LWe7" id="userInputs"><code style="text-decoration:none">userInputs</code><a href="#userInputs" class="hash-link" aria-label="Direct link to userInputs" title="Direct link to userInputs">​</a></h3><div class="repositoryDetailsContainer_BPdw"><a class="sourceButton_sEho" href="https://github.com/fartshreksigma/UniversalCraftwarsDocs/blob/master/src/CMDR.lua#L360"><div class="sourceButtonText_Vh0m">&lt;/&gt;</div></a></div><div class="memberString_GwaU"><code class="purple_ieR2">type</code> <code>userInputs<!-- --> = </code> <code class="purple_ieR2">{</code><code class="blue_P4bS"><a style="text-decoration:underline;color:inherit" href="/UniversalCraftwarsDocs/api/Cmdr#userInput">userInput</a></code><code class="purple_ieR2">}</code></div><div>
+<p>A group of Enum.UserInputType representing button presses, such as mouse clicks</p>
+</div><div class="divider_rE5g"></div><h3 class="anchor anchorWithStickyNavbar_LWe7" id="vector3"><code style="text-decoration:none">vector3</code><a href="#vector3" class="hash-link" aria-label="Direct link to vector3" title="Direct link to vector3">​</a></h3><div class="repositoryDetailsContainer_BPdw"><a class="sourceButton_sEho" href="https://github.com/fartshreksigma/UniversalCraftwarsDocs/blob/master/src/CMDR.lua#L367"><div class="sourceButtonText_Vh0m">&lt;/&gt;</div></a></div><div class="memberString_GwaU"><code class="purple_ieR2">type</code> <code>vector3<!-- --> = </code> <code class="blue_P4bS"><a style="text-decoration:underline;color:inherit" href="https://developer.roblox.com/en-us/api-reference/datatype/Vector3" target="_blank" rel="noopener noreferrer">Vector3<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound" style="color:gray;vertical-align:middle;margin-left:2px"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></code></div><div>
+<p>A 3-Dimensional Vector with an X, Y, and Z axis</p>
+</div><div class="divider_rE5g"></div><h3 class="anchor anchorWithStickyNavbar_LWe7" id="vector3s"><code style="text-decoration:none">vector3s</code><a href="#vector3s" class="hash-link" aria-label="Direct link to vector3s" title="Direct link to vector3s">​</a></h3><div class="repositoryDetailsContainer_BPdw"><a class="sourceButton_sEho" href="https://github.com/fartshreksigma/UniversalCraftwarsDocs/blob/master/src/CMDR.lua#L374"><div class="sourceButtonText_Vh0m">&lt;/&gt;</div></a></div><div class="memberString_GwaU"><code class="purple_ieR2">type</code> <code>vector3s<!-- --> = </code> <code class="purple_ieR2">{</code><code class="blue_P4bS"><a style="text-decoration:underline;color:inherit" href="/UniversalCraftwarsDocs/api/Cmdr#vector3">vector3</a></code><code class="purple_ieR2">}</code></div><div>
+<p>A group of 3-Dimensional Vectors with X, Y, and Z axes</p>
+</div><div class="divider_rE5g"></div><h3 class="anchor anchorWithStickyNavbar_LWe7" id="vector2"><code style="text-decoration:none">vector2</code><a href="#vector2" class="hash-link" aria-label="Direct link to vector2" title="Direct link to vector2">​</a></h3><div class="repositoryDetailsContainer_BPdw"><a class="sourceButton_sEho" href="https://github.com/fartshreksigma/UniversalCraftwarsDocs/blob/master/src/CMDR.lua#L381"><div class="sourceButtonText_Vh0m">&lt;/&gt;</div></a></div><div class="memberString_GwaU"><code class="purple_ieR2">type</code> <code>vector2<!-- --> = </code> <code class="blue_P4bS"><a style="text-decoration:underline;color:inherit" href="https://developer.roblox.com/en-us/api-reference/datatype/Vector2" target="_blank" rel="noopener noreferrer">Vector2<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound" style="color:gray;vertical-align:middle;margin-left:2px"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></code></div><div>
+<p>A 2-Dimensional Vector with an X and Y axis</p>
+</div><div class="divider_rE5g"></div><h3 class="anchor anchorWithStickyNavbar_LWe7" id="vector2s"><code style="text-decoration:none">vector2s</code><a href="#vector2s" class="hash-link" aria-label="Direct link to vector2s" title="Direct link to vector2s">​</a></h3><div class="repositoryDetailsContainer_BPdw"><a class="sourceButton_sEho" href="https://github.com/fartshreksigma/UniversalCraftwarsDocs/blob/master/src/CMDR.lua#L388"><div class="sourceButtonText_Vh0m">&lt;/&gt;</div></a></div><div class="memberString_GwaU"><code class="purple_ieR2">type</code> <code>vector2s<!-- --> = </code> <code class="purple_ieR2">{</code><code class="blue_P4bS"><a style="text-decoration:underline;color:inherit" href="/UniversalCraftwarsDocs/api/Cmdr#vector2">vector2</a></code><code class="purple_ieR2">}</code></div><div>
+<p>A group of 2-Dimensional Vectors with X and Y axes</p>
+</div><div class="divider_rE5g"></div><h3 class="anchor anchorWithStickyNavbar_LWe7" id="unixtimestamp"><code style="text-decoration:none">unixtimestamp</code><a href="#unixtimestamp" class="hash-link" aria-label="Direct link to unixtimestamp" title="Direct link to unixtimestamp">​</a></h3><span class="docTag__6UZ" style="border-color:#218c74;color:#218c74">Custom</span><div class="repositoryDetailsContainer_BPdw"><a class="sourceButton_sEho" href="https://github.com/fartshreksigma/UniversalCraftwarsDocs/blob/master/src/CMDR.lua#L396"><div class="sourceButtonText_Vh0m">&lt;/&gt;</div></a></div><div class="memberString_GwaU"><code class="purple_ieR2">type</code> <code>unixtimestamp<!-- --> = </code> <code class="blue_P4bS">DateTime</code></div><div>
+<p>A unix timestamp, which is converted into a <a href="https://create.roblox.com/docs/reference/engine/datatypes/DateTime" target="_blank">DateTime</a></p>
+</div><div class="divider_rE5g"></div><h3 class="anchor anchorWithStickyNavbar_LWe7" id="unixtimestampmillis"><code style="text-decoration:none">unixtimestampmillis</code><a href="#unixtimestampmillis" class="hash-link" aria-label="Direct link to unixtimestampmillis" title="Direct link to unixtimestampmillis">​</a></h3><span class="docTag__6UZ" style="border-color:#218c74;color:#218c74">Custom</span><div class="repositoryDetailsContainer_BPdw"><a class="sourceButton_sEho" href="https://github.com/fartshreksigma/UniversalCraftwarsDocs/blob/master/src/CMDR.lua#L404"><div class="sourceButtonText_Vh0m">&lt;/&gt;</div></a></div><div class="memberString_GwaU"><code class="purple_ieR2">type</code> <code>unixtimestampmillis<!-- --> = </code> <code class="blue_P4bS">DateTime</code></div><div>
+<p>A unix timestamp in milliseconds, converted into a <a href="https://create.roblox.com/docs/reference/engine/datatypes/DateTime" target="_blank">DateTime</a> object</p>
+</div><div class="divider_rE5g"></div><h3 class="anchor anchorWithStickyNavbar_LWe7" id="universaltime"><code style="text-decoration:none">universaltime</code><a href="#universaltime" class="hash-link" aria-label="Direct link to universaltime" title="Direct link to universaltime">​</a></h3><span class="docTag__6UZ" style="border-color:#218c74;color:#218c74">Custom</span><div class="repositoryDetailsContainer_BPdw"><a class="sourceButton_sEho" href="https://github.com/fartshreksigma/UniversalCraftwarsDocs/blob/master/src/CMDR.lua#L412"><div class="sourceButtonText_Vh0m">&lt;/&gt;</div></a></div><div class="memberString_GwaU"><code class="purple_ieR2">type</code> <code>universaltime<!-- --> = </code> <code class="blue_P4bS">DateTime</code></div><div>
+<p>A time provided in format <code>(year)-(month)-(day)-(hour)-(minute)-(second)-(millisecond)</code> and formatted as a Universal Time</p>
+</div><div class="divider_rE5g"></div><h3 class="anchor anchorWithStickyNavbar_LWe7" id="localtime"><code style="text-decoration:none">localtime</code><a href="#localtime" class="hash-link" aria-label="Direct link to localtime" title="Direct link to localtime">​</a></h3><span class="docTag__6UZ" style="border-color:#218c74;color:#218c74">Custom</span><div class="repositoryDetailsContainer_BPdw"><a class="sourceButton_sEho" href="https://github.com/fartshreksigma/UniversalCraftwarsDocs/blob/master/src/CMDR.lua#L420"><div class="sourceButtonText_Vh0m">&lt;/&gt;</div></a></div><div class="memberString_GwaU"><code class="purple_ieR2">type</code> <code>localtime<!-- --> = </code> <code class="blue_P4bS">DateTime</code></div><div>
+<p>A time provided in <code>(year)-(month)-(day)-(hour)-(minute)-(second)-(millisecond)</code> format as a Local Time</p>
+</div><div class="divider_rE5g"></div><h3 class="anchor anchorWithStickyNavbar_LWe7" id="isodate"><code style="text-decoration:none">isodate</code><a href="#isodate" class="hash-link" aria-label="Direct link to isodate" title="Direct link to isodate">​</a></h3><span class="docTag__6UZ" style="border-color:#218c74;color:#218c74">Custom</span><div class="repositoryDetailsContainer_BPdw"><a class="sourceButton_sEho" href="https://github.com/fartshreksigma/UniversalCraftwarsDocs/blob/master/src/CMDR.lua#L428"><div class="sourceButtonText_Vh0m">&lt;/&gt;</div></a></div><div class="memberString_GwaU"><code class="purple_ieR2">type</code> <code>isodate<!-- --> = </code> <code class="blue_P4bS">DateTime</code></div><div>
+<p>A time provided as an ISODate, <code>(year)-(month)-(day)T(hour):(minute):(second)Z</code></p>
+</div><div class="divider_rE5g"></div><h3 class="anchor anchorWithStickyNavbar_LWe7" id="itemid"><code style="text-decoration:none">itemid</code><a href="#itemid" class="hash-link" aria-label="Direct link to itemid" title="Direct link to itemid">​</a></h3><span class="docTag__6UZ" style="border-color:#218c74;color:#218c74">Custom</span><div class="repositoryDetailsContainer_BPdw"><a class="sourceButton_sEho" href="https://github.com/fartshreksigma/UniversalCraftwarsDocs/blob/master/src/CMDR.lua#L436"><div class="sourceButtonText_Vh0m">&lt;/&gt;</div></a></div><div class="memberString_GwaU"><code class="purple_ieR2">type</code> <code>itemid<!-- --> = </code> <code class="blue_P4bS"><a style="text-decoration:underline;color:inherit" href="/UniversalCraftwarsDocs/api/CustomTypes#Item">Item</a></code></div><div>
+<p>An itemid, despite the name a name is provided within the command bar which is then converted to an ID</p>
+</div><div class="divider_rE5g"></div><h3 class="anchor anchorWithStickyNavbar_LWe7" id="itemids"><code style="text-decoration:none">itemids</code><a href="#itemids" class="hash-link" aria-label="Direct link to itemids" title="Direct link to itemids">​</a></h3><span class="docTag__6UZ" style="border-color:#218c74;color:#218c74">Custom</span><div class="repositoryDetailsContainer_BPdw"><a class="sourceButton_sEho" href="https://github.com/fartshreksigma/UniversalCraftwarsDocs/blob/master/src/CMDR.lua#L444"><div class="sourceButtonText_Vh0m">&lt;/&gt;</div></a></div><div class="memberString_GwaU"><code class="purple_ieR2">type</code> <code>itemids<!-- --> = </code> <code class="purple_ieR2">{</code><code class="blue_P4bS"><a style="text-decoration:underline;color:inherit" href="/UniversalCraftwarsDocs/api/Cmdr#itemid">itemid</a></code><code class="purple_ieR2">}</code></div><div>
+<p>A group of itemids, which are provided as names and coverted to IDs</p>
+</div><div class="divider_rE5g"></div><h3 class="anchor anchorWithStickyNavbar_LWe7" id="service"><code style="text-decoration:none">service</code><a href="#service" class="hash-link" aria-label="Direct link to service" title="Direct link to service">​</a></h3><span class="docTag__6UZ" style="border-color:#218c74;color:#218c74">Custom</span><div class="repositoryDetailsContainer_BPdw"><a class="sourceButton_sEho" href="https://github.com/fartshreksigma/UniversalCraftwarsDocs/blob/master/src/CMDR.lua#L452"><div class="sourceButtonText_Vh0m">&lt;/&gt;</div></a></div><div class="memberString_GwaU"><code class="purple_ieR2">type</code> <code>service<!-- --> = </code> <code class="blue_P4bS">Service</code></div><div>
+<p>A Roblox service, such as ReplicatedStorage, ServerScriptService, etc.</p>
+</div><div class="divider_rE5g"></div><h3 class="anchor anchorWithStickyNavbar_LWe7" id="services"><code style="text-decoration:none">services</code><a href="#services" class="hash-link" aria-label="Direct link to services" title="Direct link to services">​</a></h3><span class="docTag__6UZ" style="border-color:#218c74;color:#218c74">Custom</span><div class="repositoryDetailsContainer_BPdw"><a class="sourceButton_sEho" href="https://github.com/fartshreksigma/UniversalCraftwarsDocs/blob/master/src/CMDR.lua#L460"><div class="sourceButtonText_Vh0m">&lt;/&gt;</div></a></div><div class="memberString_GwaU"><code class="purple_ieR2">type</code> <code>services<!-- --> = </code> <code class="purple_ieR2">{</code><code class="blue_P4bS"><a style="text-decoration:underline;color:inherit" href="/UniversalCraftwarsDocs/api/Cmdr#service">service</a></code><code class="purple_ieR2">}</code></div><div>
+<p>A group of Roblox services such as ReplicatedStorage, ServerScriptService, etc.</p>
+</div></div></article></div><details><summary>Show raw api</summary><pre style="max-width:100%;white-space:pre-wrap">{
+    &quot;functions&quot;: [],
+    &quot;properties&quot;: [],
+    &quot;types&quot;: [
+        {
+            &quot;name&quot;: &quot;bindableResource&quot;,
+            &quot;desc&quot;: &quot;Frankly, I have no idea as to the purpose of this type, potentially for things like StarterGui:SetCore()?&quot;,
+            &quot;lua_type&quot;: &quot;\&quot;Chat\&quot;&quot;,
+            &quot;source&quot;: {
+                &quot;line&quot;: 13,
+                &quot;path&quot;: &quot;src/CMDR.lua&quot;
+            }
+        },
+        {
+            &quot;name&quot;: &quot;brickColor&quot;,
+            &quot;desc&quot;: &quot;Represents a [BrickColor](https://create.roblox.com/docs/reference/engine/datatypes/BrickColor) DataType.&quot;,
+            &quot;lua_type&quot;: &quot;BrickColor&quot;,
+            &quot;source&quot;: {
+                &quot;line&quot;: 20,
+                &quot;path&quot;: &quot;src/CMDR.lua&quot;
+            }
+        },
+        {
+            &quot;name&quot;: &quot;brickColors&quot;,
+            &quot;desc&quot;: &quot;Represents a group of [BrickColors](https://create.roblox.com/docs/reference/engine/datatypes/BrickColor).&quot;,
+            &quot;lua_type&quot;: &quot;{brickColor}&quot;,
+            &quot;source&quot;: {
+                &quot;line&quot;: 27,
+                &quot;path&quot;: &quot;src/CMDR.lua&quot;
+            }
+        },
+        {
+            &quot;name&quot;: &quot;color3&quot;,
+            &quot;desc&quot;: &quot;Represents a [Color3](https://create.roblox.com/docs/reference/engine/datatypes/Color3) value, made up of a sequence of [RGB](https://en.wikipedia.org/wiki/RGB_color_model#:~:text=The%20RGB%20color%20model%20is,red%2C%20green%2C%20and%20blue) values&quot;,
+            &quot;lua_type&quot;: &quot;Color3&quot;,
+            &quot;source&quot;: {
+                &quot;line&quot;: 34,
+                &quot;path&quot;: &quot;src/CMDR.lua&quot;
+            }
+        },
+        {
+            &quot;name&quot;: &quot;color3s&quot;,
+            &quot;desc&quot;: &quot;Represents a group of [Color3s](https://create.roblox.com/docs/reference/engine/datatypes/Color3), made up of sequences of [RGB](https://en.wikipedia.org/wiki/RGB_color_model#:~:text=The%20RGB%20color%20model%20is,red%2C%20green%2C%20and%20blue) values&quot;,
+            &quot;lua_type&quot;: &quot;{color3}&quot;,
+            &quot;source&quot;: {
+                &quot;line&quot;: 41,
+                &quot;path&quot;: &quot;src/CMDR.lua&quot;
+            }
+        },
+        {
+            &quot;name&quot;: &quot;hexColor3&quot;,
+            &quot;desc&quot;: &quot;Represents a [Hexadecimal Color Code](https://en.wikipedia.org/wiki/Web_colors#Hex_triplet), being similiar to a color3 just differently formatted&quot;,
+            &quot;lua_type&quot;: &quot;string&quot;,
+            &quot;source&quot;: {
+                &quot;line&quot;: 48,
+                &quot;path&quot;: &quot;src/CMDR.lua&quot;
+            }
+        },
+        {
+            &quot;name&quot;: &quot;hexColor3s&quot;,
+            &quot;desc&quot;: &quot;Represents a group of [Hexadecimal Color Codes](https://en.wikipedia.org/wiki/Web_colors#Hex_triplet), being similiar to color3s just differently formatted&quot;,
+            &quot;lua_type&quot;: &quot;{hexColor3}&quot;,
+            &quot;source&quot;: {
+                &quot;line&quot;: 55,
+                &quot;path&quot;: &quot;src/CMDR.lua&quot;
+            }
+        },
+        {
+            &quot;name&quot;: &quot;command&quot;,
+            &quot;desc&quot;: &quot;Represents a command name that has been registered with the Cmdr registry&quot;,
+            &quot;lua_type&quot;: &quot;CmdrCommand&quot;,
+            &quot;source&quot;: {
+                &quot;line&quot;: 62,
+                &quot;path&quot;: &quot;src/CMDR.lua&quot;
+            }
+        },
+        {
+            &quot;name&quot;: &quot;commands&quot;,
+            &quot;desc&quot;: &quot;Represents a group of command names that have been registered with the Cmdr registry&quot;,
+            &quot;lua_type&quot;: &quot;{command}&quot;,
+            &quot;source&quot;: {
+                &quot;line&quot;: 69,
+                &quot;path&quot;: &quot;src/CMDR.lua&quot;
+            }
+        },
+        {
+            &quot;name&quot;: &quot;conditionFunction&quot;,
+            &quot;desc&quot;: &quot;A condition for a function, the only current option is startsWith, likely used to determine conditions for custom commands&quot;,
+            &quot;lua_type&quot;: &quot;string&quot;,
+            &quot;source&quot;: {
+                &quot;line&quot;: 76,
+                &quot;path&quot;: &quot;src/CMDR.lua&quot;
+            }
+        },
+        {
+            &quot;name&quot;: &quot;duration&quot;,
+            &quot;desc&quot;: &quot;A duration inputted with a format such as 5d for 5 days, which is then converted to a number&quot;,
+            &quot;lua_type&quot;: &quot;number&quot;,
+            &quot;source&quot;: {
+                &quot;line&quot;: 83,
+                &quot;path&quot;: &quot;src/CMDR.lua&quot;
+            }
+        },
+        {
+            &quot;name&quot;: &quot;durations&quot;,
+            &quot;desc&quot;: &quot;A collection of durations inputted with formats such as 5d for 5 days, which are then converted to numbers&quot;,
+            &quot;lua_type&quot;: &quot;{duration}&quot;,
+            &quot;source&quot;: {
+                &quot;line&quot;: 90,
+                &quot;path&quot;: &quot;src/CMDR.lua&quot;
+            }
+        },
+        {
+            &quot;name&quot;: &quot;json&quot;,
+            &quot;desc&quot;: &quot;A JSON decoded table which was inputed into the command bar in an encoded format&quot;,
+            &quot;lua_type&quot;: &quot;{[primative]: [primative]}&quot;,
+            &quot;source&quot;: {
+                &quot;line&quot;: 97,
+                &quot;path&quot;: &quot;src/CMDR.lua&quot;
+            }
+        },
+        {
+            &quot;name&quot;: &quot;mathOperator&quot;,
+            &quot;desc&quot;: &quot;Common math operators such as ```+```, ```-```, ```*```, ```/```, ```**```, and ```%```&quot;,
+            &quot;lua_type&quot;: &quot;Operator&quot;,
+            &quot;source&quot;: {
+                &quot;line&quot;: 104,
+                &quot;path&quot;: &quot;src/CMDR.lua&quot;
+            }
+        },
+        {
+            &quot;name&quot;: &quot;player&quot;,
+            &quot;desc&quot;: &quot;A player who is currently in the server, inputted by their name\n:::tip\nYou can use ```.``` for it to use the executor, ```*``` for all players, ```**``` for others, and ```?``` for random\n:::&quot;,
+            &quot;lua_type&quot;: &quot;Player&quot;,
+            &quot;source&quot;: {
+                &quot;line&quot;: 114,
+                &quot;path&quot;: &quot;src/CMDR.lua&quot;
+            }
+        },
+        {
+            &quot;name&quot;: &quot;players&quot;,
+            &quot;desc&quot;: &quot;A group of players who are in the server\n:::info\nPrefixing a player type with ```%``` will instead use the teamPlayers type\n:::&quot;,
+            &quot;lua_type&quot;: &quot;{player}&quot;,
+            &quot;source&quot;: {
+                &quot;line&quot;: 124,
+                &quot;path&quot;: &quot;src/CMDR.lua&quot;
+            }
+        },
+        {
+            &quot;name&quot;: &quot;playerId&quot;,
+            &quot;desc&quot;: &quot;Inputs a player by their full username, and returns their UserId\n:::tip\nYou can use ```.``` for it to use the executor, ```*``` for all players, ```**``` for others, and ```?``` for random\n:::&quot;,
+            &quot;lua_type&quot;: &quot;number&quot;,
+            &quot;source&quot;: {
+                &quot;line&quot;: 134,
+                &quot;path&quot;: &quot;src/CMDR.lua&quot;
+            }
+        },
+        {
+            &quot;name&quot;: &quot;playerIds&quot;,
+            &quot;desc&quot;: &quot;A group of players UserIds\n:::info\nPrefixing with ```#``` will instead use a players UserId over name\n:::&quot;,
+            &quot;lua_type&quot;: &quot;{playerId}&quot;,
+            &quot;source&quot;: {
+                &quot;line&quot;: 144,
+                &quot;path&quot;: &quot;src/CMDR.lua&quot;
+            }
+        },
+        {
+            &quot;name&quot;: &quot;stringType&quot;,
+            &quot;desc&quot;: &quot;A string primative, due to conflicting with unrelated mentions of the string datatype this has been renamed from string to stringType\n:::tip\nYou can surround a string which contains spaces with ```\&quot;``` in order for it to take the whole string instead of just the first word\n:::&quot;,
+            &quot;lua_type&quot;: &quot;string&quot;,
+            &quot;source&quot;: {
+                &quot;line&quot;: 154,
+                &quot;path&quot;: &quot;src/CMDR.lua&quot;
+            }
+        },
+        {
+            &quot;name&quot;: &quot;numberType&quot;,
+            &quot;desc&quot;: &quot;A number primative, due to conflicting names with a primative type, it has been renamed from number to numberType&quot;,
+            &quot;lua_type&quot;: &quot;number&quot;,
+            &quot;source&quot;: {
+                &quot;line&quot;: 161,
+                &quot;path&quot;: &quot;src/CMDR.lua&quot;
+            }
+        },
+        {
+            &quot;name&quot;: &quot;integer&quot;,
+            &quot;desc&quot;: &quot;An integer, meaning a number which has no decimal portion&quot;,
+            &quot;lua_type&quot;: &quot;number&quot;,
+            &quot;source&quot;: {
+                &quot;line&quot;: 168,
+                &quot;path&quot;: &quot;src/CMDR.lua&quot;
+            }
+        },
+        {
+            &quot;name&quot;: &quot;positiveInteger&quot;,
+            &quot;desc&quot;: &quot;An integer which is greater than 0&quot;,
+            &quot;lua_type&quot;: &quot;number&quot;,
+            &quot;source&quot;: {
+                &quot;line&quot;: 175,
+                &quot;path&quot;: &quot;src/CMDR.lua&quot;
+            }
+        },
+        {
+            &quot;name&quot;: &quot;nonNegativeInteger&quot;,
+            &quot;desc&quot;: &quot;An integer which is greater than or equal to 0&quot;,
+            &quot;lua_type&quot;: &quot;number&quot;,
+            &quot;source&quot;: {
+                &quot;line&quot;: 182,
+                &quot;path&quot;: &quot;src/CMDR.lua&quot;
+            }
+        },
+        {
+            &quot;name&quot;: &quot;byte&quot;,
+            &quot;desc&quot;: &quot;A 16 bit number, being between 0 and 255&quot;,
+            &quot;lua_type&quot;: &quot;number&quot;,
+            &quot;source&quot;: {
+                &quot;line&quot;: 189,
+                &quot;path&quot;: &quot;src/CMDR.lua&quot;
+            }
+        },
+        {
+            &quot;name&quot;: &quot;digit&quot;,
+            &quot;desc&quot;: &quot;A single digit number, being between 0 and 9&quot;,
+            &quot;lua_type&quot;: &quot;number&quot;,
+            &quot;source&quot;: {
+                &quot;line&quot;: 196,
+                &quot;path&quot;: &quot;src/CMDR.lua&quot;
+            }
+        },
+        {
+            &quot;name&quot;: &quot;booleanType&quot;,
+            &quot;desc&quot;: &quot;A boolean value, containing either true or false, due to conflicting names with a commonly used primative, this has been renamed from boolean to booleanType\n:::info\nOther options than ```true``` and ```false``` can be inputed, being ```t```, ```yes```, ```y```, ```on```, ```enable```, ```enabled```,\n ```1```, and ```+```, for true, and ```f```, ```no```, ```n```, ```off```, ```disable```, ```disabled```, ```0```, and ```-``` for false\n:::&quot;,
+            &quot;lua_type&quot;: &quot;boolean&quot;,
+            &quot;source&quot;: {
+                &quot;line&quot;: 207,
+                &quot;path&quot;: &quot;src/CMDR.lua&quot;
+            }
+        },
+        {
+            &quot;name&quot;: &quot;stringTypes&quot;,
+            &quot;desc&quot;: &quot;A group of string primatives, due to conflicting with unrelated mentions of the string datatype this has been renamed from strings to stringTypes&quot;,
+            &quot;lua_type&quot;: &quot;{stringType}&quot;,
+            &quot;source&quot;: {
+                &quot;line&quot;: 214,
+                &quot;path&quot;: &quot;src/CMDR.lua&quot;
+            }
+        },
+        {
+            &quot;name&quot;: &quot;numberTypes&quot;,
+            &quot;desc&quot;: &quot;A group of number primatives, due to conflicting names with a primative type, it has been renamed from numbers to numberTypes&quot;,
+            &quot;lua_type&quot;: &quot;{numberType}&quot;,
+            &quot;source&quot;: {
+                &quot;line&quot;: 221,
+                &quot;path&quot;: &quot;src/CMDR.lua&quot;
+            }
+        },
+        {
+            &quot;name&quot;: &quot;integers&quot;,
+            &quot;desc&quot;: &quot;A group of integers, meaning numbers with no decimal portion&quot;,
+            &quot;lua_type&quot;: &quot;{integer}&quot;,
+            &quot;source&quot;: {
+                &quot;line&quot;: 228,
+                &quot;path&quot;: &quot;src/CMDR.lua&quot;
+            }
+        },
+        {
+            &quot;name&quot;: &quot;positiveIntegers&quot;,
+            &quot;desc&quot;: &quot;A group of integers which are greater than 0&quot;,
+            &quot;lua_type&quot;: &quot;{positiveInteger}&quot;,
+            &quot;source&quot;: {
+                &quot;line&quot;: 235,
+                &quot;path&quot;: &quot;src/CMDR.lua&quot;
+            }
+        },
+        {
+            &quot;name&quot;: &quot;nonNegativeIntegers&quot;,
+            &quot;desc&quot;: &quot;A group of integers which are greater than or equal to 0&quot;,
+            &quot;lua_type&quot;: &quot;{nonNegativeInteger}&quot;,
+            &quot;source&quot;: {
+                &quot;line&quot;: 242,
+                &quot;path&quot;: &quot;src/CMDR.lua&quot;
+            }
+        },
+        {
+            &quot;name&quot;: &quot;bytes&quot;,
+            &quot;desc&quot;: &quot;A group of 16 bit numbers, being between 0 and 255&quot;,
+            &quot;lua_type&quot;: &quot;{byte}&quot;,
+            &quot;source&quot;: {
+                &quot;line&quot;: 249,
+                &quot;path&quot;: &quot;src/CMDR.lua&quot;
+            }
+        },
+        {
+            &quot;name&quot;: &quot;digits&quot;,
+            &quot;desc&quot;: &quot;A group of single digit numbers, being between 0 and 9&quot;,
+            &quot;lua_type&quot;: &quot;{digit}&quot;,
+            &quot;source&quot;: {
+                &quot;line&quot;: 256,
+                &quot;path&quot;: &quot;src/CMDR.lua&quot;
+            }
+        },
+        {
+            &quot;name&quot;: &quot;booleanTypes&quot;,
+            &quot;desc&quot;: &quot;A group of boolean values, containing either true or false, due to conflicting names with a commonly used primative, this has been renamed from booleans to booleanTypes&quot;,
+            &quot;lua_type&quot;: &quot;{booleanType}&quot;,
+            &quot;source&quot;: {
+                &quot;line&quot;: 263,
+                &quot;path&quot;: &quot;src/CMDR.lua&quot;
+            }
+        },
+        {
+            &quot;name&quot;: &quot;storedKey&quot;,
+            &quot;desc&quot;: &quot;A stored value within Cmdr\n:::info\nThe string used to query for storedKey types must begin with either ```.``` ```$``` or ```$.```\n:::&quot;,
+            &quot;lua_type&quot;: &quot;string&quot;,
+            &quot;source&quot;: {
+                &quot;line&quot;: 273,
+                &quot;path&quot;: &quot;src/CMDR.lua&quot;
+            }
+        },
+        {
+            &quot;name&quot;: &quot;storedKeys&quot;,
+            &quot;desc&quot;: &quot;A group of stored keys&quot;,
+            &quot;lua_type&quot;: &quot;{storedKey}&quot;,
+            &quot;source&quot;: {
+                &quot;line&quot;: 280,
+                &quot;path&quot;: &quot;src/CMDR.lua&quot;
+            }
+        },
+        {
+            &quot;name&quot;: &quot;team&quot;,
+            &quot;desc&quot;: &quot;A team, identified by it&#x27;s name&quot;,
+            &quot;lua_type&quot;: &quot;Team&quot;,
+            &quot;source&quot;: {
+                &quot;line&quot;: 287,
+                &quot;path&quot;: &quot;src/CMDR.lua&quot;
+            }
+        },
+        {
+            &quot;name&quot;: &quot;teams&quot;,
+            &quot;desc&quot;: &quot;A group of teams, identified by names&quot;,
+            &quot;lua_type&quot;: &quot;{team}&quot;,
+            &quot;source&quot;: {
+                &quot;line&quot;: 294,
+                &quot;path&quot;: &quot;src/CMDR.lua&quot;
+            }
+        },
+        {
+            &quot;name&quot;: &quot;teamPlayers&quot;,
+            &quot;desc&quot;: &quot;An array of the players within a team&quot;,
+            &quot;lua_type&quot;: &quot;{Player}&quot;,
+            &quot;source&quot;: {
+                &quot;line&quot;: 301,
+                &quot;path&quot;: &quot;src/CMDR.lua&quot;
+            }
+        },
+        {
+            &quot;name&quot;: &quot;teamColor&quot;,
+            &quot;desc&quot;: &quot;The BrickColor used in it&#x27;s TeamColor property&quot;,
+            &quot;lua_type&quot;: &quot;BrickColor&quot;,
+            &quot;source&quot;: {
+                &quot;line&quot;: 308,
+                &quot;path&quot;: &quot;src/CMDR.lua&quot;
+            }
+        },
+        {
+            &quot;name&quot;: &quot;teamColors&quot;,
+            &quot;desc&quot;: &quot;A group of BrickColors, used in the corresponding teams TeamColor&quot;,
+            &quot;lua_type&quot;: &quot;{teamColor}&quot;,
+            &quot;source&quot;: {
+                &quot;line&quot;: 315,
+                &quot;path&quot;: &quot;src/CMDR.lua&quot;
+            }
+        },
+        {
+            &quot;name&quot;: &quot;typeType&quot;,
+            &quot;desc&quot;: &quot;A type used within Cmdr, the representing string is type, however to avoid conflicts typeType is used to define it&quot;,
+            &quot;lua_type&quot;: &quot;CmdrType&quot;,
+            &quot;source&quot;: {
+                &quot;line&quot;: 322,
+                &quot;path&quot;: &quot;src/CMDR.lua&quot;
+            }
+        },
+        {
+            &quot;name&quot;: &quot;typeTypes&quot;,
+            &quot;desc&quot;: &quot;A group of types used within Cmdr, typeTypes is used to represent the type as types may conflict&quot;,
+            &quot;lua_type&quot;: &quot;{typeType}&quot;,
+            &quot;source&quot;: {
+                &quot;line&quot;: 329,
+                &quot;path&quot;: &quot;src/CMDR.lua&quot;
+            }
+        },
+        {
+            &quot;name&quot;: &quot;url&quot;,
+            &quot;desc&quot;: &quot;A [URL](https://en.wikipedia.org/wiki/URL) used to identify a website\n:::info\nThe URL must begin with either ```https://``` or ```http://```\n:::&quot;,
+            &quot;lua_type&quot;: &quot;string&quot;,
+            &quot;source&quot;: {
+                &quot;line&quot;: 339,
+                &quot;path&quot;: &quot;src/CMDR.lua&quot;
+            }
+        },
+        {
+            &quot;name&quot;: &quot;urls&quot;,
+            &quot;desc&quot;: &quot;A group of URLs used to identify websites&quot;,
+            &quot;lua_type&quot;: &quot;{url}&quot;,
+            &quot;source&quot;: {
+                &quot;line&quot;: 346,
+                &quot;path&quot;: &quot;src/CMDR.lua&quot;
+            }
+        },
+        {
+            &quot;name&quot;: &quot;userInput&quot;,
+            &quot;desc&quot;: &quot;An Enum.UserInputType representing a button press such as mouse click&quot;,
+            &quot;lua_type&quot;: &quot;UserInputType&quot;,
+            &quot;source&quot;: {
+                &quot;line&quot;: 353,
+                &quot;path&quot;: &quot;src/CMDR.lua&quot;
+            }
+        },
+        {
+            &quot;name&quot;: &quot;userInputs&quot;,
+            &quot;desc&quot;: &quot;A group of Enum.UserInputType representing button presses, such as mouse clicks&quot;,
+            &quot;lua_type&quot;: &quot;{userInput}&quot;,
+            &quot;source&quot;: {
+                &quot;line&quot;: 360,
+                &quot;path&quot;: &quot;src/CMDR.lua&quot;
+            }
+        },
+        {
+            &quot;name&quot;: &quot;vector3&quot;,
+            &quot;desc&quot;: &quot;A 3-Dimensional Vector with an X, Y, and Z axis&quot;,
+            &quot;lua_type&quot;: &quot;Vector3&quot;,
+            &quot;source&quot;: {
+                &quot;line&quot;: 367,
+                &quot;path&quot;: &quot;src/CMDR.lua&quot;
+            }
+        },
+        {
+            &quot;name&quot;: &quot;vector3s&quot;,
+            &quot;desc&quot;: &quot;A group of 3-Dimensional Vectors with X, Y, and Z axes&quot;,
+            &quot;lua_type&quot;: &quot;{vector3}&quot;,
+            &quot;source&quot;: {
+                &quot;line&quot;: 374,
+                &quot;path&quot;: &quot;src/CMDR.lua&quot;
+            }
+        },
+        {
+            &quot;name&quot;: &quot;vector2&quot;,
+            &quot;desc&quot;: &quot;A 2-Dimensional Vector with an X and Y axis&quot;,
+            &quot;lua_type&quot;: &quot;Vector2&quot;,
+            &quot;source&quot;: {
+                &quot;line&quot;: 381,
+                &quot;path&quot;: &quot;src/CMDR.lua&quot;
+            }
+        },
+        {
+            &quot;name&quot;: &quot;vector2s&quot;,
+            &quot;desc&quot;: &quot;A group of 2-Dimensional Vectors with X and Y axes&quot;,
+            &quot;lua_type&quot;: &quot;{vector2}&quot;,
+            &quot;source&quot;: {
+                &quot;line&quot;: 388,
+                &quot;path&quot;: &quot;src/CMDR.lua&quot;
+            }
+        },
+        {
+            &quot;name&quot;: &quot;unixtimestamp&quot;,
+            &quot;desc&quot;: &quot;A unix timestamp, which is converted into a [DateTime](https://create.roblox.com/docs/reference/engine/datatypes/DateTime)&quot;,
+            &quot;lua_type&quot;: &quot;DateTime&quot;,
+            &quot;tags&quot;: [
+                &quot;Custom&quot;
+            ],
+            &quot;source&quot;: {
+                &quot;line&quot;: 396,
+                &quot;path&quot;: &quot;src/CMDR.lua&quot;
+            }
+        },
+        {
+            &quot;name&quot;: &quot;unixtimestampmillis&quot;,
+            &quot;desc&quot;: &quot;A unix timestamp in milliseconds, converted into a [DateTime](https://create.roblox.com/docs/reference/engine/datatypes/DateTime) object&quot;,
+            &quot;lua_type&quot;: &quot;DateTime&quot;,
+            &quot;tags&quot;: [
+                &quot;Custom&quot;
+            ],
+            &quot;source&quot;: {
+                &quot;line&quot;: 404,
+                &quot;path&quot;: &quot;src/CMDR.lua&quot;
+            }
+        },
+        {
+            &quot;name&quot;: &quot;universaltime&quot;,
+            &quot;desc&quot;: &quot;A time provided in format ```(year)-(month)-(day)-(hour)-(minute)-(second)-(millisecond)``` and formatted as a Universal Time&quot;,
+            &quot;lua_type&quot;: &quot;DateTime&quot;,
+            &quot;tags&quot;: [
+                &quot;Custom&quot;
+            ],
+            &quot;source&quot;: {
+                &quot;line&quot;: 412,
+                &quot;path&quot;: &quot;src/CMDR.lua&quot;
+            }
+        },
+        {
+            &quot;name&quot;: &quot;localtime&quot;,
+            &quot;desc&quot;: &quot;A time provided in ```(year)-(month)-(day)-(hour)-(minute)-(second)-(millisecond)``` format as a Local Time&quot;,
+            &quot;lua_type&quot;: &quot;DateTime&quot;,
+            &quot;tags&quot;: [
+                &quot;Custom&quot;
+            ],
+            &quot;source&quot;: {
+                &quot;line&quot;: 420,
+                &quot;path&quot;: &quot;src/CMDR.lua&quot;
+            }
+        },
+        {
+            &quot;name&quot;: &quot;isodate&quot;,
+            &quot;desc&quot;: &quot;A time provided as an ISODate, ```(year)-(month)-(day)T(hour):(minute):(second)Z```&quot;,
+            &quot;lua_type&quot;: &quot;DateTime&quot;,
+            &quot;tags&quot;: [
+                &quot;Custom&quot;
+            ],
+            &quot;source&quot;: {
+                &quot;line&quot;: 428,
+                &quot;path&quot;: &quot;src/CMDR.lua&quot;
+            }
+        },
+        {
+            &quot;name&quot;: &quot;itemid&quot;,
+            &quot;desc&quot;: &quot;An itemid, despite the name a name is provided within the command bar which is then converted to an ID&quot;,
+            &quot;lua_type&quot;: &quot;Item&quot;,
+            &quot;tags&quot;: [
+                &quot;Custom&quot;
+            ],
+            &quot;source&quot;: {
+                &quot;line&quot;: 436,
+                &quot;path&quot;: &quot;src/CMDR.lua&quot;
+            }
+        },
+        {
+            &quot;name&quot;: &quot;itemids&quot;,
+            &quot;desc&quot;: &quot;A group of itemids, which are provided as names and coverted to IDs&quot;,
+            &quot;lua_type&quot;: &quot;{itemid}&quot;,
+            &quot;tags&quot;: [
+                &quot;Custom&quot;
+            ],
+            &quot;source&quot;: {
+                &quot;line&quot;: 444,
+                &quot;path&quot;: &quot;src/CMDR.lua&quot;
+            }
+        },
+        {
+            &quot;name&quot;: &quot;service&quot;,
+            &quot;desc&quot;: &quot;A Roblox service, such as ReplicatedStorage, ServerScriptService, etc.&quot;,
+            &quot;lua_type&quot;: &quot;Service&quot;,
+            &quot;tags&quot;: [
+                &quot;Custom&quot;
+            ],
+            &quot;source&quot;: {
+                &quot;line&quot;: 452,
+                &quot;path&quot;: &quot;src/CMDR.lua&quot;
+            }
+        },
+        {
+            &quot;name&quot;: &quot;services&quot;,
+            &quot;desc&quot;: &quot;A group of Roblox services such as ReplicatedStorage, ServerScriptService, etc.&quot;,
+            &quot;lua_type&quot;: &quot;{service}&quot;,
+            &quot;tags&quot;: [
+                &quot;Custom&quot;
+            ],
+            &quot;source&quot;: {
+                &quot;line&quot;: 460,
+                &quot;path&quot;: &quot;src/CMDR.lua&quot;
+            }
+        }
+    ],
+    &quot;name&quot;: &quot;Cmdr&quot;,
+    &quot;desc&quot;: &quot;The [Cmdr](https://eryn.io/Cmdr/) library, which is a powerful and easy to use command bar tool.&quot;,
+    &quot;source&quot;: {
+        &quot;line&quot;: 6,
+        &quot;path&quot;: &quot;src/CMDR.lua&quot;
+    }
+}</pre></details></div><div class="col col--3"><div class="tableOfContents_bqdL thin-scrollbar"><ul class="table-of-contents table-of-contents__left-border"><li><a href="#types" class="table-of-contents__link toc-highlight">Types</a><ul><li><a href="#bindableResource" class="table-of-contents__link toc-highlight">bindableResource</a></li><li><a href="#booleanType" class="table-of-contents__link toc-highlight">booleanType</a></li><li><a href="#booleanTypes" class="table-of-contents__link toc-highlight">booleanTypes</a></li><li><a href="#brickColor" class="table-of-contents__link toc-highlight">brickColor</a></li><li><a href="#brickColors" class="table-of-contents__link toc-highlight">brickColors</a></li><li><a href="#byte" class="table-of-contents__link toc-highlight">byte</a></li><li><a href="#bytes" class="table-of-contents__link toc-highlight">bytes</a></li><li><a href="#color3" class="table-of-contents__link toc-highlight">color3</a></li><li><a href="#color3s" class="table-of-contents__link toc-highlight">color3s</a></li><li><a href="#command" class="table-of-contents__link toc-highlight">command</a></li><li><a href="#commands" class="table-of-contents__link toc-highlight">commands</a></li><li><a href="#conditionFunction" class="table-of-contents__link toc-highlight">conditionFunction</a></li><li><a href="#digit" class="table-of-contents__link toc-highlight">digit</a></li><li><a href="#digits" class="table-of-contents__link toc-highlight">digits</a></li><li><a href="#duration" class="table-of-contents__link toc-highlight">duration</a></li><li><a href="#durations" class="table-of-contents__link toc-highlight">durations</a></li><li><a href="#hexColor3" class="table-of-contents__link toc-highlight">hexColor3</a></li><li><a href="#hexColor3s" class="table-of-contents__link toc-highlight">hexColor3s</a></li><li><a href="#integer" class="table-of-contents__link toc-highlight">integer</a></li><li><a href="#integers" class="table-of-contents__link toc-highlight">integers</a></li><li><a href="#isodate" class="table-of-contents__link toc-highlight">isodate</a></li><li><a href="#itemid" class="table-of-contents__link toc-highlight">itemid</a></li><li><a href="#itemids" class="table-of-contents__link toc-highlight">itemids</a></li><li><a href="#json" class="table-of-contents__link toc-highlight">json</a></li><li><a href="#localtime" class="table-of-contents__link toc-highlight">localtime</a></li><li><a href="#mathOperator" class="table-of-contents__link toc-highlight">mathOperator</a></li><li><a href="#nonNegativeInteger" class="table-of-contents__link toc-highlight">nonNegativeInteger</a></li><li><a href="#nonNegativeIntegers" class="table-of-contents__link toc-highlight">nonNegativeIntegers</a></li><li><a href="#numberType" class="table-of-contents__link toc-highlight">numberType</a></li><li><a href="#numberTypes" class="table-of-contents__link toc-highlight">numberTypes</a></li><li><a href="#player" class="table-of-contents__link toc-highlight">player</a></li><li><a href="#playerId" class="table-of-contents__link toc-highlight">playerId</a></li><li><a href="#playerIds" class="table-of-contents__link toc-highlight">playerIds</a></li><li><a href="#players" class="table-of-contents__link toc-highlight">players</a></li><li><a href="#positiveInteger" class="table-of-contents__link toc-highlight">positiveInteger</a></li><li><a href="#positiveIntegers" class="table-of-contents__link toc-highlight">positiveIntegers</a></li><li><a href="#service" class="table-of-contents__link toc-highlight">service</a></li><li><a href="#services" class="table-of-contents__link toc-highlight">services</a></li><li><a href="#storedKey" class="table-of-contents__link toc-highlight">storedKey</a></li><li><a href="#storedKeys" class="table-of-contents__link toc-highlight">storedKeys</a></li><li><a href="#stringType" class="table-of-contents__link toc-highlight">stringType</a></li><li><a href="#stringTypes" class="table-of-contents__link toc-highlight">stringTypes</a></li><li><a href="#team" class="table-of-contents__link toc-highlight">team</a></li><li><a href="#teamColor" class="table-of-contents__link toc-highlight">teamColor</a></li><li><a href="#teamColors" class="table-of-contents__link toc-highlight">teamColors</a></li><li><a href="#teamPlayers" class="table-of-contents__link toc-highlight">teamPlayers</a></li><li><a href="#teams" class="table-of-contents__link toc-highlight">teams</a></li><li><a href="#typeType" class="table-of-contents__link toc-highlight">typeType</a></li><li><a href="#typeTypes" class="table-of-contents__link toc-highlight">typeTypes</a></li><li><a href="#universaltime" class="table-of-contents__link toc-highlight">universaltime</a></li><li><a href="#unixtimestamp" class="table-of-contents__link toc-highlight">unixtimestamp</a></li><li><a href="#unixtimestampmillis" class="table-of-contents__link toc-highlight">unixtimestampmillis</a></li><li><a href="#url" class="table-of-contents__link toc-highlight">url</a></li><li><a href="#urls" class="table-of-contents__link toc-highlight">urls</a></li><li><a href="#userInput" class="table-of-contents__link toc-highlight">userInput</a></li><li><a href="#userInputs" class="table-of-contents__link toc-highlight">userInputs</a></li><li><a href="#vector2" class="table-of-contents__link toc-highlight">vector2</a></li><li><a href="#vector2s" class="table-of-contents__link toc-highlight">vector2s</a></li><li><a href="#vector3" class="table-of-contents__link toc-highlight">vector3</a></li><li><a href="#vector3s" class="table-of-contents__link toc-highlight">vector3s</a></li></ul></li><li><a href="#properties" class="table-of-contents__link toc-highlight">Properties</a></li><li><a href="#functions" class="table-of-contents__link toc-highlight">Functions</a></li></ul></div></div></div></div></main></div></div><footer class="footer footer--dark"><div class="container container-fluid"><div class="footer__bottom text--center"><div class="footer__copyright">Copyright © 2024 fartshreksigma. Built with Moonwave and Docusaurus.</div></div></div></footer></div>
+<script src="/UniversalCraftwarsDocs/assets/js/runtime~main.8776e5db.js"></script>
+<script src="/UniversalCraftwarsDocs/assets/js/main.534b27d3.js"></script>
+</body>
+</html>
