@@ -1,7 +1,7 @@
 <div align="center">
 	<h1>Universal Craftwars Documentation</h1>
 	<p>A documentation/API reference for the game <a href="https://www.roblox.com/games/17741993263/Universal-Craftwars-Revaluation-WIP"><strong>Universal Craftwars</strong></a></p>
-	<a href="https://eryn.io/roblox-lua-promise/"><strong>View docs</strong></a>
+	<a href="https://fartshreksigma.github.io/UniversalCraftwarsDocs/"><strong>View docs</strong></a>
 </div>
 <!--moonwave-hide-before-this-line-->
 

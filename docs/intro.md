@@ -7,4 +7,5 @@ sidebar_position: 1
 Heres some links to do with the docs:
 
 - [**API Docs**](/api/DatastoreService)
+- [**Changelog**](/changelog)
 - More coming in future!
