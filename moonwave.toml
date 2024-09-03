@@ -42,12 +42,20 @@ classes = ["CustomTypes"]
 
 [[classOrder]]
 section = "Creators"
-classes = ["SharedCreators"]
+classes = ["SharedCreators", "ChatMessageLogDisplayCreator"]
 
 [[classOrder]]
 section = "FilterParams"
 classes = ["InventoryFilterParams", "CraftingFilterParams"]
 
 [[classOrder]]
+section = "ChatHandlers"
+classes = ["ServerChatHandler", "ClientChatHandler", "ChatMessageLogDisplay"]
+
+[[classOrder]]
 section = "Libraries"
-classes = ["Cmdr"]
+classes = ["Cmdr", "WindLines"]
+
+[[classOrder]]
+section = "ProfileService"
+classes = ["ProfileService", "ProfileStore", "Profile", "global_updates"]

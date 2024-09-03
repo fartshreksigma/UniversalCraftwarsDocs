@@ -107,3 +107,41 @@ local RareRarity: Rarity = "None"
 ```
 
 ]=]
+
+--[=[
+@interface ChatGradientData
+@within CustomTypes
+.Transparency number? -- The transparency of the gradient
+.GradientColor ColorSequence? -- The color of the gradient
+.Rotation number? -- The rotation of the gradient
+.Offset Vector2? -- The offset of the gradient
+
+A gradient applied to a chat message
+]=]
+
+--[=[
+@interface ChatObjectPool
+@within CustomTypes
+.InstancePoolsByClass {[string]: {Instance}} -- The object pool of each class within in
+.Name string -- The name of the ObjectPool
+.PoolSizePerType number -- The size of the pool per type
+
+An object pool for a chat object
+]=]
+
+--[=[
+@interface ChatMessageData
+@within CustomTypes
+.Channel string -- The channel the message is in
+.ExtraData {} -- Data about things such as tags
+.ID number | string -- The messages Id, number if Roblox made, else a string
+.IsFiltered boolean -- If the message was filtered
+.Message string -- The message text
+.MessageLength number -- The message length through string.len
+.MessageLengthUtf8 number -- The message length through utf8.len
+.MessageType string -- The type of message
+.OriginalChannel string -- The channel this message originally was sent in
+.Time number -- The time the message was sent at
+
+The data of a message used when creating it
+]=]
