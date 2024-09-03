@@ -1,0 +1,609 @@
+<!doctype html>
+<html lang="en" dir="ltr" class="plugin-moonwave plugin-id-moonwave">
+<head>
+<meta charset="UTF-8">
+<meta name="generator" content="Docusaurus v2.3.1">
+<title data-rh="true">ChatMessageLogDisplay | UniversalCraftwarsDocs</title><meta data-rh="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" property="og:url" content="https://eryn.io/UniversalCraftwarsDocs/api/ChatMessageLogDisplay"><meta data-rh="true" name="docusaurus_locale" content="en"><meta data-rh="true" name="docusaurus_tag" content="default"><meta data-rh="true" name="docsearch:language" content="en"><meta data-rh="true" name="docsearch:docusaurus_tag" content="default"><meta data-rh="true" property="og:title" content="ChatMessageLogDisplay | UniversalCraftwarsDocs"><meta data-rh="true" name="description" content="The creator for message labels, a Roblox LegacyChat instance."><meta data-rh="true" property="og:description" content="The creator for message labels, a Roblox LegacyChat instance."><link data-rh="true" rel="canonical" href="https://eryn.io/UniversalCraftwarsDocs/api/ChatMessageLogDisplay"><link data-rh="true" rel="alternate" href="https://eryn.io/UniversalCraftwarsDocs/api/ChatMessageLogDisplay" hreflang="en"><link data-rh="true" rel="alternate" href="https://eryn.io/UniversalCraftwarsDocs/api/ChatMessageLogDisplay" hreflang="x-default"><link rel="stylesheet" href="/UniversalCraftwarsDocs/assets/css/styles.fdfd902f.css">
+<link rel="preload" href="/UniversalCraftwarsDocs/assets/js/runtime~main.11f5bce8.js" as="script">
+<link rel="preload" href="/UniversalCraftwarsDocs/assets/js/main.178a2ad6.js" as="script">
+</head>
+<body class="navigation-with-keyboard">
+<script>!function(){function e(e){document.documentElement.setAttribute("data-theme",e)}var t=function(){var e=null;try{e=localStorage.getItem("theme")}catch(e){}return e}();null!==t?e(t):window.matchMedia("(prefers-color-scheme: dark)").matches?e("dark"):(window.matchMedia("(prefers-color-scheme: light)").matches,e("light"))}()</script><div id="__docusaurus">
+<div role="region" aria-label="Skip to main content"><a class="skipToContent_fXgn" href="#docusaurus_skipToContent_fallback">Skip to main content</a></div><nav aria-label="Main" class="navbar navbar--fixed-top"><div class="navbar__inner"><div class="navbar__items"><button aria-label="Toggle navigation bar" aria-expanded="false" class="navbar__toggle clean-btn" type="button"><svg width="30" height="30" viewBox="0 0 30 30" aria-hidden="true"><path stroke="currentColor" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2" d="M4 7h22M4 15h22M4 23h22"></path></svg></button><a class="navbar__brand" href="/UniversalCraftwarsDocs/"><b class="navbar__title text--truncate">UniversalCraftwarsDocs</b></a><a class="navbar__item navbar__link" href="/UniversalCraftwarsDocs/docs/intro">Docs</a><a aria-current="page" class="navbar__item navbar__link navbar__link--active" href="/UniversalCraftwarsDocs/api/">API</a><a class="navbar__item navbar__link" href="/UniversalCraftwarsDocs/changelog">Changelog</a></div><div class="navbar__items navbar__items--right"><a href="https://discord.gg/rGuvu8bPZW" target="_blank" rel="noopener noreferrer" class="navbar__item navbar__link">Discord<svg width="13.5" height="13.5" aria-hidden="true" viewBox="0 0 24 24" class="iconExternalLink_nPIU"><path fill="currentColor" d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"></path></svg></a><a href="https://www.roblox.com/games/17741993263/Universal-Craftwars-Revaluation-WIP" target="_blank" rel="noopener noreferrer" class="navbar__item navbar__link">Roblox<svg width="13.5" height="13.5" aria-hidden="true" viewBox="0 0 24 24" class="iconExternalLink_nPIU"><path fill="currentColor" d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"></path></svg></a><a href="https://github.com/fartshreksigma/UniversalCraftwarsDocs" target="_blank" rel="noopener noreferrer" class="navbar__item navbar__link">GitHub<svg width="13.5" height="13.5" aria-hidden="true" viewBox="0 0 24 24" class="iconExternalLink_nPIU"><path fill="currentColor" d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"></path></svg></a><div class="toggle_vylO colorModeToggle_DEke"><button class="clean-btn toggleButton_gllP toggleButtonDisabled_aARS" type="button" disabled="" title="Switch between dark and light mode (currently light mode)" aria-label="Switch between dark and light mode (currently light mode)" aria-live="polite"><svg viewBox="0 0 24 24" width="24" height="24" class="lightToggleIcon_pyhR"><path fill="currentColor" d="M12,9c1.65,0,3,1.35,3,3s-1.35,3-3,3s-3-1.35-3-3S10.35,9,12,9 M12,7c-2.76,0-5,2.24-5,5s2.24,5,5,5s5-2.24,5-5 S14.76,7,12,7L12,7z M2,13l2,0c0.55,0,1-0.45,1-1s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S1.45,13,2,13z M20,13l2,0c0.55,0,1-0.45,1-1 s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S19.45,13,20,13z M11,2v2c0,0.55,0.45,1,1,1s1-0.45,1-1V2c0-0.55-0.45-1-1-1S11,1.45,11,2z M11,20v2c0,0.55,0.45,1,1,1s1-0.45,1-1v-2c0-0.55-0.45-1-1-1C11.45,19,11,19.45,11,20z M5.99,4.58c-0.39-0.39-1.03-0.39-1.41,0 c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0s0.39-1.03,0-1.41L5.99,4.58z M18.36,16.95 c-0.39-0.39-1.03-0.39-1.41,0c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0c0.39-0.39,0.39-1.03,0-1.41 L18.36,16.95z M19.42,5.99c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06c-0.39,0.39-0.39,1.03,0,1.41 s1.03,0.39,1.41,0L19.42,5.99z M7.05,18.36c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06 c-0.39,0.39-0.39,1.03,0,1.41s1.03,0.39,1.41,0L7.05,18.36z"></path></svg><svg viewBox="0 0 24 24" width="24" height="24" class="darkToggleIcon_wfgR"><path fill="currentColor" d="M9.37,5.51C9.19,6.15,9.1,6.82,9.1,7.5c0,4.08,3.32,7.4,7.4,7.4c0.68,0,1.35-0.09,1.99-0.27C17.45,17.19,14.93,19,12,19 c-3.86,0-7-3.14-7-7C5,9.07,6.81,6.55,9.37,5.51z M12,3c-4.97,0-9,4.03-9,9s4.03,9,9,9s9-4.03,9-9c0-0.46-0.04-0.92-0.1-1.36 c-0.98,1.37-2.58,2.26-4.4,2.26c-2.98,0-5.4-2.42-5.4-5.4c0-1.81,0.89-3.42,2.26-4.4C12.92,3.04,12.46,3,12,3L12,3z"></path></svg></button></div><div class="searchBox_ZlJk"><div class="navbar__search"><span aria-label="expand searchbar" role="button" class="search-icon" tabindex="0"></span><input type="search" id="search_input_react" placeholder="Loading..." aria-label="Search" class="navbar__search-input search-bar" disabled=""></div></div></div></div><div role="presentation" class="navbar-sidebar__backdrop"></div></nav><div id="docusaurus_skipToContent_fallback" class="main-wrapper mainWrapper_z2l0 docPageContainer_wNNk"><div class="docPage_Dpn1"><div class="docSidebarContainer_o_re"><div class="sidebar_njMd"><nav aria-label="Docs sidebar" class="menu thin-scrollbar menu_SIkG"><ul class="theme-doc-sidebar-menu menu__list"><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="menu__link menu__link--sublist menu__link--sublist-caret" aria-expanded="false" href="/UniversalCraftwarsDocs/api/DatastoreService">Datastore</a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="menu__link menu__link--sublist menu__link--sublist-caret" aria-expanded="false" href="/UniversalCraftwarsDocs/api/BiomeHandler">Biomes</a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="menu__link menu__link--sublist menu__link--sublist-caret" aria-expanded="false" href="/UniversalCraftwarsDocs/api/CustomTypes">Types</a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="menu__link menu__link--sublist menu__link--sublist-caret" aria-expanded="false" href="/UniversalCraftwarsDocs/api/SharedCreators">Creators</a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="menu__link menu__link--sublist menu__link--sublist-caret" aria-expanded="false" href="/UniversalCraftwarsDocs/api/InventoryFilterParams">FilterParams</a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item"><div class="menu__list-item-collapsible"><a class="menu__link menu__link--sublist menu__link--sublist-caret menu__link--active" aria-expanded="true" href="/UniversalCraftwarsDocs/api/ServerChatHandler">ChatHandlers</a></div><ul style="display:block;overflow:visible;height:auto" class="menu__list"><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/UniversalCraftwarsDocs/api/ServerChatHandler">​Server​Chat​Handler</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/UniversalCraftwarsDocs/api/ClientChatHandler">​Client​Chat​Handler</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link menu__link--active" aria-current="page" tabindex="0" href="/UniversalCraftwarsDocs/api/ChatMessageLogDisplay">​Chat​Message​Log​Display</a></li></ul></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="menu__link menu__link--sublist menu__link--sublist-caret" aria-expanded="false" href="/UniversalCraftwarsDocs/api/Cmdr">Libraries</a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="menu__link menu__link--sublist menu__link--sublist-caret" aria-expanded="false" href="/UniversalCraftwarsDocs/api/ProfileService">ProfileService</a></div></li></ul></nav></div></div><main class="docMainContainer_HJE1"><div class="container padding-vert--lg"><div class="row"><div class="col docItemCol_MU3C"><div class="docItemContainer_Wv98"><article><div class="member_J0w1 markdown"><div class="tocCollapsible_ETCw theme-doc-toc-mobile tocMobile_oUs_"><button type="button" class="clean-btn tocCollapsibleButton_TO0P">On this page</button></div><header><h1 class="docTitle_mZRt" style="text-decoration:none"><span style="display:inline-block">Chat</span><span style="display:inline-block">Message</span><span style="display:inline-block">Log</span><span style="display:inline-block">Display</span></h1><div class="luaClassTags_EipM"></div><div>
+<p>The creator for message labels, a Roblox LegacyChat instance.</p>
+</div></header><h2 class="anchor anchorWithStickyNavbar_LWe7" id="types">Types<a href="#types" class="hash-link" aria-label="Direct link to Types" title="Direct link to Types">​</a></h2><div class="divider_rE5g"></div><h3 class="anchor anchorWithStickyNavbar_LWe7" id="MadeMessageChat"><code style="text-decoration:none">MadeMessageChat</code><a href="#MadeMessageChat" class="hash-link" aria-label="Direct link to MadeMessageChat" title="Direct link to MadeMessageChat">​</a></h3><div class="repositoryDetailsContainer_BPdw"><a class="sourceButton_sEho" href="https://github.com/fartshreksigma/UniversalCraftwarsDocs/blob/master/src/CustomChatControl.lua#L119"><div class="sourceButtonText_Vh0m">&lt;/&gt;</div></a></div><div class="memberString_GwaU"><code class="purple_ieR2">interface</code> <code>MadeMessageChat<!-- --> <!-- -->{</code><div class="inset_uKQm"><div><code>BaseFrame<!-- -->: </code><code class="blue_P4bS"><a style="text-decoration:underline;color:inherit" href="https://developer.roblox.com/en-us/api-reference/class/Frame" target="_blank" rel="noopener noreferrer">Frame<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound" style="color:gray;vertical-align:middle;margin-left:2px"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></code><span class="inlineDescription_G7Er">-- <span>
+<p>The frame of the message</p>
+</span></span></div><div><code>BaseMessage<!-- -->: </code><code class="blue_P4bS"><a style="text-decoration:underline;color:inherit" href="https://developer.roblox.com/en-us/api-reference/class/TextLabel" target="_blank" rel="noopener noreferrer">TextLabel<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound" style="color:gray;vertical-align:middle;margin-left:2px"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></code><span class="inlineDescription_G7Er">-- <span>
+<p>The storage for the text</p>
+</span></span></div><div><code>Destroy<!-- -->: </code><code class="purple_ieR2">(</code><code class="purple_ieR2">)</code><code class="purple_ieR2"> → </code><code class="purple_ieR2">(</code><code class="purple_ieR2">)</code><span class="inlineDescription_G7Er">-- <span>
+<p>A function to destroy the made message</p>
+</span></span></div><div><code>Destroyed<!-- -->: </code><code class="blue_P4bS">boolean</code><span class="inlineDescription_G7Er">-- <span>
+<p>Whether the message is destroyed</p>
+</span></span></div><div><code>FadeInFunction<!-- -->: </code><code class="purple_ieR2">(</code><div class="inset_uKQm"><code>duration<!-- -->: </code><code class="blue_P4bS">number</code><code class="purple_ieR2">,</code></div><div class="inset_uKQm"><code class="blue_P4bS">CurveUtils</code></div><code class="purple_ieR2">)</code><code class="purple_ieR2"> → </code><code class="purple_ieR2">(</code><code class="purple_ieR2">)</code><span class="inlineDescription_G7Er">-- <span>
+<p>The function to fade in a message</p>
+</span></span></div><div><code>FadeOutFunction<!-- -->: </code><code class="purple_ieR2">(</code><div class="inset_uKQm"><code>duration<!-- -->: </code><code class="blue_P4bS">number</code><code class="purple_ieR2">,</code></div><div class="inset_uKQm"><code class="blue_P4bS">CurveUtils</code></div><code class="purple_ieR2">)</code><code class="purple_ieR2"> → </code><code class="purple_ieR2">(</code><code class="purple_ieR2">)</code><span class="inlineDescription_G7Er">-- <span>
+<p>The function to fade out a message</p>
+</span></span></div><div><code>GetHeightFunction<!-- -->: </code><code class="purple_ieR2">(</code><code>xSize<!-- -->: </code><code class="blue_P4bS">number</code><code class="purple_ieR2">)</code><code class="purple_ieR2"> → </code><code class="purple_ieR2">(</code><code class="blue_P4bS">number</code><code class="purple_ieR2">)</code><span class="inlineDescription_G7Er">-- <span>
+<p>The function to get the message height</p>
+</span></span></div><div><code>ID<!-- -->: </code><code class="blue_P4bS">number</code><code class="op_lSLc"> | </code><code class="blue_P4bS">string</code><span class="inlineDescription_G7Er">-- <span>
+<p>The message Id, a string for custom messages, and a number for Roblox messages</p>
+</span></span></div><div><code>ObjectPool<!-- -->: </code><code class="blue_P4bS"><a style="text-decoration:underline;color:inherit" href="/UniversalCraftwarsDocs/api/CustomTypes#ChatObjectPool">ChatObjectPool</a></code><span class="inlineDescription_G7Er">-- <span>
+<p>The object pool of the message</p>
+</span></span></div><div><code>UpdateAnimFunction<!-- -->: </code><code class="purple_ieR2">(</code><div class="inset_uKQm"><code>dtScale<!-- -->: </code><code class="blue_P4bS">number</code><code class="purple_ieR2">,</code></div><div class="inset_uKQm"><code class="blue_P4bS">CurveUtils</code></div><code class="purple_ieR2">)</code><code class="purple_ieR2"> → </code><code class="purple_ieR2">(</code><code class="purple_ieR2">)</code><span class="inlineDescription_G7Er">-- <span>
+<p>A function to update the text animation</p>
+</span></span></div><div><code>UpdateTextFunction<!-- -->: </code><code class="blue_P4bS">nil</code><span class="inlineDescription_G7Er">-- <span>
+<p>A functionto update the text, non-existant in SetCore messages for some reason</p>
+</span></span></div></div><code>}</code></div><div>
+<p>A dictionary containing info and functions to do with a message</p>
+</div><h2 class="anchor anchorWithStickyNavbar_LWe7" id="properties">Properties<a href="#properties" class="hash-link" aria-label="Direct link to Properties" title="Direct link to Properties">​</a></h2><div class="divider_rE5g"></div><h3 class="anchor anchorWithStickyNavbar_LWe7" id="Destroyed"><code style="text-decoration:none">Destroyed</code><a href="#Destroyed" class="hash-link" aria-label="Direct link to Destroyed" title="Direct link to Destroyed">​</a></h3><div class="repositoryDetailsContainer_BPdw"><a class="sourceButton_sEho" href="https://github.com/fartshreksigma/UniversalCraftwarsDocs/blob/master/src/CustomChatControl.lua#L317"><div class="sourceButtonText_Vh0m">&lt;/&gt;</div></a></div><div class="memberString_GwaU"><code>ChatMessageLogDisplay<!-- -->.<!-- -->Destroyed<!-- -->:<!-- --> </code> <code class="blue_P4bS">boolean</code></div><div>
+<p>Whether the MessageLogDisplay is destroyed</p>
+</div><div class="divider_rE5g"></div><h3 class="anchor anchorWithStickyNavbar_LWe7" id="GuiObject"><code style="text-decoration:none">GuiObject</code><a href="#GuiObject" class="hash-link" aria-label="Direct link to GuiObject" title="Direct link to GuiObject">​</a></h3><div class="repositoryDetailsContainer_BPdw"><a class="sourceButton_sEho" href="https://github.com/fartshreksigma/UniversalCraftwarsDocs/blob/master/src/CustomChatControl.lua#L324"><div class="sourceButtonText_Vh0m">&lt;/&gt;</div></a></div><div class="memberString_GwaU"><code>ChatMessageLogDisplay<!-- -->.<!-- -->GuiObject<!-- -->:<!-- --> </code> <code class="blue_P4bS"><a style="text-decoration:underline;color:inherit" href="https://developer.roblox.com/en-us/api-reference/class/Frame" target="_blank" rel="noopener noreferrer">Frame<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound" style="color:gray;vertical-align:middle;margin-left:2px"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></code></div><div>
+<p>The frame of the MessageLogDisplay gui</p>
+</div><div class="divider_rE5g"></div><h3 class="anchor anchorWithStickyNavbar_LWe7" id="Scroller"><code style="text-decoration:none">Scroller</code><a href="#Scroller" class="hash-link" aria-label="Direct link to Scroller" title="Direct link to Scroller">​</a></h3><div class="repositoryDetailsContainer_BPdw"><a class="sourceButton_sEho" href="https://github.com/fartshreksigma/UniversalCraftwarsDocs/blob/master/src/CustomChatControl.lua#L331"><div class="sourceButtonText_Vh0m">&lt;/&gt;</div></a></div><div class="memberString_GwaU"><code>ChatMessageLogDisplay<!-- -->.<!-- -->Scroller<!-- -->:<!-- --> </code> <code class="blue_P4bS"><a style="text-decoration:underline;color:inherit" href="https://developer.roblox.com/en-us/api-reference/class/ScrollingFrame" target="_blank" rel="noopener noreferrer">ScrollingFrame<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound" style="color:gray;vertical-align:middle;margin-left:2px"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></code></div><div>
+<p>The scrolling frame of the MessageLogDisplay gui</p>
+</div><div class="divider_rE5g"></div><h3 class="anchor anchorWithStickyNavbar_LWe7" id="Layout"><code style="text-decoration:none">Layout</code><a href="#Layout" class="hash-link" aria-label="Direct link to Layout" title="Direct link to Layout">​</a></h3><div class="repositoryDetailsContainer_BPdw"><a class="sourceButton_sEho" href="https://github.com/fartshreksigma/UniversalCraftwarsDocs/blob/master/src/CustomChatControl.lua#L338"><div class="sourceButtonText_Vh0m">&lt;/&gt;</div></a></div><div class="memberString_GwaU"><code>ChatMessageLogDisplay<!-- -->.<!-- -->Layout<!-- -->:<!-- --> </code> <code class="blue_P4bS"><a style="text-decoration:underline;color:inherit" href="https://developer.roblox.com/en-us/api-reference/class/UIListLayout" target="_blank" rel="noopener noreferrer">UIListLayout<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound" style="color:gray;vertical-align:middle;margin-left:2px"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></code></div><div>
+<p>The UIListLayout of the gui</p>
+</div><div class="divider_rE5g"></div><h3 class="anchor anchorWithStickyNavbar_LWe7" id="MessageObjectLog"><code style="text-decoration:none">MessageObjectLog</code><a href="#MessageObjectLog" class="hash-link" aria-label="Direct link to MessageObjectLog" title="Direct link to MessageObjectLog">​</a></h3><div class="repositoryDetailsContainer_BPdw"><a class="sourceButton_sEho" href="https://github.com/fartshreksigma/UniversalCraftwarsDocs/blob/master/src/CustomChatControl.lua#L345"><div class="sourceButtonText_Vh0m">&lt;/&gt;</div></a></div><div class="memberString_GwaU"><code>ChatMessageLogDisplay<!-- -->.<!-- -->MessageObjectLog<!-- -->:<!-- --> </code> <code class="purple_ieR2">{</code><code class="purple_ieR2">}</code></div><div>
+<p>The object log of the MessageLogDisplay</p>
+</div><div class="divider_rE5g"></div><h3 class="anchor anchorWithStickyNavbar_LWe7" id="Name"><code style="text-decoration:none">Name</code><a href="#Name" class="hash-link" aria-label="Direct link to Name" title="Direct link to Name">​</a></h3><div class="repositoryDetailsContainer_BPdw"><a class="sourceButton_sEho" href="https://github.com/fartshreksigma/UniversalCraftwarsDocs/blob/master/src/CustomChatControl.lua#L352"><div class="sourceButtonText_Vh0m">&lt;/&gt;</div></a></div><div class="memberString_GwaU"><code>ChatMessageLogDisplay<!-- -->.<!-- -->Name<!-- -->:<!-- --> </code> <code class="blue_P4bS">string</code></div><div>
+<p>The name of the MessageLogDisplay</p>
+</div><div class="divider_rE5g"></div><h3 class="anchor anchorWithStickyNavbar_LWe7" id="CurrentChannelName"><code style="text-decoration:none">CurrentChannelName</code><a href="#CurrentChannelName" class="hash-link" aria-label="Direct link to CurrentChannelName" title="Direct link to CurrentChannelName">​</a></h3><div class="repositoryDetailsContainer_BPdw"><a class="sourceButton_sEho" href="https://github.com/fartshreksigma/UniversalCraftwarsDocs/blob/master/src/CustomChatControl.lua#L359"><div class="sourceButtonText_Vh0m">&lt;/&gt;</div></a></div><div class="memberString_GwaU"><code>ChatMessageLogDisplay<!-- -->.<!-- -->CurrentChannelName<!-- -->:<!-- --> </code> <code class="blue_P4bS">string</code></div><div>
+<p>The name of the current channel of the MessageLogDisplay</p>
+</div><h2 class="anchor anchorWithStickyNavbar_LWe7" id="functions">Functions<a href="#functions" class="hash-link" aria-label="Direct link to Functions" title="Direct link to Functions">​</a></h2><div class="divider_rE5g"></div><h3 class="anchor anchorWithStickyNavbar_LWe7" id="WaitUntilParentedCorrectly"><code style="text-decoration:none">WaitUntilParentedCorrectly</code><a href="#WaitUntilParentedCorrectly" class="hash-link" aria-label="Direct link to WaitUntilParentedCorrectly" title="Direct link to WaitUntilParentedCorrectly">​</a></h3><span class="badge_Ba2I" style="color:#f1c40f"><span class="badgeTooltip_cWXP">This is a yielding function. When called, it will pause the Lua thread that called the function until a result is ready to be returned, without interrupting other scripts.</span><span class="badgeToolTipTail_H9D_"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" fill="#f1c40f" role="img" aria-label="This is a yielding function. When called, it will pause the Lua thread that called the function until a result is ready to be returned, without interrupting other scripts."><path d="M96.4 11.9c-1.4-2.5-4-4-6.9-4H10.8c-2.9 0-5.4 1.5-6.9 4-1.4 2.5-1.4 5.5 0 7.9L43.3 88c1.4 2.5 4 4 6.9 4 2.9 0 5.4-1.5 6.9-4l39.3-68.2c1.4-2.4 1.4-5.4 0-7.9zM46.3 54.5c1.1-1.1 2.3-1.6 3.8-1.6s2.8.5 3.8 1.6c1.1 1.1 1.6 2.3 1.6 3.8s-.5 2.8-1.6 3.8c-1.1 1.1-2.3 1.6-3.8 1.6s-2.8-.5-3.8-1.6c-1.1-1.1-1.6-2.3-1.6-3.8.1-1.5.6-2.8 1.6-3.8zm-.5-4.9V21.8h8.8v27.8h-8.8z"></path></svg> <!-- -->Yields</span></span><div class="repositoryDetailsContainer_BPdw"><a class="sourceButton_sEho" href="https://github.com/fartshreksigma/UniversalCraftwarsDocs/blob/master/src/CustomChatControl.lua#L127"><div class="sourceButtonText_Vh0m">&lt;/&gt;</div></a></div><div class="memberString_GwaU"><code>ChatMessageLogDisplay<!-- -->:</code><code class="green_DgR4">WaitUntilParentedCorrectly</code><code>(</code><code>) → </code><code>(</code><code>)</code></div><div>
+<p>Yields the thread until it is parented correctly</p>
+</div><div class="divider_rE5g"></div><h3 class="anchor anchorWithStickyNavbar_LWe7" id="Update"><code style="text-decoration:none">Update</code><a href="#Update" class="hash-link" aria-label="Direct link to Update" title="Direct link to Update">​</a></h3><div class="repositoryDetailsContainer_BPdw"><a class="sourceButton_sEho" href="https://github.com/fartshreksigma/UniversalCraftwarsDocs/blob/master/src/CustomChatControl.lua#L136"><div class="sourceButtonText_Vh0m">&lt;/&gt;</div></a></div><div class="memberString_GwaU"><code>ChatMessageLogDisplay<!-- -->:</code><code class="green_DgR4">Update</code><code>(</code><div class="inset_uKQm"><div><code>dtScale<!-- -->: </code><code class="blue_P4bS">number</code><span class="inlineDescription_G7Er">-- <span>
+<p>The DeltaTime scale? Unsure.</p>
+</span></span></div></div><code>) → </code><code>(</code><code>)</code></div><div>
+<p>Calls every UpdateAnimFunction of the made messages</p>
+</div><div class="divider_rE5g"></div><h3 class="anchor anchorWithStickyNavbar_LWe7" id="FadeInText"><code style="text-decoration:none">FadeInText</code><a href="#FadeInText" class="hash-link" aria-label="Direct link to FadeInText" title="Direct link to FadeInText">​</a></h3><div class="repositoryDetailsContainer_BPdw"><a class="sourceButton_sEho" href="https://github.com/fartshreksigma/UniversalCraftwarsDocs/blob/master/src/CustomChatControl.lua#L145"><div class="sourceButtonText_Vh0m">&lt;/&gt;</div></a></div><div class="memberString_GwaU"><code>ChatMessageLogDisplay<!-- -->:</code><code class="green_DgR4">FadeInText</code><code>(</code><div class="inset_uKQm"><div><code>duration<!-- -->: </code><code class="blue_P4bS">number</code><span class="inlineDescription_G7Er">-- <span>
+<p>The duration of the fade</p>
+</span></span></div></div><code>) → </code><code>(</code><code>)</code></div><div>
+<p>Fades in every message</p>
+</div><div class="divider_rE5g"></div><h3 class="anchor anchorWithStickyNavbar_LWe7" id="FadeOutText"><code style="text-decoration:none">FadeOutText</code><a href="#FadeOutText" class="hash-link" aria-label="Direct link to FadeOutText" title="Direct link to FadeOutText">​</a></h3><div class="repositoryDetailsContainer_BPdw"><a class="sourceButton_sEho" href="https://github.com/fartshreksigma/UniversalCraftwarsDocs/blob/master/src/CustomChatControl.lua#L154"><div class="sourceButtonText_Vh0m">&lt;/&gt;</div></a></div><div class="memberString_GwaU"><code>ChatMessageLogDisplay<!-- -->:</code><code class="green_DgR4">FadeOutText</code><code>(</code><div class="inset_uKQm"><div><code>duration<!-- -->: </code><code class="blue_P4bS">number</code><span class="inlineDescription_G7Er">-- <span>
+<p>The duration of the fade</p>
+</span></span></div></div><code>) → </code><code>(</code><code>)</code></div><div>
+<p>Fades out every message</p>
+</div><div class="divider_rE5g"></div><h3 class="anchor anchorWithStickyNavbar_LWe7" id="FadeInBackground"><code style="text-decoration:none">FadeInBackground</code><a href="#FadeInBackground" class="hash-link" aria-label="Direct link to FadeInBackground" title="Direct link to FadeInBackground">​</a></h3><div class="repositoryDetailsContainer_BPdw"><a class="sourceButton_sEho" href="https://github.com/fartshreksigma/UniversalCraftwarsDocs/blob/master/src/CustomChatControl.lua#L171"><div class="sourceButtonText_Vh0m">&lt;/&gt;</div></a></div><div class="memberString_GwaU"><code>ChatMessageLogDisplay<!-- -->:</code><code class="green_DgR4">FadeInBackground</code><code>(</code><div class="inset_uKQm"><div><code>duration<!-- -->: </code><code class="blue_P4bS">number</code><span class="inlineDescription_G7Er">-- <span>
+<p>The duration of the fade</p>
+</span></span></div></div><code>) → </code><code>(</code><code>)</code></div><div>
+<p>Does nothing</p>
+<pre class="language-lua"><code class="language-lua"><span class="token comment">-- This is the function def:</span>
+<span class="token keyword">function</span> methods<span class="token punctuation">:</span><span class="token function">FadeInBackground</span><span class="token punctuation">(</span>duration<span class="token punctuation">)</span>
+	<span class="token comment">--// Do nothing</span>
+<span class="token keyword">end</span>
+</code></pre>
+</div><div class="divider_rE5g"></div><h3 class="anchor anchorWithStickyNavbar_LWe7" id="FadeOutBackground"><code style="text-decoration:none">FadeOutBackground</code><a href="#FadeOutBackground" class="hash-link" aria-label="Direct link to FadeOutBackground" title="Direct link to FadeOutBackground">​</a></h3><div class="repositoryDetailsContainer_BPdw"><a class="sourceButton_sEho" href="https://github.com/fartshreksigma/UniversalCraftwarsDocs/blob/master/src/CustomChatControl.lua#L188"><div class="sourceButtonText_Vh0m">&lt;/&gt;</div></a></div><div class="memberString_GwaU"><code>ChatMessageLogDisplay<!-- -->:</code><code class="green_DgR4">FadeOutBackground</code><code>(</code><div class="inset_uKQm"><div><code>duration<!-- -->: </code><code class="blue_P4bS">number</code><span class="inlineDescription_G7Er">-- <span>
+<p>The duration of the fade</p>
+</span></span></div></div><code>) → </code><code>(</code><code>)</code></div><div>
+<p>Does nothing</p>
+<pre class="language-lua"><code class="language-lua"><span class="token comment">-- This is the function def:</span>
+<span class="token keyword">function</span> methods<span class="token punctuation">:</span><span class="token function">FadeOutBackground</span><span class="token punctuation">(</span>duration<span class="token punctuation">)</span>
+	<span class="token comment">--// Do nothing</span>
+<span class="token keyword">end</span>
+</code></pre>
+</div><div class="divider_rE5g"></div><h3 class="anchor anchorWithStickyNavbar_LWe7" id="SetCurrentChannelName"><code style="text-decoration:none">SetCurrentChannelName</code><a href="#SetCurrentChannelName" class="hash-link" aria-label="Direct link to SetCurrentChannelName" title="Direct link to SetCurrentChannelName">​</a></h3><div class="repositoryDetailsContainer_BPdw"><a class="sourceButton_sEho" href="https://github.com/fartshreksigma/UniversalCraftwarsDocs/blob/master/src/CustomChatControl.lua#L197"><div class="sourceButtonText_Vh0m">&lt;/&gt;</div></a></div><div class="memberString_GwaU"><code>ChatMessageLogDisplay<!-- -->:</code><code class="green_DgR4">SetCurrentChannelName</code><code>(</code><div class="inset_uKQm"><div><code>name<!-- -->: </code><code class="blue_P4bS">string</code><span class="inlineDescription_G7Er">-- <span>
+<p>The name of the new channel</p>
+</span></span></div></div><code>) → </code><code>(</code><code>)</code></div><div>
+<p>Sets the name of the current channel to the provided one</p>
+</div><div class="divider_rE5g"></div><h3 class="anchor anchorWithStickyNavbar_LWe7" id="Clear"><code style="text-decoration:none">Clear</code><a href="#Clear" class="hash-link" aria-label="Direct link to Clear" title="Direct link to Clear">​</a></h3><div class="repositoryDetailsContainer_BPdw"><a class="sourceButton_sEho" href="https://github.com/fartshreksigma/UniversalCraftwarsDocs/blob/master/src/CustomChatControl.lua#L206"><div class="sourceButtonText_Vh0m">&lt;/&gt;</div></a></div><div class="memberString_GwaU"><code>ChatMessageLogDisplay<!-- -->:</code><code class="green_DgR4">Clear</code><code>(</code><div class="inset_uKQm"><div><code>excludeCustom<!-- -->: </code><code class="blue_P4bS">boolean</code><span class="inlineDescription_G7Er">-- <span>
+<p>Whether custom messages will be ignored in the clear</p>
+</span></span></div></div><code>) → </code><code>(</code><code>)</code></div><div>
+<p>Clears all messages under the MessageLogDisplay</p>
+</div><div class="divider_rE5g"></div><h3 class="anchor anchorWithStickyNavbar_LWe7" id="ReorderAllMessages"><code style="text-decoration:none">ReorderAllMessages</code><a href="#ReorderAllMessages" class="hash-link" aria-label="Direct link to ReorderAllMessages" title="Direct link to ReorderAllMessages">​</a></h3><div class="repositoryDetailsContainer_BPdw"><a class="sourceButton_sEho" href="https://github.com/fartshreksigma/UniversalCraftwarsDocs/blob/master/src/CustomChatControl.lua#L213"><div class="sourceButtonText_Vh0m">&lt;/&gt;</div></a></div><div class="memberString_GwaU"><code>ChatMessageLogDisplay<!-- -->:</code><code class="green_DgR4">ReorderAllMessages</code><code>(</code><code>) → </code><code>(</code><code>)</code></div><div>
+<p>Reorders all the messages under the log</p>
+</div><div class="divider_rE5g"></div><h3 class="anchor anchorWithStickyNavbar_LWe7" id="PositionMessageLabelInWindow"><code style="text-decoration:none">PositionMessageLabelInWindow</code><a href="#PositionMessageLabelInWindow" class="hash-link" aria-label="Direct link to PositionMessageLabelInWindow" title="Direct link to PositionMessageLabelInWindow">​</a></h3><div class="repositoryDetailsContainer_BPdw"><a class="sourceButton_sEho" href="https://github.com/fartshreksigma/UniversalCraftwarsDocs/blob/master/src/CustomChatControl.lua#L223"><div class="sourceButtonText_Vh0m">&lt;/&gt;</div></a></div><div class="memberString_GwaU"><code>ChatMessageLogDisplay<!-- -->:</code><code class="green_DgR4">PositionMessageLabelInWindow</code><code>(</code><div class="inset_uKQm"><div><code>messageObject<!-- -->: </code><code class="blue_P4bS"><a style="text-decoration:underline;color:inherit" href="/UniversalCraftwarsDocs/api/ChatMessageLogDisplay#MadeMessageChat">MadeMessageChat</a></code><code>,</code><span class="inlineDescription_G7Er">-- <span>
+<p>The message to position</p>
+</span></span></div><div><code>index<!-- -->: </code><code class="blue_P4bS">number</code><span class="inlineDescription_G7Er">-- <span>
+<p>Where in the frame to position the message</p>
+</span></span></div></div><code>) → </code><code>(</code><code>)</code></div><div>
+<p>Positions a message at a certain index under the log</p>
+</div><div class="divider_rE5g"></div><h3 class="anchor anchorWithStickyNavbar_LWe7" id="UpdateMessageTextHeight"><code style="text-decoration:none">UpdateMessageTextHeight</code><a href="#UpdateMessageTextHeight" class="hash-link" aria-label="Direct link to UpdateMessageTextHeight" title="Direct link to UpdateMessageTextHeight">​</a></h3><div class="repositoryDetailsContainer_BPdw"><a class="sourceButton_sEho" href="https://github.com/fartshreksigma/UniversalCraftwarsDocs/blob/master/src/CustomChatControl.lua#L232"><div class="sourceButtonText_Vh0m">&lt;/&gt;</div></a></div><div class="memberString_GwaU"><code>ChatMessageLogDisplay<!-- -->:</code><code class="green_DgR4">UpdateMessageTextHeight</code><code>(</code><div class="inset_uKQm"><div><code>messageObject<!-- -->: </code><code class="blue_P4bS"><a style="text-decoration:underline;color:inherit" href="/UniversalCraftwarsDocs/api/ChatMessageLogDisplay#MadeMessageChat">MadeMessageChat</a></code><span class="inlineDescription_G7Er">-- <span>
+<p>The message to update the height of</p>
+</span></span></div></div><code>) → </code><code>(</code><code>)</code></div><div>
+<p>Updates a select message's height</p>
+</div><div class="divider_rE5g"></div><h3 class="anchor anchorWithStickyNavbar_LWe7" id="IsScrolledDown"><code style="text-decoration:none">IsScrolledDown</code><a href="#IsScrolledDown" class="hash-link" aria-label="Direct link to IsScrolledDown" title="Direct link to IsScrolledDown">​</a></h3><div class="repositoryDetailsContainer_BPdw"><a class="sourceButton_sEho" href="https://github.com/fartshreksigma/UniversalCraftwarsDocs/blob/master/src/CustomChatControl.lua#L241"><div class="sourceButtonText_Vh0m">&lt;/&gt;</div></a></div><div class="memberString_GwaU"><code>ChatMessageLogDisplay<!-- -->:</code><code class="green_DgR4">IsScrolledDown</code><code>(</code><code>) → </code><code class="blue_P4bS">boolean</code><span class="inlineDescription_G7Er">-- <span>
+<p>If the display is scrolled down</p>
+</span></span></div><div>
+<p>Returns if the log display gui is scrolled down</p>
+</div><div class="divider_rE5g"></div><h3 class="anchor anchorWithStickyNavbar_LWe7" id="RemoveLastMessage"><code style="text-decoration:none">RemoveLastMessage</code><a href="#RemoveLastMessage" class="hash-link" aria-label="Direct link to RemoveLastMessage" title="Direct link to RemoveLastMessage">​</a></h3><div class="repositoryDetailsContainer_BPdw"><a class="sourceButton_sEho" href="https://github.com/fartshreksigma/UniversalCraftwarsDocs/blob/master/src/CustomChatControl.lua#L248"><div class="sourceButtonText_Vh0m">&lt;/&gt;</div></a></div><div class="memberString_GwaU"><code>ChatMessageLogDisplay<!-- -->:</code><code class="green_DgR4">RemoveLastMessage</code><code>(</code><code>) → </code><code>(</code><code>)</code></div><div>
+<p>Destroys the last chat message</p>
+</div><div class="divider_rE5g"></div><h3 class="anchor anchorWithStickyNavbar_LWe7" id="AddMessageAtIndex"><code style="text-decoration:none">AddMessageAtIndex</code><a href="#AddMessageAtIndex" class="hash-link" aria-label="Direct link to AddMessageAtIndex" title="Direct link to AddMessageAtIndex">​</a></h3><div class="repositoryDetailsContainer_BPdw"><a class="sourceButton_sEho" href="https://github.com/fartshreksigma/UniversalCraftwarsDocs/blob/master/src/CustomChatControl.lua#L258"><div class="sourceButtonText_Vh0m">&lt;/&gt;</div></a></div><div class="memberString_GwaU"><code>ChatMessageLogDisplay<!-- -->:</code><code class="green_DgR4">AddMessageAtIndex</code><code>(</code><div class="inset_uKQm"><div><code>messageData<!-- -->: </code><code class="blue_P4bS"><a style="text-decoration:underline;color:inherit" href="/UniversalCraftwarsDocs/api/CustomTypes#ChatMessageData">ChatMessageData</a></code><code>,</code><span class="inlineDescription_G7Er">-- <span>
+<p>The data of the message to add</p>
+</span></span></div><div><code>index<!-- -->: </code><code class="blue_P4bS">number</code><span class="inlineDescription_G7Er">-- <span>
+<p>The index of where to add the message</p>
+</span></span></div></div><code>) → </code><code>(</code><code>)</code></div><div>
+<p>Adds a message to the log at an index</p>
+</div><div class="divider_rE5g"></div><h3 class="anchor anchorWithStickyNavbar_LWe7" id="RemoveMessageAtIndex"><code style="text-decoration:none">RemoveMessageAtIndex</code><a href="#RemoveMessageAtIndex" class="hash-link" aria-label="Direct link to RemoveMessageAtIndex" title="Direct link to RemoveMessageAtIndex">​</a></h3><div class="repositoryDetailsContainer_BPdw"><a class="sourceButton_sEho" href="https://github.com/fartshreksigma/UniversalCraftwarsDocs/blob/master/src/CustomChatControl.lua#L267"><div class="sourceButtonText_Vh0m">&lt;/&gt;</div></a></div><div class="memberString_GwaU"><code>ChatMessageLogDisplay<!-- -->:</code><code class="green_DgR4">RemoveMessageAtIndex</code><code>(</code><div class="inset_uKQm"><div><code>index<!-- -->: </code><code class="blue_P4bS">number</code><span class="inlineDescription_G7Er">-- <span>
+<p>The index of what message to remove</p>
+</span></span></div></div><code>) → </code><code>(</code><code>)</code></div><div>
+<p>Removes a message from the log at an index</p>
+</div><div class="divider_rE5g"></div><h3 class="anchor anchorWithStickyNavbar_LWe7" id="AddMessage"><code style="text-decoration:none">AddMessage</code><a href="#AddMessage" class="hash-link" aria-label="Direct link to AddMessage" title="Direct link to AddMessage">​</a></h3><div class="repositoryDetailsContainer_BPdw"><a class="sourceButton_sEho" href="https://github.com/fartshreksigma/UniversalCraftwarsDocs/blob/master/src/CustomChatControl.lua#L276"><div class="sourceButtonText_Vh0m">&lt;/&gt;</div></a></div><div class="memberString_GwaU"><code>ChatMessageLogDisplay<!-- -->:</code><code class="green_DgR4">AddMessage</code><code>(</code><div class="inset_uKQm"><div><code>messageData<!-- -->: </code><code class="blue_P4bS"><a style="text-decoration:underline;color:inherit" href="/UniversalCraftwarsDocs/api/CustomTypes#ChatMessageData">ChatMessageData</a></code><span class="inlineDescription_G7Er">-- <span>
+<p>The data of the message to add</p>
+</span></span></div></div><code>) → </code><code>(</code><code>)</code></div><div>
+<p>Adds a message to the log</p>
+</div><div class="divider_rE5g"></div><h3 class="anchor anchorWithStickyNavbar_LWe7" id="RefreshMessagePlacement"><code style="text-decoration:none">RefreshMessagePlacement</code><a href="#RefreshMessagePlacement" class="hash-link" aria-label="Direct link to RefreshMessagePlacement" title="Direct link to RefreshMessagePlacement">​</a></h3><div class="repositoryDetailsContainer_BPdw"><a class="sourceButton_sEho" href="https://github.com/fartshreksigma/UniversalCraftwarsDocs/blob/master/src/CustomChatControl.lua#L285"><div class="sourceButtonText_Vh0m">&lt;/&gt;</div></a></div><div class="memberString_GwaU"><code>ChatMessageLogDisplay<!-- -->:</code><code class="green_DgR4">RefreshMessagePlacement</code><code>(</code><div class="inset_uKQm"><div><code>messageData<!-- -->: </code><code class="blue_P4bS"><a style="text-decoration:underline;color:inherit" href="/UniversalCraftwarsDocs/api/CustomTypes#ChatMessageData">ChatMessageData</a></code><span class="inlineDescription_G7Er">-- <span>
+<p>The data of the message to refresh the placement of</p>
+</span></span></div></div><code>) → </code><code>(</code><code>)</code></div><div>
+<p>Refreshes the placement of message from its ChatMessageData</p>
+</div><div class="divider_rE5g"></div><h3 class="anchor anchorWithStickyNavbar_LWe7" id="UpdateMessageFiltered"><code style="text-decoration:none">UpdateMessageFiltered</code><a href="#UpdateMessageFiltered" class="hash-link" aria-label="Direct link to UpdateMessageFiltered" title="Direct link to UpdateMessageFiltered">​</a></h3><div class="repositoryDetailsContainer_BPdw"><a class="sourceButton_sEho" href="https://github.com/fartshreksigma/UniversalCraftwarsDocs/blob/master/src/CustomChatControl.lua#L294"><div class="sourceButtonText_Vh0m">&lt;/&gt;</div></a></div><div class="memberString_GwaU"><code>ChatMessageLogDisplay<!-- -->:</code><code class="green_DgR4">UpdateMessageFiltered</code><code>(</code><div class="inset_uKQm"><div><code>messageData<!-- -->: </code><code class="blue_P4bS"><a style="text-decoration:underline;color:inherit" href="/UniversalCraftwarsDocs/api/CustomTypes#ChatMessageData">ChatMessageData</a></code><span class="inlineDescription_G7Er">-- <span>
+<p>The data of the message to update the filtering of</p>
+</span></span></div></div><code>) → </code><code>(</code><code>)</code></div><div>
+<p>Updates a message after being externally filtered</p>
+</div><div class="divider_rE5g"></div><h3 class="anchor anchorWithStickyNavbar_LWe7" id="SetActive"><code style="text-decoration:none">SetActive</code><a href="#SetActive" class="hash-link" aria-label="Direct link to SetActive" title="Direct link to SetActive">​</a></h3><div class="repositoryDetailsContainer_BPdw"><a class="sourceButton_sEho" href="https://github.com/fartshreksigma/UniversalCraftwarsDocs/blob/master/src/CustomChatControl.lua#L303"><div class="sourceButtonText_Vh0m">&lt;/&gt;</div></a></div><div class="memberString_GwaU"><code>ChatMessageLogDisplay<!-- -->:</code><code class="green_DgR4">SetActive</code><code>(</code><div class="inset_uKQm"><div><code>active<!-- -->: </code><code class="blue_P4bS">boolean</code><span class="inlineDescription_G7Er">-- <span>
+<p>THe boolean of the active state</p>
+</span></span></div></div><code>) → </code><code>(</code><code>)</code></div><div>
+<p>Toggles the message log display gui</p>
+</div><div class="divider_rE5g"></div><h3 class="anchor anchorWithStickyNavbar_LWe7" id="Destroy"><code style="text-decoration:none">Destroy</code><a href="#Destroy" class="hash-link" aria-label="Direct link to Destroy" title="Direct link to Destroy">​</a></h3><div class="repositoryDetailsContainer_BPdw"><a class="sourceButton_sEho" href="https://github.com/fartshreksigma/UniversalCraftwarsDocs/blob/master/src/CustomChatControl.lua#L310"><div class="sourceButtonText_Vh0m">&lt;/&gt;</div></a></div><div class="memberString_GwaU"><code>ChatMessageLogDisplay<!-- -->:</code><code class="green_DgR4">Destroy</code><code>(</code><code>) → </code><code>(</code><code>)</code></div><div>
+<p>Destroys the MessageLogDisplay</p>
+</div></div></article></div><details><summary>Show raw api</summary><pre style="max-width:100%;white-space:pre-wrap">{
+    &quot;functions&quot;: [
+        {
+            &quot;name&quot;: &quot;WaitUntilParentedCorrectly&quot;,
+            &quot;desc&quot;: &quot;Yields the thread until it is parented correctly&quot;,
+            &quot;params&quot;: [],
+            &quot;returns&quot;: [],
+            &quot;function_type&quot;: &quot;method&quot;,
+            &quot;yields&quot;: true,
+            &quot;source&quot;: {
+                &quot;line&quot;: 127,
+                &quot;path&quot;: &quot;src/CustomChatControl.lua&quot;
+            }
+        },
+        {
+            &quot;name&quot;: &quot;Update&quot;,
+            &quot;desc&quot;: &quot;Calls every UpdateAnimFunction of the made messages&quot;,
+            &quot;params&quot;: [
+                {
+                    &quot;name&quot;: &quot;dtScale&quot;,
+                    &quot;desc&quot;: &quot;The DeltaTime scale? Unsure.&quot;,
+                    &quot;lua_type&quot;: &quot;number&quot;
+                }
+            ],
+            &quot;returns&quot;: [],
+            &quot;function_type&quot;: &quot;method&quot;,
+            &quot;source&quot;: {
+                &quot;line&quot;: 136,
+                &quot;path&quot;: &quot;src/CustomChatControl.lua&quot;
+            }
+        },
+        {
+            &quot;name&quot;: &quot;FadeInText&quot;,
+            &quot;desc&quot;: &quot;Fades in every message&quot;,
+            &quot;params&quot;: [
+                {
+                    &quot;name&quot;: &quot;duration&quot;,
+                    &quot;desc&quot;: &quot;The duration of the fade&quot;,
+                    &quot;lua_type&quot;: &quot;number&quot;
+                }
+            ],
+            &quot;returns&quot;: [],
+            &quot;function_type&quot;: &quot;method&quot;,
+            &quot;source&quot;: {
+                &quot;line&quot;: 145,
+                &quot;path&quot;: &quot;src/CustomChatControl.lua&quot;
+            }
+        },
+        {
+            &quot;name&quot;: &quot;FadeOutText&quot;,
+            &quot;desc&quot;: &quot;Fades out every message&quot;,
+            &quot;params&quot;: [
+                {
+                    &quot;name&quot;: &quot;duration&quot;,
+                    &quot;desc&quot;: &quot;The duration of the fade&quot;,
+                    &quot;lua_type&quot;: &quot;number&quot;
+                }
+            ],
+            &quot;returns&quot;: [],
+            &quot;function_type&quot;: &quot;method&quot;,
+            &quot;source&quot;: {
+                &quot;line&quot;: 154,
+                &quot;path&quot;: &quot;src/CustomChatControl.lua&quot;
+            }
+        },
+        {
+            &quot;name&quot;: &quot;FadeInBackground&quot;,
+            &quot;desc&quot;: &quot;Does nothing\n\n```lua\n-- This is the function def:\nfunction methods:FadeInBackground(duration)\n\t--// Do nothing\nend\n```&quot;,
+            &quot;params&quot;: [
+                {
+                    &quot;name&quot;: &quot;duration&quot;,
+                    &quot;desc&quot;: &quot;The duration of the fade&quot;,
+                    &quot;lua_type&quot;: &quot;number&quot;
+                }
+            ],
+            &quot;returns&quot;: [],
+            &quot;function_type&quot;: &quot;method&quot;,
+            &quot;source&quot;: {
+                &quot;line&quot;: 171,
+                &quot;path&quot;: &quot;src/CustomChatControl.lua&quot;
+            }
+        },
+        {
+            &quot;name&quot;: &quot;FadeOutBackground&quot;,
+            &quot;desc&quot;: &quot;Does nothing\n\n```lua\n-- This is the function def:\nfunction methods:FadeOutBackground(duration)\n\t--// Do nothing\nend\n```&quot;,
+            &quot;params&quot;: [
+                {
+                    &quot;name&quot;: &quot;duration&quot;,
+                    &quot;desc&quot;: &quot;The duration of the fade&quot;,
+                    &quot;lua_type&quot;: &quot;number&quot;
+                }
+            ],
+            &quot;returns&quot;: [],
+            &quot;function_type&quot;: &quot;method&quot;,
+            &quot;source&quot;: {
+                &quot;line&quot;: 188,
+                &quot;path&quot;: &quot;src/CustomChatControl.lua&quot;
+            }
+        },
+        {
+            &quot;name&quot;: &quot;SetCurrentChannelName&quot;,
+            &quot;desc&quot;: &quot;Sets the name of the current channel to the provided one&quot;,
+            &quot;params&quot;: [
+                {
+                    &quot;name&quot;: &quot;name&quot;,
+                    &quot;desc&quot;: &quot;The name of the new channel&quot;,
+                    &quot;lua_type&quot;: &quot;string&quot;
+                }
+            ],
+            &quot;returns&quot;: [],
+            &quot;function_type&quot;: &quot;method&quot;,
+            &quot;source&quot;: {
+                &quot;line&quot;: 197,
+                &quot;path&quot;: &quot;src/CustomChatControl.lua&quot;
+            }
+        },
+        {
+            &quot;name&quot;: &quot;Clear&quot;,
+            &quot;desc&quot;: &quot;Clears all messages under the MessageLogDisplay&quot;,
+            &quot;params&quot;: [
+                {
+                    &quot;name&quot;: &quot;excludeCustom&quot;,
+                    &quot;desc&quot;: &quot;Whether custom messages will be ignored in the clear&quot;,
+                    &quot;lua_type&quot;: &quot;boolean&quot;
+                }
+            ],
+            &quot;returns&quot;: [],
+            &quot;function_type&quot;: &quot;method&quot;,
+            &quot;source&quot;: {
+                &quot;line&quot;: 206,
+                &quot;path&quot;: &quot;src/CustomChatControl.lua&quot;
+            }
+        },
+        {
+            &quot;name&quot;: &quot;ReorderAllMessages&quot;,
+            &quot;desc&quot;: &quot;Reorders all the messages under the log&quot;,
+            &quot;params&quot;: [],
+            &quot;returns&quot;: [],
+            &quot;function_type&quot;: &quot;method&quot;,
+            &quot;source&quot;: {
+                &quot;line&quot;: 213,
+                &quot;path&quot;: &quot;src/CustomChatControl.lua&quot;
+            }
+        },
+        {
+            &quot;name&quot;: &quot;PositionMessageLabelInWindow&quot;,
+            &quot;desc&quot;: &quot;Positions a message at a certain index under the log&quot;,
+            &quot;params&quot;: [
+                {
+                    &quot;name&quot;: &quot;messageObject&quot;,
+                    &quot;desc&quot;: &quot;The message to position&quot;,
+                    &quot;lua_type&quot;: &quot;MadeMessageChat&quot;
+                },
+                {
+                    &quot;name&quot;: &quot;index&quot;,
+                    &quot;desc&quot;: &quot;Where in the frame to position the message&quot;,
+                    &quot;lua_type&quot;: &quot;number&quot;
+                }
+            ],
+            &quot;returns&quot;: [],
+            &quot;function_type&quot;: &quot;method&quot;,
+            &quot;source&quot;: {
+                &quot;line&quot;: 223,
+                &quot;path&quot;: &quot;src/CustomChatControl.lua&quot;
+            }
+        },
+        {
+            &quot;name&quot;: &quot;UpdateMessageTextHeight&quot;,
+            &quot;desc&quot;: &quot;Updates a select message&#x27;s height&quot;,
+            &quot;params&quot;: [
+                {
+                    &quot;name&quot;: &quot;messageObject&quot;,
+                    &quot;desc&quot;: &quot;The message to update the height of&quot;,
+                    &quot;lua_type&quot;: &quot;MadeMessageChat&quot;
+                }
+            ],
+            &quot;returns&quot;: [],
+            &quot;function_type&quot;: &quot;method&quot;,
+            &quot;source&quot;: {
+                &quot;line&quot;: 232,
+                &quot;path&quot;: &quot;src/CustomChatControl.lua&quot;
+            }
+        },
+        {
+            &quot;name&quot;: &quot;IsScrolledDown&quot;,
+            &quot;desc&quot;: &quot;Returns if the log display gui is scrolled down&quot;,
+            &quot;params&quot;: [],
+            &quot;returns&quot;: [
+                {
+                    &quot;desc&quot;: &quot;If the display is scrolled down&quot;,
+                    &quot;lua_type&quot;: &quot;boolean&quot;
+                }
+            ],
+            &quot;function_type&quot;: &quot;method&quot;,
+            &quot;source&quot;: {
+                &quot;line&quot;: 241,
+                &quot;path&quot;: &quot;src/CustomChatControl.lua&quot;
+            }
+        },
+        {
+            &quot;name&quot;: &quot;RemoveLastMessage&quot;,
+            &quot;desc&quot;: &quot;Destroys the last chat message&quot;,
+            &quot;params&quot;: [],
+            &quot;returns&quot;: [],
+            &quot;function_type&quot;: &quot;method&quot;,
+            &quot;source&quot;: {
+                &quot;line&quot;: 248,
+                &quot;path&quot;: &quot;src/CustomChatControl.lua&quot;
+            }
+        },
+        {
+            &quot;name&quot;: &quot;AddMessageAtIndex&quot;,
+            &quot;desc&quot;: &quot;Adds a message to the log at an index&quot;,
+            &quot;params&quot;: [
+                {
+                    &quot;name&quot;: &quot;messageData&quot;,
+                    &quot;desc&quot;: &quot;The data of the message to add&quot;,
+                    &quot;lua_type&quot;: &quot;ChatMessageData&quot;
+                },
+                {
+                    &quot;name&quot;: &quot;index&quot;,
+                    &quot;desc&quot;: &quot;The index of where to add the message&quot;,
+                    &quot;lua_type&quot;: &quot;number&quot;
+                }
+            ],
+            &quot;returns&quot;: [],
+            &quot;function_type&quot;: &quot;method&quot;,
+            &quot;source&quot;: {
+                &quot;line&quot;: 258,
+                &quot;path&quot;: &quot;src/CustomChatControl.lua&quot;
+            }
+        },
+        {
+            &quot;name&quot;: &quot;RemoveMessageAtIndex&quot;,
+            &quot;desc&quot;: &quot;Removes a message from the log at an index&quot;,
+            &quot;params&quot;: [
+                {
+                    &quot;name&quot;: &quot;index&quot;,
+                    &quot;desc&quot;: &quot;The index of what message to remove&quot;,
+                    &quot;lua_type&quot;: &quot;number&quot;
+                }
+            ],
+            &quot;returns&quot;: [],
+            &quot;function_type&quot;: &quot;method&quot;,
+            &quot;source&quot;: {
+                &quot;line&quot;: 267,
+                &quot;path&quot;: &quot;src/CustomChatControl.lua&quot;
+            }
+        },
+        {
+            &quot;name&quot;: &quot;AddMessage&quot;,
+            &quot;desc&quot;: &quot;Adds a message to the log&quot;,
+            &quot;params&quot;: [
+                {
+                    &quot;name&quot;: &quot;messageData&quot;,
+                    &quot;desc&quot;: &quot;The data of the message to add&quot;,
+                    &quot;lua_type&quot;: &quot;ChatMessageData&quot;
+                }
+            ],
+            &quot;returns&quot;: [],
+            &quot;function_type&quot;: &quot;method&quot;,
+            &quot;source&quot;: {
+                &quot;line&quot;: 276,
+                &quot;path&quot;: &quot;src/CustomChatControl.lua&quot;
+            }
+        },
+        {
+            &quot;name&quot;: &quot;RefreshMessagePlacement&quot;,
+            &quot;desc&quot;: &quot;Refreshes the placement of message from its ChatMessageData&quot;,
+            &quot;params&quot;: [
+                {
+                    &quot;name&quot;: &quot;messageData&quot;,
+                    &quot;desc&quot;: &quot;The data of the message to refresh the placement of&quot;,
+                    &quot;lua_type&quot;: &quot;ChatMessageData&quot;
+                }
+            ],
+            &quot;returns&quot;: [],
+            &quot;function_type&quot;: &quot;method&quot;,
+            &quot;source&quot;: {
+                &quot;line&quot;: 285,
+                &quot;path&quot;: &quot;src/CustomChatControl.lua&quot;
+            }
+        },
+        {
+            &quot;name&quot;: &quot;UpdateMessageFiltered&quot;,
+            &quot;desc&quot;: &quot;Updates a message after being externally filtered&quot;,
+            &quot;params&quot;: [
+                {
+                    &quot;name&quot;: &quot;messageData&quot;,
+                    &quot;desc&quot;: &quot;The data of the message to update the filtering of&quot;,
+                    &quot;lua_type&quot;: &quot;ChatMessageData&quot;
+                }
+            ],
+            &quot;returns&quot;: [],
+            &quot;function_type&quot;: &quot;method&quot;,
+            &quot;source&quot;: {
+                &quot;line&quot;: 294,
+                &quot;path&quot;: &quot;src/CustomChatControl.lua&quot;
+            }
+        },
+        {
+            &quot;name&quot;: &quot;SetActive&quot;,
+            &quot;desc&quot;: &quot;Toggles the message log display gui&quot;,
+            &quot;params&quot;: [
+                {
+                    &quot;name&quot;: &quot;active&quot;,
+                    &quot;desc&quot;: &quot;THe boolean of the active state&quot;,
+                    &quot;lua_type&quot;: &quot;boolean&quot;
+                }
+            ],
+            &quot;returns&quot;: [],
+            &quot;function_type&quot;: &quot;method&quot;,
+            &quot;source&quot;: {
+                &quot;line&quot;: 303,
+                &quot;path&quot;: &quot;src/CustomChatControl.lua&quot;
+            }
+        },
+        {
+            &quot;name&quot;: &quot;Destroy&quot;,
+            &quot;desc&quot;: &quot;Destroys the MessageLogDisplay&quot;,
+            &quot;params&quot;: [],
+            &quot;returns&quot;: [],
+            &quot;function_type&quot;: &quot;method&quot;,
+            &quot;source&quot;: {
+                &quot;line&quot;: 310,
+                &quot;path&quot;: &quot;src/CustomChatControl.lua&quot;
+            }
+        }
+    ],
+    &quot;properties&quot;: [
+        {
+            &quot;name&quot;: &quot;Destroyed&quot;,
+            &quot;desc&quot;: &quot;Whether the MessageLogDisplay is destroyed&quot;,
+            &quot;lua_type&quot;: &quot;boolean&quot;,
+            &quot;source&quot;: {
+                &quot;line&quot;: 317,
+                &quot;path&quot;: &quot;src/CustomChatControl.lua&quot;
+            }
+        },
+        {
+            &quot;name&quot;: &quot;GuiObject&quot;,
+            &quot;desc&quot;: &quot;The frame of the MessageLogDisplay gui&quot;,
+            &quot;lua_type&quot;: &quot;Frame&quot;,
+            &quot;source&quot;: {
+                &quot;line&quot;: 324,
+                &quot;path&quot;: &quot;src/CustomChatControl.lua&quot;
+            }
+        },
+        {
+            &quot;name&quot;: &quot;Scroller&quot;,
+            &quot;desc&quot;: &quot;The scrolling frame of the MessageLogDisplay gui&quot;,
+            &quot;lua_type&quot;: &quot;ScrollingFrame&quot;,
+            &quot;source&quot;: {
+                &quot;line&quot;: 331,
+                &quot;path&quot;: &quot;src/CustomChatControl.lua&quot;
+            }
+        },
+        {
+            &quot;name&quot;: &quot;Layout&quot;,
+            &quot;desc&quot;: &quot;The UIListLayout of the gui&quot;,
+            &quot;lua_type&quot;: &quot;UIListLayout&quot;,
+            &quot;source&quot;: {
+                &quot;line&quot;: 338,
+                &quot;path&quot;: &quot;src/CustomChatControl.lua&quot;
+            }
+        },
+        {
+            &quot;name&quot;: &quot;MessageObjectLog&quot;,
+            &quot;desc&quot;: &quot;The object log of the MessageLogDisplay&quot;,
+            &quot;lua_type&quot;: &quot;{}&quot;,
+            &quot;source&quot;: {
+                &quot;line&quot;: 345,
+                &quot;path&quot;: &quot;src/CustomChatControl.lua&quot;
+            }
+        },
+        {
+            &quot;name&quot;: &quot;Name&quot;,
+            &quot;desc&quot;: &quot;The name of the MessageLogDisplay&quot;,
+            &quot;lua_type&quot;: &quot;string&quot;,
+            &quot;source&quot;: {
+                &quot;line&quot;: 352,
+                &quot;path&quot;: &quot;src/CustomChatControl.lua&quot;
+            }
+        },
+        {
+            &quot;name&quot;: &quot;CurrentChannelName&quot;,
+            &quot;desc&quot;: &quot;The name of the current channel of the MessageLogDisplay&quot;,
+            &quot;lua_type&quot;: &quot;string&quot;,
+            &quot;source&quot;: {
+                &quot;line&quot;: 359,
+                &quot;path&quot;: &quot;src/CustomChatControl.lua&quot;
+            }
+        }
+    ],
+    &quot;types&quot;: [
+        {
+            &quot;name&quot;: &quot;MadeMessageChat&quot;,
+            &quot;desc&quot;: &quot;A dictionary containing info and functions to do with a message&quot;,
+            &quot;fields&quot;: [
+                {
+                    &quot;name&quot;: &quot;BaseFrame&quot;,
+                    &quot;lua_type&quot;: &quot;Frame&quot;,
+                    &quot;desc&quot;: &quot;The frame of the message&quot;
+                },
+                {
+                    &quot;name&quot;: &quot;BaseMessage&quot;,
+                    &quot;lua_type&quot;: &quot;TextLabel&quot;,
+                    &quot;desc&quot;: &quot;The storage for the text&quot;
+                },
+                {
+                    &quot;name&quot;: &quot;Destroy&quot;,
+                    &quot;lua_type&quot;: &quot;() -&gt; ()&quot;,
+                    &quot;desc&quot;: &quot;A function to destroy the made message&quot;
+                },
+                {
+                    &quot;name&quot;: &quot;Destroyed&quot;,
+                    &quot;lua_type&quot;: &quot;boolean&quot;,
+                    &quot;desc&quot;: &quot;Whether the message is destroyed&quot;
+                },
+                {
+                    &quot;name&quot;: &quot;FadeInFunction&quot;,
+                    &quot;lua_type&quot;: &quot;(duration: number, CurveUtils) -&gt; ()&quot;,
+                    &quot;desc&quot;: &quot;The function to fade in a message&quot;
+                },
+                {
+                    &quot;name&quot;: &quot;FadeOutFunction&quot;,
+                    &quot;lua_type&quot;: &quot;(duration: number, CurveUtils) -&gt; ()&quot;,
+                    &quot;desc&quot;: &quot;The function to fade out a message&quot;
+                },
+                {
+                    &quot;name&quot;: &quot;GetHeightFunction&quot;,
+                    &quot;lua_type&quot;: &quot;(xSize: number) -&gt; (number)&quot;,
+                    &quot;desc&quot;: &quot;The function to get the message height&quot;
+                },
+                {
+                    &quot;name&quot;: &quot;ID&quot;,
+                    &quot;lua_type&quot;: &quot;number | string&quot;,
+                    &quot;desc&quot;: &quot;The message Id, a string for custom messages, and a number for Roblox messages&quot;
+                },
+                {
+                    &quot;name&quot;: &quot;ObjectPool&quot;,
+                    &quot;lua_type&quot;: &quot;ChatObjectPool&quot;,
+                    &quot;desc&quot;: &quot;The object pool of the message&quot;
+                },
+                {
+                    &quot;name&quot;: &quot;UpdateAnimFunction&quot;,
+                    &quot;lua_type&quot;: &quot;(dtScale: number, CurveUtils) -&gt; ()&quot;,
+                    &quot;desc&quot;: &quot;A function to update the text animation&quot;
+                },
+                {
+                    &quot;name&quot;: &quot;UpdateTextFunction&quot;,
+                    &quot;lua_type&quot;: &quot;nil&quot;,
+                    &quot;desc&quot;: &quot;A functionto update the text, non-existant in SetCore messages for some reason&quot;
+                }
+            ],
+            &quot;source&quot;: {
+                &quot;line&quot;: 119,
+                &quot;path&quot;: &quot;src/CustomChatControl.lua&quot;
+            }
+        }
+    ],
+    &quot;name&quot;: &quot;ChatMessageLogDisplay&quot;,
+    &quot;desc&quot;: &quot;The creator for message labels, a Roblox LegacyChat instance.&quot;,
+    &quot;source&quot;: {
+        &quot;line&quot;: 101,
+        &quot;path&quot;: &quot;src/CustomChatControl.lua&quot;
+    }
+}</pre></details></div><div class="col col--3"><div class="tableOfContents_bqdL thin-scrollbar"><ul class="table-of-contents table-of-contents__left-border"><li><a href="#types" class="table-of-contents__link toc-highlight">Types</a><ul><li><a href="#MadeMessageChat" class="table-of-contents__link toc-highlight">MadeMessageChat</a></li></ul></li><li><a href="#properties" class="table-of-contents__link toc-highlight">Properties</a><ul><li><a href="#CurrentChannelName" class="table-of-contents__link toc-highlight">CurrentChannelName</a></li><li><a href="#Destroyed" class="table-of-contents__link toc-highlight">Destroyed</a></li><li><a href="#GuiObject" class="table-of-contents__link toc-highlight">GuiObject</a></li><li><a href="#Layout" class="table-of-contents__link toc-highlight">Layout</a></li><li><a href="#MessageObjectLog" class="table-of-contents__link toc-highlight">MessageObjectLog</a></li><li><a href="#Name" class="table-of-contents__link toc-highlight">Name</a></li><li><a href="#Scroller" class="table-of-contents__link toc-highlight">Scroller</a></li></ul></li><li><a href="#functions" class="table-of-contents__link toc-highlight">Functions</a><ul><li><a href="#AddMessage" class="table-of-contents__link toc-highlight">:AddMessage</a></li><li><a href="#AddMessageAtIndex" class="table-of-contents__link toc-highlight">:AddMessageAtIndex</a></li><li><a href="#Clear" class="table-of-contents__link toc-highlight">:Clear</a></li><li><a href="#Destroy" class="table-of-contents__link toc-highlight">:Destroy</a></li><li><a href="#FadeInBackground" class="table-of-contents__link toc-highlight">:FadeInBackground</a></li><li><a href="#FadeInText" class="table-of-contents__link toc-highlight">:FadeInText</a></li><li><a href="#FadeOutBackground" class="table-of-contents__link toc-highlight">:FadeOutBackground</a></li><li><a href="#FadeOutText" class="table-of-contents__link toc-highlight">:FadeOutText</a></li><li><a href="#IsScrolledDown" class="table-of-contents__link toc-highlight">:IsScrolledDown</a></li><li><a href="#PositionMessageLabelInWindow" class="table-of-contents__link toc-highlight">:PositionMessageLabelInWindow</a></li><li><a href="#RefreshMessagePlacement" class="table-of-contents__link toc-highlight">:RefreshMessagePlacement</a></li><li><a href="#RemoveLastMessage" class="table-of-contents__link toc-highlight">:RemoveLastMessage</a></li><li><a href="#RemoveMessageAtIndex" class="table-of-contents__link toc-highlight">:RemoveMessageAtIndex</a></li><li><a href="#ReorderAllMessages" class="table-of-contents__link toc-highlight">:ReorderAllMessages</a></li><li><a href="#SetActive" class="table-of-contents__link toc-highlight">:SetActive</a></li><li><a href="#SetCurrentChannelName" class="table-of-contents__link toc-highlight">:SetCurrentChannelName</a></li><li><a href="#Update" class="table-of-contents__link toc-highlight">:Update</a></li><li><a href="#UpdateMessageFiltered" class="table-of-contents__link toc-highlight">:UpdateMessageFiltered</a></li><li><a href="#UpdateMessageTextHeight" class="table-of-contents__link toc-highlight">:UpdateMessageTextHeight</a></li><li><a href="#WaitUntilParentedCorrectly" class="table-of-contents__link toc-highlight">:WaitUntilParentedCorrectly</a></li></ul></li></ul></div></div></div></div></main></div></div><footer class="footer footer--dark"><div class="container container-fluid"><div class="footer__bottom text--center"><div class="footer__copyright">Copyright © 2024 fartshreksigma. Built with Moonwave and Docusaurus.</div></div></div></footer></div>
+<script src="/UniversalCraftwarsDocs/assets/js/runtime~main.11f5bce8.js"></script>
+<script src="/UniversalCraftwarsDocs/assets/js/main.178a2ad6.js"></script>
+</body>
+</html>

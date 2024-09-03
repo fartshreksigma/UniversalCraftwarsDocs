@@ -1,0 +1,584 @@
+<!doctype html>
+<html lang="en" dir="ltr" class="plugin-moonwave plugin-id-moonwave">
+<head>
+<meta charset="UTF-8">
+<meta name="generator" content="Docusaurus v2.3.1">
+<title data-rh="true">Profile | UniversalCraftwarsDocs</title><meta data-rh="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" property="og:url" content="https://eryn.io/UniversalCraftwarsDocs/api/Profile"><meta data-rh="true" name="docusaurus_locale" content="en"><meta data-rh="true" name="docusaurus_tag" content="default"><meta data-rh="true" name="docsearch:language" content="en"><meta data-rh="true" name="docsearch:docusaurus_tag" content="default"><meta data-rh="true" property="og:title" content="Profile | UniversalCraftwarsDocs"><meta data-rh="true" name="description" content="Profiles are the main storage for data in ProfileService, they are created through [```ProfileStore:LoadProfileAsync()```](/api/ProfileStore#LoadProfileAsync)"><meta data-rh="true" property="og:description" content="Profiles are the main storage for data in ProfileService, they are created through [```ProfileStore:LoadProfileAsync()```](/api/ProfileStore#LoadProfileAsync)"><link data-rh="true" rel="canonical" href="https://eryn.io/UniversalCraftwarsDocs/api/Profile"><link data-rh="true" rel="alternate" href="https://eryn.io/UniversalCraftwarsDocs/api/Profile" hreflang="en"><link data-rh="true" rel="alternate" href="https://eryn.io/UniversalCraftwarsDocs/api/Profile" hreflang="x-default"><link rel="stylesheet" href="/UniversalCraftwarsDocs/assets/css/styles.fdfd902f.css">
+<link rel="preload" href="/UniversalCraftwarsDocs/assets/js/runtime~main.11f5bce8.js" as="script">
+<link rel="preload" href="/UniversalCraftwarsDocs/assets/js/main.178a2ad6.js" as="script">
+</head>
+<body class="navigation-with-keyboard">
+<script>!function(){function e(e){document.documentElement.setAttribute("data-theme",e)}var t=function(){var e=null;try{e=localStorage.getItem("theme")}catch(e){}return e}();null!==t?e(t):window.matchMedia("(prefers-color-scheme: dark)").matches?e("dark"):(window.matchMedia("(prefers-color-scheme: light)").matches,e("light"))}()</script><div id="__docusaurus">
+<div role="region" aria-label="Skip to main content"><a class="skipToContent_fXgn" href="#docusaurus_skipToContent_fallback">Skip to main content</a></div><nav aria-label="Main" class="navbar navbar--fixed-top"><div class="navbar__inner"><div class="navbar__items"><button aria-label="Toggle navigation bar" aria-expanded="false" class="navbar__toggle clean-btn" type="button"><svg width="30" height="30" viewBox="0 0 30 30" aria-hidden="true"><path stroke="currentColor" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2" d="M4 7h22M4 15h22M4 23h22"></path></svg></button><a class="navbar__brand" href="/UniversalCraftwarsDocs/"><b class="navbar__title text--truncate">UniversalCraftwarsDocs</b></a><a class="navbar__item navbar__link" href="/UniversalCraftwarsDocs/docs/intro">Docs</a><a aria-current="page" class="navbar__item navbar__link navbar__link--active" href="/UniversalCraftwarsDocs/api/">API</a><a class="navbar__item navbar__link" href="/UniversalCraftwarsDocs/changelog">Changelog</a></div><div class="navbar__items navbar__items--right"><a href="https://discord.gg/rGuvu8bPZW" target="_blank" rel="noopener noreferrer" class="navbar__item navbar__link">Discord<svg width="13.5" height="13.5" aria-hidden="true" viewBox="0 0 24 24" class="iconExternalLink_nPIU"><path fill="currentColor" d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"></path></svg></a><a href="https://www.roblox.com/games/17741993263/Universal-Craftwars-Revaluation-WIP" target="_blank" rel="noopener noreferrer" class="navbar__item navbar__link">Roblox<svg width="13.5" height="13.5" aria-hidden="true" viewBox="0 0 24 24" class="iconExternalLink_nPIU"><path fill="currentColor" d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"></path></svg></a><a href="https://github.com/fartshreksigma/UniversalCraftwarsDocs" target="_blank" rel="noopener noreferrer" class="navbar__item navbar__link">GitHub<svg width="13.5" height="13.5" aria-hidden="true" viewBox="0 0 24 24" class="iconExternalLink_nPIU"><path fill="currentColor" d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"></path></svg></a><div class="toggle_vylO colorModeToggle_DEke"><button class="clean-btn toggleButton_gllP toggleButtonDisabled_aARS" type="button" disabled="" title="Switch between dark and light mode (currently light mode)" aria-label="Switch between dark and light mode (currently light mode)" aria-live="polite"><svg viewBox="0 0 24 24" width="24" height="24" class="lightToggleIcon_pyhR"><path fill="currentColor" d="M12,9c1.65,0,3,1.35,3,3s-1.35,3-3,3s-3-1.35-3-3S10.35,9,12,9 M12,7c-2.76,0-5,2.24-5,5s2.24,5,5,5s5-2.24,5-5 S14.76,7,12,7L12,7z M2,13l2,0c0.55,0,1-0.45,1-1s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S1.45,13,2,13z M20,13l2,0c0.55,0,1-0.45,1-1 s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S19.45,13,20,13z M11,2v2c0,0.55,0.45,1,1,1s1-0.45,1-1V2c0-0.55-0.45-1-1-1S11,1.45,11,2z M11,20v2c0,0.55,0.45,1,1,1s1-0.45,1-1v-2c0-0.55-0.45-1-1-1C11.45,19,11,19.45,11,20z M5.99,4.58c-0.39-0.39-1.03-0.39-1.41,0 c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0s0.39-1.03,0-1.41L5.99,4.58z M18.36,16.95 c-0.39-0.39-1.03-0.39-1.41,0c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0c0.39-0.39,0.39-1.03,0-1.41 L18.36,16.95z M19.42,5.99c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06c-0.39,0.39-0.39,1.03,0,1.41 s1.03,0.39,1.41,0L19.42,5.99z M7.05,18.36c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06 c-0.39,0.39-0.39,1.03,0,1.41s1.03,0.39,1.41,0L7.05,18.36z"></path></svg><svg viewBox="0 0 24 24" width="24" height="24" class="darkToggleIcon_wfgR"><path fill="currentColor" d="M9.37,5.51C9.19,6.15,9.1,6.82,9.1,7.5c0,4.08,3.32,7.4,7.4,7.4c0.68,0,1.35-0.09,1.99-0.27C17.45,17.19,14.93,19,12,19 c-3.86,0-7-3.14-7-7C5,9.07,6.81,6.55,9.37,5.51z M12,3c-4.97,0-9,4.03-9,9s4.03,9,9,9s9-4.03,9-9c0-0.46-0.04-0.92-0.1-1.36 c-0.98,1.37-2.58,2.26-4.4,2.26c-2.98,0-5.4-2.42-5.4-5.4c0-1.81,0.89-3.42,2.26-4.4C12.92,3.04,12.46,3,12,3L12,3z"></path></svg></button></div><div class="searchBox_ZlJk"><div class="navbar__search"><span aria-label="expand searchbar" role="button" class="search-icon" tabindex="0"></span><input type="search" id="search_input_react" placeholder="Loading..." aria-label="Search" class="navbar__search-input search-bar" disabled=""></div></div></div></div><div role="presentation" class="navbar-sidebar__backdrop"></div></nav><div id="docusaurus_skipToContent_fallback" class="main-wrapper mainWrapper_z2l0 docPageContainer_wNNk"><div class="docPage_Dpn1"><div class="docSidebarContainer_o_re"><div class="sidebar_njMd"><nav aria-label="Docs sidebar" class="menu thin-scrollbar menu_SIkG"><ul class="theme-doc-sidebar-menu menu__list"><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="menu__link menu__link--sublist menu__link--sublist-caret" aria-expanded="false" href="/UniversalCraftwarsDocs/api/DatastoreService">Datastore</a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="menu__link menu__link--sublist menu__link--sublist-caret" aria-expanded="false" href="/UniversalCraftwarsDocs/api/BiomeHandler">Biomes</a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="menu__link menu__link--sublist menu__link--sublist-caret" aria-expanded="false" href="/UniversalCraftwarsDocs/api/CustomTypes">Types</a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="menu__link menu__link--sublist menu__link--sublist-caret" aria-expanded="false" href="/UniversalCraftwarsDocs/api/SharedCreators">Creators</a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="menu__link menu__link--sublist menu__link--sublist-caret" aria-expanded="false" href="/UniversalCraftwarsDocs/api/InventoryFilterParams">FilterParams</a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="menu__link menu__link--sublist menu__link--sublist-caret" aria-expanded="false" href="/UniversalCraftwarsDocs/api/ServerChatHandler">ChatHandlers</a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="menu__link menu__link--sublist menu__link--sublist-caret" aria-expanded="false" href="/UniversalCraftwarsDocs/api/Cmdr">Libraries</a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item"><div class="menu__list-item-collapsible"><a class="menu__link menu__link--sublist menu__link--sublist-caret menu__link--active" aria-expanded="true" href="/UniversalCraftwarsDocs/api/ProfileService">ProfileService</a></div><ul style="display:block;overflow:visible;height:auto" class="menu__list"><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/UniversalCraftwarsDocs/api/ProfileService">​Profile​Service</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/UniversalCraftwarsDocs/api/ProfileStore">​Profile​Store</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link menu__link--active" aria-current="page" tabindex="0" href="/UniversalCraftwarsDocs/api/Profile">​Profile</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/UniversalCraftwarsDocs/api/global_updates">global_updates</a></li></ul></li></ul></nav></div></div><main class="docMainContainer_HJE1"><div class="container padding-vert--lg"><div class="row"><div class="col docItemCol_MU3C"><div class="docItemContainer_Wv98"><article><div class="member_J0w1 markdown"><div class="tocCollapsible_ETCw theme-doc-toc-mobile tocMobile_oUs_"><button type="button" class="clean-btn tocCollapsibleButton_TO0P">On this page</button></div><header><h1 class="docTitle_mZRt" style="text-decoration:none"><span style="display:inline-block">Profile</span></h1><div class="luaClassTags_EipM"></div><div>
+<p>Profiles are the main storage for data in ProfileService, they are created through <a href="/UniversalCraftwarsDocs/api/ProfileStore#LoadProfileAsync"><code>ProfileStore:LoadProfileAsync()</code></a></p>
+</div></header><h2 class="anchor anchorWithStickyNavbar_LWe7" id="types">Types<a href="#types" class="hash-link" aria-label="Direct link to Types" title="Direct link to Types">​</a></h2><div class="divider_rE5g"></div><h3 class="anchor anchorWithStickyNavbar_LWe7" id="ProfileMetaData"><code style="text-decoration:none">ProfileMetaData</code><a href="#ProfileMetaData" class="hash-link" aria-label="Direct link to ProfileMetaData" title="Direct link to ProfileMetaData">​</a></h3><div class="repositoryDetailsContainer_BPdw"><a class="sourceButton_sEho" href="https://github.com/fartshreksigma/UniversalCraftwarsDocs/blob/master/src/ProfileService.lua#L294"><div class="sourceButtonText_Vh0m">&lt;/&gt;</div></a></div><div class="memberString_GwaU"><code class="purple_ieR2">interface</code> <code>ProfileMetaData<!-- --> <!-- -->{</code><div class="inset_uKQm"><div><code>ProfileCreateTime<!-- -->: </code><code class="blue_P4bS">number</code><span class="inlineDescription_G7Er">-- <span>
+<p>Read-only</p>
+</span></span></div><div><code>SessionLoadCount<!-- -->: </code><code class="blue_P4bS">number</code><span class="inlineDescription_G7Er">-- <span>
+<p>Read-only</p>
+</span></span></div><div><code>ActiveSession<!-- -->: </code><code class="blue_P4bS">table?</code><span class="inlineDescription_G7Er">-- <span>
+<p>Read-only</p>
+</span></span></div><div><code>MetaTags<!-- -->: </code><code class="blue_P4bS">table</code><span class="inlineDescription_G7Er">-- <span>
+<p>Writable</p>
+</span></span></div><div><code>MetaTagsLatest<!-- -->: </code><code class="blue_P4bS">table</code><span class="inlineDescription_G7Er">-- <span>
+<p>Read-only</p>
+</span></span></div></div><code>}</code></div><div></div><h2 class="anchor anchorWithStickyNavbar_LWe7" id="properties">Properties<a href="#properties" class="hash-link" aria-label="Direct link to Properties" title="Direct link to Properties">​</a></h2><div class="divider_rE5g"></div><h3 class="anchor anchorWithStickyNavbar_LWe7" id="MetaData"><code style="text-decoration:none">MetaData</code><a href="#MetaData" class="hash-link" aria-label="Direct link to MetaData" title="Direct link to MetaData">​</a></h3><span class="badge_Ba2I" style="color:#e74c3c"><span class="badgeTooltip_cWXP">This item is read only and cannot be modified.</span><span class="badgeToolTipTail_H9D_"><svg xmlns="http://www.w3.org/2000/svg" height="300px" width="300px" fill="#e74c3c" x="0px" y="0px" viewBox="0 0 96 96"><path d="M70.354,15.662h-7.496H25.566c-3.282,0-5.19-0.776-5.728-1.169v-1.456c0.538-0.393,2.445-1.168,5.728-1.168h46.479V8H25.566  c-4.776,0-9.594,1.468-9.594,4.747v61.458C15.972,86.645,20.328,88,37.495,88h42.535V15.662H70.354z"></path></svg> <!-- -->Read Only</span></span><div class="repositoryDetailsContainer_BPdw"><a class="sourceButton_sEho" href="https://github.com/fartshreksigma/UniversalCraftwarsDocs/blob/master/src/ProfileService.lua#L303"><div class="sourceButtonText_Vh0m">&lt;/&gt;</div></a></div><div class="memberString_GwaU"><code>Profile<!-- -->.<!-- -->MetaData<!-- -->:<!-- --> </code> <code class="blue_P4bS"><a style="text-decoration:underline;color:inherit" href="/UniversalCraftwarsDocs/api/Profile#ProfileMetaData">ProfileMetaData</a></code></div><div>
+<p>
+  <code>Profile.MetaData</code> is a table containing data about the profile itself
+  <code>Profile.MetaData.MetaTags</code> is saved on the same DataStore key together with <a href="#Data"><code>Profile.Data</code></a>
+</p>
+</div><div class="divider_rE5g"></div><h3 class="anchor anchorWithStickyNavbar_LWe7" id="MetaTagsUpdated"><code style="text-decoration:none">MetaTagsUpdated</code><a href="#MetaTagsUpdated" class="hash-link" aria-label="Direct link to MetaTagsUpdated" title="Direct link to MetaTagsUpdated">​</a></h3><span class="badge_Ba2I" style="color:#e74c3c"><span class="badgeTooltip_cWXP">This item is read only and cannot be modified.</span><span class="badgeToolTipTail_H9D_"><svg xmlns="http://www.w3.org/2000/svg" height="300px" width="300px" fill="#e74c3c" x="0px" y="0px" viewBox="0 0 96 96"><path d="M70.354,15.662h-7.496H25.566c-3.282,0-5.19-0.776-5.728-1.169v-1.456c0.538-0.393,2.445-1.168,5.728-1.168h46.479V8H25.566  c-4.776,0-9.594,1.468-9.594,4.747v61.458C15.972,86.645,20.328,88,37.495,88h42.535V15.662H70.354z"></path></svg> <!-- -->Read Only</span></span><div class="repositoryDetailsContainer_BPdw"><a class="sourceButton_sEho" href="https://github.com/fartshreksigma/UniversalCraftwarsDocs/blob/master/src/ProfileService.lua#L313"><div class="sourceButtonText_Vh0m">&lt;/&gt;</div></a></div><div class="memberString_GwaU"><code>Profile<!-- -->.<!-- -->MetaTagsUpdated<!-- -->:<!-- --> </code> <code class="blue_P4bS"><a style="text-decoration:underline;color:inherit" href="https://developer.roblox.com/en-us/api-reference/datatype/RBXScriptSignal" target="_blank" rel="noopener noreferrer">RBXScriptSignal<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound" style="color:gray;vertical-align:middle;margin-left:2px"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></code></div><div>
+<p>A signal which fires every auto-save in which the profile has different <code>Profile.MetaData.MetaTags</code>. Uses a custom implementation of an RBXScriptSignal so some methods may not be available.</p>
+<p><strong><code>Profile.MetaTagsUpdated</code> will also fire when a profile is saved for the last time and released</strong></p>
+</div><div class="divider_rE5g"></div><h3 class="anchor anchorWithStickyNavbar_LWe7" id="RobloxMetaData"><code style="text-decoration:none">RobloxMetaData</code><a href="#RobloxMetaData" class="hash-link" aria-label="Direct link to RobloxMetaData" title="Direct link to RobloxMetaData">​</a></h3><div class="repositoryDetailsContainer_BPdw"><a class="sourceButton_sEho" href="https://github.com/fartshreksigma/UniversalCraftwarsDocs/blob/master/src/ProfileService.lua#L322"><div class="sourceButtonText_Vh0m">&lt;/&gt;</div></a></div><div class="memberString_GwaU"><code>Profile<!-- -->.<!-- -->RobloxMetaData<!-- -->:<!-- --> </code> <code class="blue_P4bS">table</code></div><div>
+<div class="admonition admonition-warning alert alert--danger">
+  <div class="admonition-heading">
+    <h5><span class="admonition-icon"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="16" viewBox="0 0 12 16">
+          <path d="M5.05.31c.81 2.17.41 3.38-.52 4.31C3.55 5.67 1.98 6.45.9 7.98c-1.45 2.05-1.7 6.53 3.53 7.7-2.2-1.16-2.67-4.52-.3-6.61-.61 2.03.53 3.33 1.94 2.86 1.39-.47 2.3.53 2.27 1.67-.02.78-.31 1.44-1.13 1.81 3.42-.59 4.78-3.42 4.78-5.56 0-2.84-2.53-3.22-1.25-5.61-1.52.13-2.03 1.13-1.89 2.75.09 1.08-1.02 1.8-1.86 1.33-.67-.41-.66-1.19-.06-1.78C8.18 5.31 8.68 2.45 5.05.32L5.03.3l.02.01z"></path>
+        </svg></span>There are harsh limits for RobloxMetaData size, at the time of writing this RobloxMetaData cant exceed 300 characters.</h5>
+  </div>
+  <div class="admonition-content"></div>
+</div>
+<p>Similiar to setting the metadata in a DataStoreOptions instance, read the <a href="https://madstudioroblox.github.io/ProfileService/api/#profilerobloxmetadata" target="_blank">official documentation</a> for more info</p>
+</div><div class="divider_rE5g"></div><h3 class="anchor anchorWithStickyNavbar_LWe7" id="UserIds"><code style="text-decoration:none">UserIds</code><a href="#UserIds" class="hash-link" aria-label="Direct link to UserIds" title="Direct link to UserIds">​</a></h3><span class="badge_Ba2I" style="color:#e74c3c"><span class="badgeTooltip_cWXP">This item is read only and cannot be modified.</span><span class="badgeToolTipTail_H9D_"><svg xmlns="http://www.w3.org/2000/svg" height="300px" width="300px" fill="#e74c3c" x="0px" y="0px" viewBox="0 0 96 96"><path d="M70.354,15.662h-7.496H25.566c-3.282,0-5.19-0.776-5.728-1.169v-1.456c0.538-0.393,2.445-1.168,5.728-1.168h46.479V8H25.566  c-4.776,0-9.594,1.468-9.594,4.747v61.458C15.972,86.645,20.328,88,37.495,88h42.535V15.662H70.354z"></path></svg> <!-- -->Read Only</span></span><div class="repositoryDetailsContainer_BPdw"><a class="sourceButton_sEho" href="https://github.com/fartshreksigma/UniversalCraftwarsDocs/blob/master/src/ProfileService.lua#L331"><div class="sourceButtonText_Vh0m">&lt;/&gt;</div></a></div><div class="memberString_GwaU"><code>Profile<!-- -->.<!-- -->UserIds<!-- -->:<!-- --> </code> <code class="blue_P4bS">table</code></div><div>
+<p>
+  User ids associated with this profile. Entries must be added with <a href="#AddUserId"><code>Profile:AddUserId()</code></a>
+  and removed with <a href="#RemoveUserId"><code>Profile:RemoveUserId()</code></a>.
+</p>
+</div><div class="divider_rE5g"></div><h3 class="anchor anchorWithStickyNavbar_LWe7" id="KeyInfo"><code style="text-decoration:none">KeyInfo</code><a href="#KeyInfo" class="hash-link" aria-label="Direct link to KeyInfo" title="Direct link to KeyInfo">​</a></h3><div class="repositoryDetailsContainer_BPdw"><a class="sourceButton_sEho" href="https://github.com/fartshreksigma/UniversalCraftwarsDocs/blob/master/src/ProfileService.lua#L338"><div class="sourceButtonText_Vh0m">&lt;/&gt;</div></a></div><div class="memberString_GwaU"><code>Profile<!-- -->.<!-- -->KeyInfo<!-- -->:<!-- --> </code> <code class="blue_P4bS"><a style="text-decoration:underline;color:inherit" href="https://developer.roblox.com/en-us/api-reference/class/DataStoreKeyInfo" target="_blank" rel="noopener noreferrer">DataStoreKeyInfo<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound" style="color:gray;vertical-align:middle;margin-left:2px"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></code></div><div>
+<p>The <a href="https://developer.roblox.com/en-us/api-reference/class/DataStoreKeyInfo" target="_blank">DataStoreKeyInfo</a> instance related to this profile.</p>
+</div><div class="divider_rE5g"></div><h3 class="anchor anchorWithStickyNavbar_LWe7" id="KeyInfoUpdated"><code style="text-decoration:none">KeyInfoUpdated</code><a href="#KeyInfoUpdated" class="hash-link" aria-label="Direct link to KeyInfoUpdated" title="Direct link to KeyInfoUpdated">​</a></h3><span class="badge_Ba2I" style="color:#e74c3c"><span class="badgeTooltip_cWXP">This item is read only and cannot be modified.</span><span class="badgeToolTipTail_H9D_"><svg xmlns="http://www.w3.org/2000/svg" height="300px" width="300px" fill="#e74c3c" x="0px" y="0px" viewBox="0 0 96 96"><path d="M70.354,15.662h-7.496H25.566c-3.282,0-5.19-0.776-5.728-1.169v-1.456c0.538-0.393,2.445-1.168,5.728-1.168h46.479V8H25.566  c-4.776,0-9.594,1.468-9.594,4.747v61.458C15.972,86.645,20.328,88,37.495,88h42.535V15.662H70.354z"></path></svg> <!-- -->Read Only</span></span><div class="repositoryDetailsContainer_BPdw"><a class="sourceButton_sEho" href="https://github.com/fartshreksigma/UniversalCraftwarsDocs/blob/master/src/ProfileService.lua#L349"><div class="sourceButtonText_Vh0m">&lt;/&gt;</div></a></div><div class="memberString_GwaU"><code>Profile<!-- -->.<!-- -->KeyInfoUpdated<!-- -->:<!-- --> </code> <code class="blue_P4bS"><a style="text-decoration:underline;color:inherit" href="https://developer.roblox.com/en-us/api-reference/datatype/RBXScriptSignal" target="_blank" rel="noopener noreferrer">RBXScriptSignal<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound" style="color:gray;vertical-align:middle;margin-left:2px"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></code></div><div>
+<p>
+  A signal that gets triggered every time <a href="#KeyInfo"><code>Profile.KeyInfo</code></a> is updated
+  with a new <a href="https://developer.roblox.com/en-us/api-reference/class/DataStoreKeyInfo" target="_blank">DataStoreKeyInfo</a>
+  instance reference after every auto-save or profile release. This uses a custom implementation of
+  an RBXScriptSignal, so some methods may not be available.
+</p>
+</div><div class="divider_rE5g"></div><h3 class="anchor anchorWithStickyNavbar_LWe7" id="GlobalUpdates"><code style="text-decoration:none">GlobalUpdates</code><a href="#GlobalUpdates" class="hash-link" aria-label="Direct link to GlobalUpdates" title="Direct link to GlobalUpdates">​</a></h3><span class="badge_Ba2I" style="color:#e74c3c"><span class="badgeTooltip_cWXP">This item is read only and cannot be modified.</span><span class="badgeToolTipTail_H9D_"><svg xmlns="http://www.w3.org/2000/svg" height="300px" width="300px" fill="#e74c3c" x="0px" y="0px" viewBox="0 0 96 96"><path d="M70.354,15.662h-7.496H25.566c-3.282,0-5.19-0.776-5.728-1.169v-1.456c0.538-0.393,2.445-1.168,5.728-1.168h46.479V8H25.566  c-4.776,0-9.594,1.468-9.594,4.747v61.458C15.972,86.645,20.328,88,37.495,88h42.535V15.662H70.354z"></path></svg> <!-- -->Read Only</span></span><div class="repositoryDetailsContainer_BPdw"><a class="sourceButton_sEho" href="https://github.com/fartshreksigma/UniversalCraftwarsDocs/blob/master/src/ProfileService.lua#L357"><div class="sourceButtonText_Vh0m">&lt;/&gt;</div></a></div><div class="memberString_GwaU"><code>Profile<!-- -->.<!-- -->GlobalUpdates<!-- -->:<!-- --> </code> <code class="blue_P4bS"><a style="text-decoration:underline;color:inherit" href="/UniversalCraftwarsDocs/api/global_updates">global_updates</a></code></div><div>
+<p>This is the <a href="/UniversalCraftwarsDocs/api/global_updates"><code>global_updates</code></a> object tied to the specific <code>Profile</code>. It exposes methods for update processing. (See <a href="/UniversalCraftwarsDocs/api/global_updates"><code>Global Updates</code></a> for more info)</p>
+</div><h2 class="anchor anchorWithStickyNavbar_LWe7" id="functions">Functions<a href="#functions" class="hash-link" aria-label="Direct link to Functions" title="Direct link to Functions">​</a></h2><div class="divider_rE5g"></div><h3 class="anchor anchorWithStickyNavbar_LWe7" id="IsActive"><code style="text-decoration:none">IsActive</code><a href="#IsActive" class="hash-link" aria-label="Direct link to IsActive" title="Direct link to IsActive">​</a></h3><div class="repositoryDetailsContainer_BPdw"><a class="sourceButton_sEho" href="https://github.com/fartshreksigma/UniversalCraftwarsDocs/blob/master/src/ProfileService.lua#L366"><div class="sourceButtonText_Vh0m">&lt;/&gt;</div></a></div><div class="memberString_GwaU"><code>Profile<!-- -->:</code><code class="green_DgR4">IsActive</code><code>(</code><code>) → </code><code class="blue_P4bS">boolean</code><span class="inlineDescription_G7Er">-- <span>
+<p>Whether the Profile is session-locked or not</p>
+</span></span></div><div>
+<p>Returns <code>true</code> while the profile is session-locked and saving of changes to <a href="#Data"><code>Profile.Data</code></a> is guarenteed.</p>
+</div><div class="divider_rE5g"></div><h3 class="anchor anchorWithStickyNavbar_LWe7" id="GetMetaTag"><code style="text-decoration:none">GetMetaTag</code><a href="#GetMetaTag" class="hash-link" aria-label="Direct link to GetMetaTag" title="Direct link to GetMetaTag">​</a></h3><div class="repositoryDetailsContainer_BPdw"><a class="sourceButton_sEho" href="https://github.com/fartshreksigma/UniversalCraftwarsDocs/blob/master/src/ProfileService.lua#L377"><div class="sourceButtonText_Vh0m">&lt;/&gt;</div></a></div><div class="memberString_GwaU"><code>Profile<!-- -->:</code><code class="green_DgR4">GetMetaTag</code><code>(</code><div class="inset_uKQm"><div><code>tag_name<!-- -->: </code><code class="blue_P4bS">string</code><span class="inlineDescription_G7Er">-- <span>
+<p>The name of the tag to retrieve</p>
+</span></span></div></div><code>) → </code><code class="blue_P4bS">any</code><span class="inlineDescription_G7Er">-- <span>
+<p>The value associated with the requested tag</p>
+</span></span></div><div>
+<p>Equivalent of <code>Profile.MetaData.MetaTags[tag_name]</code>. See <a href="#SetMetaTag"><code>Profile:SetMetaTag()</code></a> for more info.</p>
+</div><div class="divider_rE5g"></div><h3 class="anchor anchorWithStickyNavbar_LWe7" id="Reconcile"><code style="text-decoration:none">Reconcile</code><a href="#Reconcile" class="hash-link" aria-label="Direct link to Reconcile" title="Direct link to Reconcile">​</a></h3><div class="repositoryDetailsContainer_BPdw"><a class="sourceButton_sEho" href="https://github.com/fartshreksigma/UniversalCraftwarsDocs/blob/master/src/ProfileService.lua#L390"><div class="sourceButtonText_Vh0m">&lt;/&gt;</div></a></div><div class="memberString_GwaU"><code>Profile<!-- -->:</code><code class="green_DgR4">Reconcile</code><code>(</code><code>) → </code><code class="blue_P4bS">nil</code></div><div>
+<p>
+  Fills in missing variables inside <a href="#Data"><code>Profile.Data</code></a> from the <a href="/UniversalCraftwarsDocs/api/DatastoreTemplateService#DataTemplate"><code>profile_template</code></a> that was provided
+  when calling <a href="/UniversalCraftwarsDocs/api/ProfileService#GetProfileStore"><code>ProfileService.GetProfileStore()</code></a>. It's often necessary to use <code>:Reconcile()</code> if
+  you're applying changes to your profile_template over the course of your game's development after release.
+</p>
+<p>Read the <a href="https://madstudioroblox.github.io/ProfileService/api/#profilereconcile" target="_blank">API Documentation</a> for more info</p>
+</div><div class="divider_rE5g"></div><h3 class="anchor anchorWithStickyNavbar_LWe7" id="ListenToRelease"><code style="text-decoration:none">ListenToRelease</code><a href="#ListenToRelease" class="hash-link" aria-label="Direct link to ListenToRelease" title="Direct link to ListenToRelease">​</a></h3><div class="repositoryDetailsContainer_BPdw"><a class="sourceButton_sEho" href="https://github.com/fartshreksigma/UniversalCraftwarsDocs/blob/master/src/ProfileService.lua#L410"><div class="sourceButtonText_Vh0m">&lt;/&gt;</div></a></div><div class="memberString_GwaU"><code>Profile<!-- -->:</code><code class="green_DgR4">ListenToRelease</code><code>(</code><div class="inset_uKQm"><div><code>listener<!-- -->: </code><code class="purple_ieR2">(</code><code class="purple_ieR2">)</code><code class="purple_ieR2"> → </code><code class="purple_ieR2">(</code><code class="purple_ieR2">)</code><span class="inlineDescription_G7Er">-- <span>
+<p>A listener which is called when the profile is released</p>
+</span></span></div></div><code>) → </code><code class="blue_P4bS"><a style="text-decoration:underline;color:inherit" href="https://developer.roblox.com/en-us/api-reference/datatype/RBXScriptConnection" target="_blank" rel="noopener noreferrer">RBXScriptConnection<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound" style="color:gray;vertical-align:middle;margin-left:2px"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></code><span class="inlineDescription_G7Er">-- <span>
+<p>A connection which can be used to disconnect the listener</p>
+</span></span></div><div>
+<p>
+  Listener functions subscribed to <code>Profile:ListenToRelease()</code> will be called when the profile
+  is remotely released (Being <code>ForceLoad</code>'ed on a remote server) or locally (<a href="#Release"><code>Profile:Release()</code></a>).
+  In common practice, the profile will rarely be released before the player leaves the game so it's recommended to simply
+  <a href="https://developer.roblox.com/en-us/api-reference/function/Player/Kick" target="_blank">:Kick()</a> the Player when this happens.
+</p>
+<div class="admonition admonition-caution alert alert--warning">
+  <div class="admonition-heading">
+    <h5><span class="admonition-icon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16">
+          <path d="M8.893 1.5c-.183-.31-.52-.5-.887-.5s-.703.19-.886.5L.138 13.499a.98.98 0 0 0 0 1.001c.193.31.53.501.886.501h13.964c.367 0 .704-.19.877-.5a1.03 1.03 0 0 0 .01-1.002L8.893 1.5zm.133 11.497H6.987v-2.003h2.039v2.003zm0-3.004H6.987V5.987h2.039v4.006z"></path>
+        </svg></span>caution</h5>
+  </div>
+  <div class="admonition-content">
+    <p>
+      After <code>Profile:ListenToRelease()</code> is triggered, it is too late to change <code>Profile.Data</code> for the final time. As long as the profile
+      is active (<a href="#IsActive"><code>Profile:IsActive()</code></a> == <code>true</code>), you should store all profile related data immediately after it becomes
+      available.
+    </p>
+  </div>
+</div>
+</div><div class="divider_rE5g"></div><h3 class="anchor anchorWithStickyNavbar_LWe7" id="Release"><code style="text-decoration:none">Release</code><a href="#Release" class="hash-link" aria-label="Direct link to Release" title="Direct link to Release">​</a></h3><div class="repositoryDetailsContainer_BPdw"><a class="sourceButton_sEho" href="https://github.com/fartshreksigma/UniversalCraftwarsDocs/blob/master/src/ProfileService.lua#L420"><div class="sourceButtonText_Vh0m">&lt;/&gt;</div></a></div><div class="memberString_GwaU"><code>Profile<!-- -->:</code><code class="green_DgR4">Release</code><code>(</code><code>) → </code><code class="blue_P4bS">nil</code></div><div>
+<p>
+  Removes the session lock for this profile on the Roblox server. Call this method after you're done working
+  with the <code>Profile</code> object. Profile data will be immediately saved for the last tiem.
+</p>
+</div><div class="divider_rE5g"></div><h3 class="anchor anchorWithStickyNavbar_LWe7" id="ListenToHopReady"><code style="text-decoration:none">ListenToHopReady</code><a href="#ListenToHopReady" class="hash-link" aria-label="Direct link to ListenToHopReady" title="Direct link to ListenToHopReady">​</a></h3><div class="repositoryDetailsContainer_BPdw"><a class="sourceButton_sEho" href="https://github.com/fartshreksigma/UniversalCraftwarsDocs/blob/master/src/ProfileService.lua#L435"><div class="sourceButtonText_Vh0m">&lt;/&gt;</div></a></div><div class="memberString_GwaU"><code>Profile<!-- -->:</code><code class="green_DgR4">ListenToHopReady</code><code>(</code><div class="inset_uKQm"><div><code>listener<!-- -->: </code><code class="purple_ieR2">(</code><code class="purple_ieR2">)</code><code class="purple_ieR2"> → </code><code class="purple_ieR2">(</code><code class="purple_ieR2">)</code><span class="inlineDescription_G7Er">-- <span>
+<p>The listener which is called when the profile has released it's session-lock</p>
+</span></span></div></div><code>) → </code><code class="blue_P4bS"><a style="text-decoration:underline;color:inherit" href="https://developer.roblox.com/en-us/api-reference/datatype/RBXScriptConnection" target="_blank" rel="noopener noreferrer">RBXScriptConnection<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound" style="color:gray;vertical-align:middle;margin-left:2px"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></code><span class="inlineDescription_G7Er">-- <span>
+<p>The connection which can be used to disconnect the listener</p>
+</span></span></div><div>
+<p>
+  <code>Profile:ListenToHopReady()</code> is in many ways similiar to <a href="#ListenToRelease"><code>Profile:ListenToRelease()</code></a> however,
+  <code>Profile:ListenToHopReady()</code> is called when the session-lock on the profile is released. In most cases, this should be within a second,
+  however, if a <code>Profile</code> is released next to an auto-update, it may take up to 7 seconds to be called.
+</p>
+<p>For more information on this method, visit the <a href="https://madstudioroblox.github.io/ProfileService/api/#profilelistentohopready" target="_blank">Profile Service API</a>.</p>
+</div><div class="divider_rE5g"></div><h3 class="anchor anchorWithStickyNavbar_LWe7" id="AddUserId"><code style="text-decoration:none">AddUserId</code><a href="#AddUserId" class="hash-link" aria-label="Direct link to AddUserId" title="Direct link to AddUserId">​</a></h3><div class="repositoryDetailsContainer_BPdw"><a class="sourceButton_sEho" href="https://github.com/fartshreksigma/UniversalCraftwarsDocs/blob/master/src/ProfileService.lua#L447"><div class="sourceButtonText_Vh0m">&lt;/&gt;</div></a></div><div class="memberString_GwaU"><code>Profile<!-- -->:</code><code class="green_DgR4">AddUserId</code><code>(</code><div class="inset_uKQm"><div><code>user_id<!-- -->: </code><code class="blue_P4bS">number</code><span class="inlineDescription_G7Er">-- <span>
+<p>The UserId to associate with the profile</p>
+</span></span></div></div><code>) → </code><code class="blue_P4bS">nil</code></div><div>
+<p>
+  Associates a <code>UserId</code> with the profile. Multiple users can be associated with a single profile by
+  calling this method for each individual <code>UserId</code>. The primary use of this method is to comply with <a href="https://gdpr-info.eu/art-17-gdpr/" target="_blank">GDPR</a> (The right to erasure).
+</p>
+</div><div class="divider_rE5g"></div><h3 class="anchor anchorWithStickyNavbar_LWe7" id="RemoveUserId"><code style="text-decoration:none">RemoveUserId</code><a href="#RemoveUserId" class="hash-link" aria-label="Direct link to RemoveUserId" title="Direct link to RemoveUserId">​</a></h3><div class="repositoryDetailsContainer_BPdw"><a class="sourceButton_sEho" href="https://github.com/fartshreksigma/UniversalCraftwarsDocs/blob/master/src/ProfileService.lua#L458"><div class="sourceButtonText_Vh0m">&lt;/&gt;</div></a></div><div class="memberString_GwaU"><code>Profile<!-- -->:</code><code class="green_DgR4">RemoveUserId</code><code>(</code><div class="inset_uKQm"><div><code>user_id<!-- -->: </code><code class="blue_P4bS">number</code><span class="inlineDescription_G7Er">-- <span>
+<p>The UserId to remove from the DataStore</p>
+</span></span></div></div><code>) → </code><code class="blue_P4bS">nil</code></div><div>
+<p>Unassociates <code>UserId</code> with the profile, if it was initially associated.</p>
+</div><div class="divider_rE5g"></div><h3 class="anchor anchorWithStickyNavbar_LWe7" id="Identify"><code style="text-decoration:none">Identify</code><a href="#Identify" class="hash-link" aria-label="Direct link to Identify" title="Direct link to Identify">​</a></h3><div class="repositoryDetailsContainer_BPdw"><a class="sourceButton_sEho" href="https://github.com/fartshreksigma/UniversalCraftwarsDocs/blob/master/src/ProfileService.lua#L471"><div class="sourceButtonText_Vh0m">&lt;/&gt;</div></a></div><div class="memberString_GwaU"><code>Profile<!-- -->:</code><code class="green_DgR4">Identify</code><code>(</code><code>) → </code><code class="blue_P4bS">string</code><span class="inlineDescription_G7Er">-- <span>
+<p>A string containing the Store, Scope, and Key</p>
+</span></span></div><div>
+<p>Returns a string containing DataStore name, scope and key. Used for debugging.</p>
+<pre class="language-lua"><code class="language-lua"><span class="token comment">-- Example return: "[Store:"GameData";Scope:"Live";Key:"Player_2312310"]"</span>
+</code></pre>
+</div><div class="divider_rE5g"></div><h3 class="anchor anchorWithStickyNavbar_LWe7" id="SetMetaTag"><code style="text-decoration:none">SetMetaTag</code><a href="#SetMetaTag" class="hash-link" aria-label="Direct link to SetMetaTag" title="Direct link to SetMetaTag">​</a></h3><div class="repositoryDetailsContainer_BPdw"><a class="sourceButton_sEho" href="https://github.com/fartshreksigma/UniversalCraftwarsDocs/blob/master/src/ProfileService.lua#L490"><div class="sourceButtonText_Vh0m">&lt;/&gt;</div></a></div><div class="memberString_GwaU"><code>Profile<!-- -->:</code><code class="green_DgR4">SetMetaTag</code><code>(</code><div class="inset_uKQm"><div><code>tag_name<!-- -->: </code><code class="blue_P4bS">string</code><code>,</code></div><div><code>value<!-- -->: </code><code class="blue_P4bS">any</code><span class="inlineDescription_G7Er">-- <span>
+<p>Any DataStore supported value, typically a primative</p>
+</span></span></div></div><code>) → </code><code class="blue_P4bS">nil</code></div><div>
+<p>
+  Equivalent of <code>Profile.MetaData.MetaTags[tag_name] = value</code>. Use for tagging your profile with information about itself
+  such as:
+</p>
+<ul>
+  <li><code>Profile:SetMetaTag("DataVersion", 1)</code>to let your game know whether <code>Profile.Data</code> needs to be converted after massive changes to your game</li>
+  <li>
+    Anything set through <code>Profile:SetMetaTag(tag_name, value)</code> will be available through
+    <code>Profile.MetaData.MetaTagsLatest[tag_name] after an auto-save or a [</code>:Save()<code>](#Save) call - </code>Profile.MetaData.MetaTagsLatest<code>is a version of</code>Profile.MetaData.MetaTags``` that has
+    been successfully saved to the DataStore.
+  </li>
+</ul>
+</div><div class="divider_rE5g"></div><h3 class="anchor anchorWithStickyNavbar_LWe7" id="Save"><code style="text-decoration:none">Save</code><a href="#Save" class="hash-link" aria-label="Direct link to Save" title="Direct link to Save">​</a></h3><div class="repositoryDetailsContainer_BPdw"><a class="sourceButton_sEho" href="https://github.com/fartshreksigma/UniversalCraftwarsDocs/blob/master/src/ProfileService.lua#L508"><div class="sourceButtonText_Vh0m">&lt;/&gt;</div></a></div><div class="memberString_GwaU"><code>Profile<!-- -->:</code><code class="green_DgR4">Save</code><code>(</code><code>) → </code><code class="blue_P4bS">nil</code></div><div>
+<p>
+  Call <code>Profile:Save()</code> to quickly progress <code>GlobalUpdates</code> state or to speed up the progagation
+  of <code>Profile.MetaData.MetaTags</code> changes to <code>Profile.MetaData.MetaTagsLatest</code>.
+</p>
+<p>
+  <code>Profile:Save()</code> <strong>should not be called for saving</strong> <code>Profile.Data</code> or
+  <code>Profile.MetaData.MetaTags</code> - this is already done for you automatically.
+</p>
+<div class="admonition admonition-caution alert alert--warning">
+  <div class="admonition-heading">
+    <h5><span class="admonition-icon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16">
+          <path d="M8.893 1.5c-.183-.31-.52-.5-.887-.5s-.703.19-.886.5L.138 13.499a.98.98 0 0 0 0 1.001c.193.31.53.501.886.501h13.964c.367 0 .704-.19.877-.5a1.03 1.03 0 0 0 .01-1.002L8.893 1.5zm.133 11.497H6.987v-2.003h2.039v2.003zm0-3.004H6.987V5.987h2.039v4.006z"></path>
+        </svg></span>caution</h5>
+  </div>
+  <div class="admonition-content">
+    <p>
+      Calling <code>Profile:Save()</code> when the <code>Profile</code> is released will throw an error. You can check <a href="#IsActive"><code>Profile:IsActive()</code></a>
+      before using this method.
+    </p>
+  </div>
+</div>
+</div><div class="divider_rE5g"></div><h3 class="anchor anchorWithStickyNavbar_LWe7" id="ClearGlobalUpdates"><code style="text-decoration:none">ClearGlobalUpdates</code><a href="#ClearGlobalUpdates" class="hash-link" aria-label="Direct link to ClearGlobalUpdates" title="Direct link to ClearGlobalUpdates">​</a></h3><div class="repositoryDetailsContainer_BPdw"><a class="sourceButton_sEho" href="https://github.com/fartshreksigma/UniversalCraftwarsDocs/blob/master/src/ProfileService.lua#L524"><div class="sourceButtonText_Vh0m">&lt;/&gt;</div></a></div><div class="memberString_GwaU"><code>Profile<!-- -->:</code><code class="green_DgR4">ClearGlobalUpdates</code><code>(</code><code>) → </code><code class="blue_P4bS">nil</code></div><div>
+<div class="admonition admonition-warning alert alert--danger">
+  <div class="admonition-heading">
+    <h5><span class="admonition-icon"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="16" viewBox="0 0 12 16">
+          <path d="M5.05.31c.81 2.17.41 3.38-.52 4.31C3.55 5.67 1.98 6.45.9 7.98c-1.45 2.05-1.7 6.53 3.53 7.7-2.2-1.16-2.67-4.52-.3-6.61-.61 2.03.53 3.33 1.94 2.86 1.39-.47 2.3.53 2.27 1.67-.02.78-.31 1.44-1.13 1.81 3.42-.59 4.78-3.42 4.78-5.56 0-2.84-2.53-3.22-1.25-5.61-1.52.13-2.03 1.13-1.89 2.75.09 1.08-1.02 1.8-1.86 1.33-.67-.41-.66-1.19-.06-1.78C8.18 5.31 8.68 2.45 5.05.32L5.03.3l.02.01z"></path>
+        </svg></span>warning</h5>
+  </div>
+  <div class="admonition-content">
+    <p>
+      Only works on profiles loaded through <a href="/UniversalCraftwarsDocs/api/ProfileStore#ViewProfileAsync"><code>ProfileStore:ViewProfileAsync()</code></a> or
+      <a href="/UniversalCraftwarsDocs/api/ProfileStore#ProfileVersionQuery"><code>ProfileStore:ProfileVersionQuery()</code></a>
+    </p>
+  </div>
+</div>
+<p>
+  Clears all global update data (active or locked) for a profile payload. It may be desirable to clear potential "residue"
+  global updates (e.g. pending gifts) which were existing in a snapshot which is being used to recover player data through
+  <a href="/UniversalCraftwarsDocs/api/ProfileStore#ProfileVersionQuery"><code>ProfileStore:ProfileVersionQuery()</code></a>
+</p>
+</div><div class="divider_rE5g"></div><h3 class="anchor anchorWithStickyNavbar_LWe7" id="OverwriteAsync"><code style="text-decoration:none">OverwriteAsync</code><a href="#OverwriteAsync" class="hash-link" aria-label="Direct link to OverwriteAsync" title="Direct link to OverwriteAsync">​</a></h3><span class="badge_Ba2I" style="color:#f1c40f"><span class="badgeTooltip_cWXP">This is a yielding function. When called, it will pause the Lua thread that called the function until a result is ready to be returned, without interrupting other scripts.</span><span class="badgeToolTipTail_H9D_"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" fill="#f1c40f" role="img" aria-label="This is a yielding function. When called, it will pause the Lua thread that called the function until a result is ready to be returned, without interrupting other scripts."><path d="M96.4 11.9c-1.4-2.5-4-4-6.9-4H10.8c-2.9 0-5.4 1.5-6.9 4-1.4 2.5-1.4 5.5 0 7.9L43.3 88c1.4 2.5 4 4 6.9 4 2.9 0 5.4-1.5 6.9-4l39.3-68.2c1.4-2.4 1.4-5.4 0-7.9zM46.3 54.5c1.1-1.1 2.3-1.6 3.8-1.6s2.8.5 3.8 1.6c1.1 1.1 1.6 2.3 1.6 3.8s-.5 2.8-1.6 3.8c-1.1 1.1-2.3 1.6-3.8 1.6s-2.8-.5-3.8-1.6c-1.1-1.1-1.6-2.3-1.6-3.8.1-1.5.6-2.8 1.6-3.8zm-.5-4.9V21.8h8.8v27.8h-8.8z"></path></svg> <!-- -->Yields</span></span><div class="repositoryDetailsContainer_BPdw"><a class="sourceButton_sEho" href="https://github.com/fartshreksigma/UniversalCraftwarsDocs/blob/master/src/ProfileService.lua#L544"><div class="sourceButtonText_Vh0m">&lt;/&gt;</div></a></div><div class="memberString_GwaU"><code>Profile<!-- -->:</code><code class="green_DgR4">OverwriteAsync</code><code>(</code><code>) → </code><code>(</code><code>)</code></div><div>
+<div class="admonition admonition-warning alert alert--danger">
+  <div class="admonition-heading">
+    <h5><span class="admonition-icon"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="16" viewBox="0 0 12 16">
+          <path d="M5.05.31c.81 2.17.41 3.38-.52 4.31C3.55 5.67 1.98 6.45.9 7.98c-1.45 2.05-1.7 6.53 3.53 7.7-2.2-1.16-2.67-4.52-.3-6.61-.61 2.03.53 3.33 1.94 2.86 1.39-.47 2.3.53 2.27 1.67-.02.78-.31 1.44-1.13 1.81 3.42-.59 4.78-3.42 4.78-5.56 0-2.84-2.53-3.22-1.25-5.61-1.52.13-2.03 1.13-1.89 2.75.09 1.08-1.02 1.8-1.86 1.33-.67-.41-.66-1.19-.06-1.78C8.18 5.31 8.68 2.45 5.05.32L5.03.3l.02.01z"></path>
+        </svg></span>warning</h5>
+  </div>
+  <div class="admonition-content">
+    <p>
+      Only works on profiles loaded through <a href="/UniversalCraftwarsDocs/api/ProfileStore#ViewProfileAsync"><code>ProfileStore:ViewProfileAsync()</code></a> or
+      <a href="/UniversalCraftwarsDocs/api/ProfileStore#ProfileVersionQuery"><code>ProfileStore:ProfileVersionQuery()</code></a>
+    </p>
+  </div>
+</div>
+<div class="admonition admonition-warning alert alert--danger">
+  <div class="admonition-heading">
+    <h5><span class="admonition-icon"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="16" viewBox="0 0 12 16">
+          <path d="M5.05.31c.81 2.17.41 3.38-.52 4.31C3.55 5.67 1.98 6.45.9 7.98c-1.45 2.05-1.7 6.53 3.53 7.7-2.2-1.16-2.67-4.52-.3-6.61-.61 2.03.53 3.33 1.94 2.86 1.39-.47 2.3.53 2.27 1.67-.02.78-.31 1.44-1.13 1.81 3.42-.59 4.78-3.42 4.78-5.56 0-2.84-2.53-3.22-1.25-5.61-1.52.13-2.03 1.13-1.89 2.75.09 1.08-1.02 1.8-1.86 1.33-.67-.41-.66-1.19-.06-1.78C8.18 5.31 8.68 2.45 5.05.32L5.03.3l.02.01z"></path>
+        </svg></span>Only use for rollback payloads (Setting latest version to a copy of a previous version)!</h5>
+  </div>
+  <div class="admonition-content">
+    <p>
+      Using this method for editing latest player data when the player is in-game can lead to several minutes of lost progress -
+      it should be replaced by <a href="/UniversalCraftwarsDocs/api/ProfileStore/LoadProfileAsync"><code>:LoadProfileAsync</code></a> which will wait for
+      the next live profile auto-save if the player is in-game, allowing the remote server to release the profile
+      and save latest data.
+    </p>
+  </div>
+</div>
+<p>Pushes the <code>Profile</code> payload to the DataStore (saves the profile) and releases the session lock for the profile.</p>
+</div></div></article></div><details><summary>Show raw api</summary><pre style="max-width:100%;white-space:pre-wrap">{
+    &quot;functions&quot;: [
+        {
+            &quot;name&quot;: &quot;IsActive&quot;,
+            &quot;desc&quot;: &quot;Returns ```true``` while the profile is session-locked and saving of changes to [```Profile.Data```](#Data) is guarenteed.&quot;,
+            &quot;params&quot;: [],
+            &quot;returns&quot;: [
+                {
+                    &quot;desc&quot;: &quot;Whether the Profile is session-locked or not&quot;,
+                    &quot;lua_type&quot;: &quot;boolean&quot;
+                }
+            ],
+            &quot;function_type&quot;: &quot;method&quot;,
+            &quot;source&quot;: {
+                &quot;line&quot;: 366,
+                &quot;path&quot;: &quot;src/ProfileService.lua&quot;
+            }
+        },
+        {
+            &quot;name&quot;: &quot;GetMetaTag&quot;,
+            &quot;desc&quot;: &quot;Equivalent of ```Profile.MetaData.MetaTags[tag_name]```. See [```Profile:SetMetaTag()```](#SetMetaTag) for more info.&quot;,
+            &quot;params&quot;: [
+                {
+                    &quot;name&quot;: &quot;tag_name&quot;,
+                    &quot;desc&quot;: &quot;The name of the tag to retrieve&quot;,
+                    &quot;lua_type&quot;: &quot;string&quot;
+                }
+            ],
+            &quot;returns&quot;: [
+                {
+                    &quot;desc&quot;: &quot;The value associated with the requested tag&quot;,
+                    &quot;lua_type&quot;: &quot;any&quot;
+                }
+            ],
+            &quot;function_type&quot;: &quot;method&quot;,
+            &quot;source&quot;: {
+                &quot;line&quot;: 377,
+                &quot;path&quot;: &quot;src/ProfileService.lua&quot;
+            }
+        },
+        {
+            &quot;name&quot;: &quot;Reconcile&quot;,
+            &quot;desc&quot;: &quot;Fills in missing variables inside [```Profile.Data```](#Data) from the [```profile_template```](/api/DatastoreTemplateService#DataTemplate) that was provided\n when calling [```ProfileService.GetProfileStore()```](/api/ProfileService#GetProfileStore). It&#x27;s often necessary to use ```:Reconcile()``` if\n you&#x27;re applying changes to your profile_template over the course of your game&#x27;s development after release.\n\nRead the [API Documentation](https://madstudioroblox.github.io/ProfileService/api/#profilereconcile) for more info&quot;,
+            &quot;params&quot;: [],
+            &quot;returns&quot;: [
+                {
+                    &quot;desc&quot;: &quot;&quot;,
+                    &quot;lua_type&quot;: &quot;nil&quot;
+                }
+            ],
+            &quot;function_type&quot;: &quot;method&quot;,
+            &quot;source&quot;: {
+                &quot;line&quot;: 390,
+                &quot;path&quot;: &quot;src/ProfileService.lua&quot;
+            }
+        },
+        {
+            &quot;name&quot;: &quot;ListenToRelease&quot;,
+            &quot;desc&quot;: &quot;Listener functions subscribed to ```Profile:ListenToRelease()``` will be called when the profile\n is remotely released (Being ```ForceLoad```&#x27;ed on a remote server) or locally ([```Profile:Release()```](#Release)).\n In common practice, the profile will rarely be released before the player leaves the game so it&#x27;s recommended to simply\n [:Kick()](https://developer.roblox.com/en-us/api-reference/function/Player/Kick) the Player when this happens.\n\n:::caution\nAfter ```Profile:ListenToRelease()``` is triggered, it is too late to change ```Profile.Data``` for the final time. As long as the profile\n is active ([```Profile:IsActive()```](#IsActive) == ```true```), you should store all profile related data immediately after it becomes\n available.\n:::&quot;,
+            &quot;params&quot;: [
+                {
+                    &quot;name&quot;: &quot;listener&quot;,
+                    &quot;desc&quot;: &quot;A listener which is called when the profile is released&quot;,
+                    &quot;lua_type&quot;: &quot;() -&gt; ()&quot;
+                }
+            ],
+            &quot;returns&quot;: [
+                {
+                    &quot;desc&quot;: &quot;A connection which can be used to disconnect the listener&quot;,
+                    &quot;lua_type&quot;: &quot;RBXScriptConnection&quot;
+                }
+            ],
+            &quot;function_type&quot;: &quot;method&quot;,
+            &quot;source&quot;: {
+                &quot;line&quot;: 410,
+                &quot;path&quot;: &quot;src/ProfileService.lua&quot;
+            }
+        },
+        {
+            &quot;name&quot;: &quot;Release&quot;,
+            &quot;desc&quot;: &quot;Removes the session lock for this profile on the Roblox server. Call this method after you&#x27;re done working\n with the ```Profile``` object. Profile data will be immediately saved for the last tiem.&quot;,
+            &quot;params&quot;: [],
+            &quot;returns&quot;: [
+                {
+                    &quot;desc&quot;: &quot;&quot;,
+                    &quot;lua_type&quot;: &quot;nil&quot;
+                }
+            ],
+            &quot;function_type&quot;: &quot;method&quot;,
+            &quot;source&quot;: {
+                &quot;line&quot;: 420,
+                &quot;path&quot;: &quot;src/ProfileService.lua&quot;
+            }
+        },
+        {
+            &quot;name&quot;: &quot;ListenToHopReady&quot;,
+            &quot;desc&quot;: &quot;```Profile:ListenToHopReady()``` is in many ways similiar to [```Profile:ListenToRelease()```](#ListenToRelease) however,\n ```Profile:ListenToHopReady()``` is called when the session-lock on the profile is released. In most cases, this should be within a second,\n however, if a ```Profile``` is released next to an auto-update, it may take up to 7 seconds to be called.\n\nFor more information on this method, visit the [Profile Service API](https://madstudioroblox.github.io/ProfileService/api/#profilelistentohopready).&quot;,
+            &quot;params&quot;: [
+                {
+                    &quot;name&quot;: &quot;listener&quot;,
+                    &quot;desc&quot;: &quot;The listener which is called when the profile has released it&#x27;s session-lock&quot;,
+                    &quot;lua_type&quot;: &quot;() -&gt; ()&quot;
+                }
+            ],
+            &quot;returns&quot;: [
+                {
+                    &quot;desc&quot;: &quot;The connection which can be used to disconnect the listener&quot;,
+                    &quot;lua_type&quot;: &quot;RBXScriptConnection&quot;
+                }
+            ],
+            &quot;function_type&quot;: &quot;method&quot;,
+            &quot;source&quot;: {
+                &quot;line&quot;: 435,
+                &quot;path&quot;: &quot;src/ProfileService.lua&quot;
+            }
+        },
+        {
+            &quot;name&quot;: &quot;AddUserId&quot;,
+            &quot;desc&quot;: &quot;Associates a ```UserId``` with the profile. Multiple users can be associated with a single profile by\n calling this method for each individual ```UserId```. The primary use of this method is to comply with [GDPR](https://gdpr-info.eu/art-17-gdpr/) (The right to erasure).&quot;,
+            &quot;params&quot;: [
+                {
+                    &quot;name&quot;: &quot;user_id&quot;,
+                    &quot;desc&quot;: &quot;The UserId to associate with the profile&quot;,
+                    &quot;lua_type&quot;: &quot;number&quot;
+                }
+            ],
+            &quot;returns&quot;: [
+                {
+                    &quot;desc&quot;: &quot;&quot;,
+                    &quot;lua_type&quot;: &quot;nil&quot;
+                }
+            ],
+            &quot;function_type&quot;: &quot;method&quot;,
+            &quot;source&quot;: {
+                &quot;line&quot;: 447,
+                &quot;path&quot;: &quot;src/ProfileService.lua&quot;
+            }
+        },
+        {
+            &quot;name&quot;: &quot;RemoveUserId&quot;,
+            &quot;desc&quot;: &quot;Unassociates ```UserId``` with the profile, if it was initially associated.&quot;,
+            &quot;params&quot;: [
+                {
+                    &quot;name&quot;: &quot;user_id&quot;,
+                    &quot;desc&quot;: &quot;The UserId to remove from the DataStore&quot;,
+                    &quot;lua_type&quot;: &quot;number&quot;
+                }
+            ],
+            &quot;returns&quot;: [
+                {
+                    &quot;desc&quot;: &quot;&quot;,
+                    &quot;lua_type&quot;: &quot;nil&quot;
+                }
+            ],
+            &quot;function_type&quot;: &quot;method&quot;,
+            &quot;source&quot;: {
+                &quot;line&quot;: 458,
+                &quot;path&quot;: &quot;src/ProfileService.lua&quot;
+            }
+        },
+        {
+            &quot;name&quot;: &quot;Identify&quot;,
+            &quot;desc&quot;: &quot;Returns a string containing DataStore name, scope and key. Used for debugging.\n\n```lua\n-- Example return: \&quot;[Store:\&quot;GameData\&quot;;Scope:\&quot;Live\&quot;;Key:\&quot;Player_2312310\&quot;]\&quot;\n```&quot;,
+            &quot;params&quot;: [],
+            &quot;returns&quot;: [
+                {
+                    &quot;desc&quot;: &quot;A string containing the Store, Scope, and Key&quot;,
+                    &quot;lua_type&quot;: &quot;string&quot;
+                }
+            ],
+            &quot;function_type&quot;: &quot;method&quot;,
+            &quot;source&quot;: {
+                &quot;line&quot;: 471,
+                &quot;path&quot;: &quot;src/ProfileService.lua&quot;
+            }
+        },
+        {
+            &quot;name&quot;: &quot;SetMetaTag&quot;,
+            &quot;desc&quot;: &quot;Equivalent of ```Profile.MetaData.MetaTags[tag_name] = value```. Use for tagging your profile with information about itself\n such as:\n\n- ```Profile:SetMetaTag(\&quot;DataVersion\&quot;, 1)```to let your game know whether ```Profile.Data``` needs to be converted after massive changes to your game\n- Anything set through ```Profile:SetMetaTag(tag_name, value)``` will be available through\n ```Profile.MetaData.MetaTagsLatest[tag_name] after an auto-save or a [```:Save()```](#Save) call -\n ```Profile.MetaData.MetaTagsLatest``` is a version of ```Profile.MetaData.MetaTags``` that has\n been successfully saved to the DataStore.&quot;,
+            &quot;params&quot;: [
+                {
+                    &quot;name&quot;: &quot;tag_name&quot;,
+                    &quot;desc&quot;: &quot;&quot;,
+                    &quot;lua_type&quot;: &quot;string&quot;
+                },
+                {
+                    &quot;name&quot;: &quot;value&quot;,
+                    &quot;desc&quot;: &quot;Any DataStore supported value, typically a primative&quot;,
+                    &quot;lua_type&quot;: &quot;any&quot;
+                }
+            ],
+            &quot;returns&quot;: [
+                {
+                    &quot;desc&quot;: &quot;&quot;,
+                    &quot;lua_type&quot;: &quot;nil&quot;
+                }
+            ],
+            &quot;function_type&quot;: &quot;method&quot;,
+            &quot;source&quot;: {
+                &quot;line&quot;: 490,
+                &quot;path&quot;: &quot;src/ProfileService.lua&quot;
+            }
+        },
+        {
+            &quot;name&quot;: &quot;Save&quot;,
+            &quot;desc&quot;: &quot;Call ```Profile:Save()``` to quickly progress ```GlobalUpdates``` state or to speed up the progagation\n of ```Profile.MetaData.MetaTags``` changes to ```Profile.MetaData.MetaTagsLatest```.\n\n```Profile:Save()``` **should not be called for saving** ```Profile.Data``` or\n ```Profile.MetaData.MetaTags``` - this is already done for you automatically.\n\n:::caution\nCalling ```Profile:Save()``` when the ```Profile``` is released will throw an error. You can check [```Profile:IsActive()```](#IsActive)\n before using this method.\n:::&quot;,
+            &quot;params&quot;: [],
+            &quot;returns&quot;: [
+                {
+                    &quot;desc&quot;: &quot;&quot;,
+                    &quot;lua_type&quot;: &quot;nil&quot;
+                }
+            ],
+            &quot;function_type&quot;: &quot;method&quot;,
+            &quot;source&quot;: {
+                &quot;line&quot;: 508,
+                &quot;path&quot;: &quot;src/ProfileService.lua&quot;
+            }
+        },
+        {
+            &quot;name&quot;: &quot;ClearGlobalUpdates&quot;,
+            &quot;desc&quot;: &quot;:::warning\nOnly works on profiles loaded through [```ProfileStore:ViewProfileAsync()```](/api/ProfileStore#ViewProfileAsync) or\n [```ProfileStore:ProfileVersionQuery()```](/api/ProfileStore#ProfileVersionQuery)\n:::\n\nClears all global update data (active or locked) for a profile payload. It may be desirable to clear potential \&quot;residue\&quot;\n global updates (e.g. pending gifts) which were existing in a snapshot which is being used to recover player data through\n [```ProfileStore:ProfileVersionQuery()```](/api/ProfileStore#ProfileVersionQuery)&quot;,
+            &quot;params&quot;: [],
+            &quot;returns&quot;: [
+                {
+                    &quot;desc&quot;: &quot;&quot;,
+                    &quot;lua_type&quot;: &quot;nil&quot;
+                }
+            ],
+            &quot;function_type&quot;: &quot;method&quot;,
+            &quot;source&quot;: {
+                &quot;line&quot;: 524,
+                &quot;path&quot;: &quot;src/ProfileService.lua&quot;
+            }
+        },
+        {
+            &quot;name&quot;: &quot;OverwriteAsync&quot;,
+            &quot;desc&quot;: &quot;:::warning\nOnly works on profiles loaded through [```ProfileStore:ViewProfileAsync()```](/api/ProfileStore#ViewProfileAsync) or\n [```ProfileStore:ProfileVersionQuery()```](/api/ProfileStore#ProfileVersionQuery)\n:::\n\n:::warning Only use for rollback payloads (Setting latest version to a copy of a previous version)!\nUsing this method for editing latest player data when the player is in-game can lead to several minutes of lost progress -\n it should be replaced by [```:LoadProfileAsync```](/api/ProfileStore/LoadProfileAsync) which will wait for\n the next live profile auto-save if the player is in-game, allowing the remote server to release the profile\n and save latest data.\n:::\n\nPushes the ```Profile``` payload to the DataStore (saves the profile) and releases the session lock for the profile.&quot;,
+            &quot;params&quot;: [],
+            &quot;returns&quot;: [],
+            &quot;function_type&quot;: &quot;method&quot;,
+            &quot;yields&quot;: true,
+            &quot;source&quot;: {
+                &quot;line&quot;: 544,
+                &quot;path&quot;: &quot;src/ProfileService.lua&quot;
+            }
+        }
+    ],
+    &quot;properties&quot;: [
+        {
+            &quot;name&quot;: &quot;MetaData&quot;,
+            &quot;desc&quot;: &quot;```Profile.MetaData``` is a table containing data about the profile itself\n```Profile.MetaData.MetaTags``` is saved on the same DataStore key together with [```Profile.Data```](#Data)&quot;,
+            &quot;lua_type&quot;: &quot;ProfileMetaData&quot;,
+            &quot;readonly&quot;: true,
+            &quot;source&quot;: {
+                &quot;line&quot;: 303,
+                &quot;path&quot;: &quot;src/ProfileService.lua&quot;
+            }
+        },
+        {
+            &quot;name&quot;: &quot;MetaTagsUpdated&quot;,
+            &quot;desc&quot;: &quot;A signal which fires every auto-save in which the profile has different ```Profile.MetaData.MetaTags```. Uses a custom implementation of an RBXScriptSignal so some methods may not be available.\n\n**```Profile.MetaTagsUpdated``` will also fire when a profile is saved for the last time and released**&quot;,
+            &quot;lua_type&quot;: &quot;RBXScriptSignal&quot;,
+            &quot;readonly&quot;: true,
+            &quot;source&quot;: {
+                &quot;line&quot;: 313,
+                &quot;path&quot;: &quot;src/ProfileService.lua&quot;
+            }
+        },
+        {
+            &quot;name&quot;: &quot;RobloxMetaData&quot;,
+            &quot;desc&quot;: &quot;:::warning There are harsh limits for RobloxMetaData size, at the time of writing this RobloxMetaData cant exceed 300 characters.\n:::\nSimiliar to setting the metadata in a DataStoreOptions instance, read the [official documentation](https://madstudioroblox.github.io/ProfileService/api/#profilerobloxmetadata) for more info&quot;,
+            &quot;lua_type&quot;: &quot;table&quot;,
+            &quot;source&quot;: {
+                &quot;line&quot;: 322,
+                &quot;path&quot;: &quot;src/ProfileService.lua&quot;
+            }
+        },
+        {
+            &quot;name&quot;: &quot;UserIds&quot;,
+            &quot;desc&quot;: &quot;User ids associated with this profile. Entries must be added with [```Profile:AddUserId()```](#AddUserId)\n and removed with [```Profile:RemoveUserId()```](#RemoveUserId).&quot;,
+            &quot;lua_type&quot;: &quot;table&quot;,
+            &quot;readonly&quot;: true,
+            &quot;source&quot;: {
+                &quot;line&quot;: 331,
+                &quot;path&quot;: &quot;src/ProfileService.lua&quot;
+            }
+        },
+        {
+            &quot;name&quot;: &quot;KeyInfo&quot;,
+            &quot;desc&quot;: &quot;The [DataStoreKeyInfo](https://developer.roblox.com/en-us/api-reference/class/DataStoreKeyInfo) instance related to this profile.&quot;,
+            &quot;lua_type&quot;: &quot;DataStoreKeyInfo&quot;,
+            &quot;source&quot;: {
+                &quot;line&quot;: 338,
+                &quot;path&quot;: &quot;src/ProfileService.lua&quot;
+            }
+        },
+        {
+            &quot;name&quot;: &quot;KeyInfoUpdated&quot;,
+            &quot;desc&quot;: &quot;A signal that gets triggered every time [```Profile.KeyInfo```](#KeyInfo) is updated\n with a new [DataStoreKeyInfo](https://developer.roblox.com/en-us/api-reference/class/DataStoreKeyInfo)\n instance reference after every auto-save or profile release. This uses a custom implementation of\n an RBXScriptSignal, so some methods may not be available.&quot;,
+            &quot;lua_type&quot;: &quot;RBXScriptSignal&quot;,
+            &quot;readonly&quot;: true,
+            &quot;source&quot;: {
+                &quot;line&quot;: 349,
+                &quot;path&quot;: &quot;src/ProfileService.lua&quot;
+            }
+        },
+        {
+            &quot;name&quot;: &quot;GlobalUpdates&quot;,
+            &quot;desc&quot;: &quot;This is the [```global_updates```](/api/global_updates) object tied to the specific ```Profile```. It exposes methods for update processing. (See [```Global Updates```](/api/global_updates) for more info)&quot;,
+            &quot;lua_type&quot;: &quot;global_updates&quot;,
+            &quot;readonly&quot;: true,
+            &quot;source&quot;: {
+                &quot;line&quot;: 357,
+                &quot;path&quot;: &quot;src/ProfileService.lua&quot;
+            }
+        }
+    ],
+    &quot;types&quot;: [
+        {
+            &quot;name&quot;: &quot;ProfileMetaData&quot;,
+            &quot;desc&quot;: &quot;&quot;,
+            &quot;fields&quot;: [
+                {
+                    &quot;name&quot;: &quot;ProfileCreateTime&quot;,
+                    &quot;lua_type&quot;: &quot;number&quot;,
+                    &quot;desc&quot;: &quot;Read-only&quot;
+                },
+                {
+                    &quot;name&quot;: &quot;SessionLoadCount&quot;,
+                    &quot;lua_type&quot;: &quot;number&quot;,
+                    &quot;desc&quot;: &quot;Read-only&quot;
+                },
+                {
+                    &quot;name&quot;: &quot;ActiveSession&quot;,
+                    &quot;lua_type&quot;: &quot;table?&quot;,
+                    &quot;desc&quot;: &quot;Read-only&quot;
+                },
+                {
+                    &quot;name&quot;: &quot;MetaTags&quot;,
+                    &quot;lua_type&quot;: &quot;table&quot;,
+                    &quot;desc&quot;: &quot;Writable&quot;
+                },
+                {
+                    &quot;name&quot;: &quot;MetaTagsLatest&quot;,
+                    &quot;lua_type&quot;: &quot;table&quot;,
+                    &quot;desc&quot;: &quot;Read-only&quot;
+                }
+            ],
+            &quot;source&quot;: {
+                &quot;line&quot;: 294,
+                &quot;path&quot;: &quot;src/ProfileService.lua&quot;
+            }
+        }
+    ],
+    &quot;name&quot;: &quot;Profile&quot;,
+    &quot;desc&quot;: &quot;Profiles are the main storage for data in ProfileService, they are created through [```ProfileStore:LoadProfileAsync()```](/api/ProfileStore#LoadProfileAsync)&quot;,
+    &quot;source&quot;: {
+        &quot;line&quot;: 284,
+        &quot;path&quot;: &quot;src/ProfileService.lua&quot;
+    }
+}</pre></details></div><div class="col col--3"><div class="tableOfContents_bqdL thin-scrollbar"><ul class="table-of-contents table-of-contents__left-border"><li><a href="#types" class="table-of-contents__link toc-highlight">Types</a><ul><li><a href="#ProfileMetaData" class="table-of-contents__link toc-highlight">ProfileMetaData</a></li></ul></li><li><a href="#properties" class="table-of-contents__link toc-highlight">Properties</a><ul><li><a href="#GlobalUpdates" class="table-of-contents__link toc-highlight">GlobalUpdates</a></li><li><a href="#KeyInfo" class="table-of-contents__link toc-highlight">KeyInfo</a></li><li><a href="#KeyInfoUpdated" class="table-of-contents__link toc-highlight">KeyInfoUpdated</a></li><li><a href="#MetaData" class="table-of-contents__link toc-highlight">MetaData</a></li><li><a href="#MetaTagsUpdated" class="table-of-contents__link toc-highlight">MetaTagsUpdated</a></li><li><a href="#RobloxMetaData" class="table-of-contents__link toc-highlight">RobloxMetaData</a></li><li><a href="#UserIds" class="table-of-contents__link toc-highlight">UserIds</a></li></ul></li><li><a href="#functions" class="table-of-contents__link toc-highlight">Functions</a><ul><li><a href="#AddUserId" class="table-of-contents__link toc-highlight">:AddUserId</a></li><li><a href="#ClearGlobalUpdates" class="table-of-contents__link toc-highlight">:ClearGlobalUpdates</a></li><li><a href="#GetMetaTag" class="table-of-contents__link toc-highlight">:GetMetaTag</a></li><li><a href="#Identify" class="table-of-contents__link toc-highlight">:Identify</a></li><li><a href="#IsActive" class="table-of-contents__link toc-highlight">:IsActive</a></li><li><a href="#ListenToHopReady" class="table-of-contents__link toc-highlight">:ListenToHopReady</a></li><li><a href="#ListenToRelease" class="table-of-contents__link toc-highlight">:ListenToRelease</a></li><li><a href="#OverwriteAsync" class="table-of-contents__link toc-highlight">:OverwriteAsync</a></li><li><a href="#Reconcile" class="table-of-contents__link toc-highlight">:Reconcile</a></li><li><a href="#Release" class="table-of-contents__link toc-highlight">:Release</a></li><li><a href="#RemoveUserId" class="table-of-contents__link toc-highlight">:RemoveUserId</a></li><li><a href="#Save" class="table-of-contents__link toc-highlight">:Save</a></li><li><a href="#SetMetaTag" class="table-of-contents__link toc-highlight">:SetMetaTag</a></li></ul></li></ul></div></div></div></div></main></div></div><footer class="footer footer--dark"><div class="container container-fluid"><div class="footer__bottom text--center"><div class="footer__copyright">Copyright © 2024 fartshreksigma. Built with Moonwave and Docusaurus.</div></div></div></footer></div>
+<script src="/UniversalCraftwarsDocs/assets/js/runtime~main.11f5bce8.js"></script>
+<script src="/UniversalCraftwarsDocs/assets/js/main.178a2ad6.js"></script>
+</body>
+</html>

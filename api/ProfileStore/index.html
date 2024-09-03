@@ -1,0 +1,400 @@
+<!doctype html>
+<html lang="en" dir="ltr" class="plugin-moonwave plugin-id-moonwave">
+<head>
+<meta charset="UTF-8">
+<meta name="generator" content="Docusaurus v2.3.1">
+<title data-rh="true">ProfileStore | UniversalCraftwarsDocs</title><meta data-rh="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" property="og:url" content="https://eryn.io/UniversalCraftwarsDocs/api/ProfileStore"><meta data-rh="true" name="docusaurus_locale" content="en"><meta data-rh="true" name="docusaurus_tag" content="default"><meta data-rh="true" name="docsearch:language" content="en"><meta data-rh="true" name="docsearch:docusaurus_tag" content="default"><meta data-rh="true" property="og:title" content="ProfileStore | UniversalCraftwarsDocs"><meta data-rh="true" name="description" content="The ProfileService equivalent of a DataStore, allowing you to interact with [Profiles](/api/Profile) under the ProfileStore"><meta data-rh="true" property="og:description" content="The ProfileService equivalent of a DataStore, allowing you to interact with [Profiles](/api/Profile) under the ProfileStore"><link data-rh="true" rel="canonical" href="https://eryn.io/UniversalCraftwarsDocs/api/ProfileStore"><link data-rh="true" rel="alternate" href="https://eryn.io/UniversalCraftwarsDocs/api/ProfileStore" hreflang="en"><link data-rh="true" rel="alternate" href="https://eryn.io/UniversalCraftwarsDocs/api/ProfileStore" hreflang="x-default"><link rel="stylesheet" href="/UniversalCraftwarsDocs/assets/css/styles.fdfd902f.css">
+<link rel="preload" href="/UniversalCraftwarsDocs/assets/js/runtime~main.11f5bce8.js" as="script">
+<link rel="preload" href="/UniversalCraftwarsDocs/assets/js/main.178a2ad6.js" as="script">
+</head>
+<body class="navigation-with-keyboard">
+<script>!function(){function e(e){document.documentElement.setAttribute("data-theme",e)}var t=function(){var e=null;try{e=localStorage.getItem("theme")}catch(e){}return e}();null!==t?e(t):window.matchMedia("(prefers-color-scheme: dark)").matches?e("dark"):(window.matchMedia("(prefers-color-scheme: light)").matches,e("light"))}()</script><div id="__docusaurus">
+<div role="region" aria-label="Skip to main content"><a class="skipToContent_fXgn" href="#docusaurus_skipToContent_fallback">Skip to main content</a></div><nav aria-label="Main" class="navbar navbar--fixed-top"><div class="navbar__inner"><div class="navbar__items"><button aria-label="Toggle navigation bar" aria-expanded="false" class="navbar__toggle clean-btn" type="button"><svg width="30" height="30" viewBox="0 0 30 30" aria-hidden="true"><path stroke="currentColor" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2" d="M4 7h22M4 15h22M4 23h22"></path></svg></button><a class="navbar__brand" href="/UniversalCraftwarsDocs/"><b class="navbar__title text--truncate">UniversalCraftwarsDocs</b></a><a class="navbar__item navbar__link" href="/UniversalCraftwarsDocs/docs/intro">Docs</a><a aria-current="page" class="navbar__item navbar__link navbar__link--active" href="/UniversalCraftwarsDocs/api/">API</a><a class="navbar__item navbar__link" href="/UniversalCraftwarsDocs/changelog">Changelog</a></div><div class="navbar__items navbar__items--right"><a href="https://discord.gg/rGuvu8bPZW" target="_blank" rel="noopener noreferrer" class="navbar__item navbar__link">Discord<svg width="13.5" height="13.5" aria-hidden="true" viewBox="0 0 24 24" class="iconExternalLink_nPIU"><path fill="currentColor" d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"></path></svg></a><a href="https://www.roblox.com/games/17741993263/Universal-Craftwars-Revaluation-WIP" target="_blank" rel="noopener noreferrer" class="navbar__item navbar__link">Roblox<svg width="13.5" height="13.5" aria-hidden="true" viewBox="0 0 24 24" class="iconExternalLink_nPIU"><path fill="currentColor" d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"></path></svg></a><a href="https://github.com/fartshreksigma/UniversalCraftwarsDocs" target="_blank" rel="noopener noreferrer" class="navbar__item navbar__link">GitHub<svg width="13.5" height="13.5" aria-hidden="true" viewBox="0 0 24 24" class="iconExternalLink_nPIU"><path fill="currentColor" d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"></path></svg></a><div class="toggle_vylO colorModeToggle_DEke"><button class="clean-btn toggleButton_gllP toggleButtonDisabled_aARS" type="button" disabled="" title="Switch between dark and light mode (currently light mode)" aria-label="Switch between dark and light mode (currently light mode)" aria-live="polite"><svg viewBox="0 0 24 24" width="24" height="24" class="lightToggleIcon_pyhR"><path fill="currentColor" d="M12,9c1.65,0,3,1.35,3,3s-1.35,3-3,3s-3-1.35-3-3S10.35,9,12,9 M12,7c-2.76,0-5,2.24-5,5s2.24,5,5,5s5-2.24,5-5 S14.76,7,12,7L12,7z M2,13l2,0c0.55,0,1-0.45,1-1s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S1.45,13,2,13z M20,13l2,0c0.55,0,1-0.45,1-1 s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S19.45,13,20,13z M11,2v2c0,0.55,0.45,1,1,1s1-0.45,1-1V2c0-0.55-0.45-1-1-1S11,1.45,11,2z M11,20v2c0,0.55,0.45,1,1,1s1-0.45,1-1v-2c0-0.55-0.45-1-1-1C11.45,19,11,19.45,11,20z M5.99,4.58c-0.39-0.39-1.03-0.39-1.41,0 c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0s0.39-1.03,0-1.41L5.99,4.58z M18.36,16.95 c-0.39-0.39-1.03-0.39-1.41,0c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0c0.39-0.39,0.39-1.03,0-1.41 L18.36,16.95z M19.42,5.99c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06c-0.39,0.39-0.39,1.03,0,1.41 s1.03,0.39,1.41,0L19.42,5.99z M7.05,18.36c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06 c-0.39,0.39-0.39,1.03,0,1.41s1.03,0.39,1.41,0L7.05,18.36z"></path></svg><svg viewBox="0 0 24 24" width="24" height="24" class="darkToggleIcon_wfgR"><path fill="currentColor" d="M9.37,5.51C9.19,6.15,9.1,6.82,9.1,7.5c0,4.08,3.32,7.4,7.4,7.4c0.68,0,1.35-0.09,1.99-0.27C17.45,17.19,14.93,19,12,19 c-3.86,0-7-3.14-7-7C5,9.07,6.81,6.55,9.37,5.51z M12,3c-4.97,0-9,4.03-9,9s4.03,9,9,9s9-4.03,9-9c0-0.46-0.04-0.92-0.1-1.36 c-0.98,1.37-2.58,2.26-4.4,2.26c-2.98,0-5.4-2.42-5.4-5.4c0-1.81,0.89-3.42,2.26-4.4C12.92,3.04,12.46,3,12,3L12,3z"></path></svg></button></div><div class="searchBox_ZlJk"><div class="navbar__search"><span aria-label="expand searchbar" role="button" class="search-icon" tabindex="0"></span><input type="search" id="search_input_react" placeholder="Loading..." aria-label="Search" class="navbar__search-input search-bar" disabled=""></div></div></div></div><div role="presentation" class="navbar-sidebar__backdrop"></div></nav><div id="docusaurus_skipToContent_fallback" class="main-wrapper mainWrapper_z2l0 docPageContainer_wNNk"><div class="docPage_Dpn1"><div class="docSidebarContainer_o_re"><div class="sidebar_njMd"><nav aria-label="Docs sidebar" class="menu thin-scrollbar menu_SIkG"><ul class="theme-doc-sidebar-menu menu__list"><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="menu__link menu__link--sublist menu__link--sublist-caret" aria-expanded="false" href="/UniversalCraftwarsDocs/api/DatastoreService">Datastore</a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="menu__link menu__link--sublist menu__link--sublist-caret" aria-expanded="false" href="/UniversalCraftwarsDocs/api/BiomeHandler">Biomes</a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="menu__link menu__link--sublist menu__link--sublist-caret" aria-expanded="false" href="/UniversalCraftwarsDocs/api/CustomTypes">Types</a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="menu__link menu__link--sublist menu__link--sublist-caret" aria-expanded="false" href="/UniversalCraftwarsDocs/api/SharedCreators">Creators</a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="menu__link menu__link--sublist menu__link--sublist-caret" aria-expanded="false" href="/UniversalCraftwarsDocs/api/InventoryFilterParams">FilterParams</a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="menu__link menu__link--sublist menu__link--sublist-caret" aria-expanded="false" href="/UniversalCraftwarsDocs/api/ServerChatHandler">ChatHandlers</a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="menu__link menu__link--sublist menu__link--sublist-caret" aria-expanded="false" href="/UniversalCraftwarsDocs/api/Cmdr">Libraries</a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item"><div class="menu__list-item-collapsible"><a class="menu__link menu__link--sublist menu__link--sublist-caret menu__link--active" aria-expanded="true" href="/UniversalCraftwarsDocs/api/ProfileService">ProfileService</a></div><ul style="display:block;overflow:visible;height:auto" class="menu__list"><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/UniversalCraftwarsDocs/api/ProfileService">​Profile​Service</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link menu__link--active" aria-current="page" tabindex="0" href="/UniversalCraftwarsDocs/api/ProfileStore">​Profile​Store</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/UniversalCraftwarsDocs/api/Profile">​Profile</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/UniversalCraftwarsDocs/api/global_updates">global_updates</a></li></ul></li></ul></nav></div></div><main class="docMainContainer_HJE1"><div class="container padding-vert--lg"><div class="row"><div class="col docItemCol_MU3C"><div class="docItemContainer_Wv98"><article><div class="member_J0w1 markdown"><div class="tocCollapsible_ETCw theme-doc-toc-mobile tocMobile_oUs_"><button type="button" class="clean-btn tocCollapsibleButton_TO0P">On this page</button></div><header><h1 class="docTitle_mZRt" style="text-decoration:none"><span style="display:inline-block">Profile</span><span style="display:inline-block">Store</span></h1><div class="luaClassTags_EipM"></div><div>
+<p>The ProfileService equivalent of a DataStore, allowing you to interact with <a href="/UniversalCraftwarsDocs/api/Profile">Profiles</a> under the ProfileStore</p>
+</div></header><h2 class="anchor anchorWithStickyNavbar_LWe7" id="types">Types<a href="#types" class="hash-link" aria-label="Direct link to Types" title="Direct link to Types">​</a></h2><div class="divider_rE5g"></div><h3 class="anchor anchorWithStickyNavbar_LWe7" id="not_released_handler_function"><code style="text-decoration:none">not_released_handler_function</code><a href="#not_released_handler_function" class="hash-link" aria-label="Direct link to not_released_handler_function" title="Direct link to not_released_handler_function">​</a></h3><div class="repositoryDetailsContainer_BPdw"><a class="sourceButton_sEho" href="https://github.com/fartshreksigma/UniversalCraftwarsDocs/blob/master/src/ProfileService.lua#L113"><div class="sourceButtonText_Vh0m">&lt;/&gt;</div></a></div><div class="memberString_GwaU"><code class="purple_ieR2">type</code> <code>not_released_handler_function<!-- --> = </code> <code class="purple_ieR2">(</code><div class="inset_uKQm"><code>place_id<!-- -->: </code><code class="blue_P4bS">number</code><code class="purple_ieR2">,</code></div><div class="inset_uKQm"><code>game_job_id<!-- -->: </code><code class="blue_P4bS">number</code></div><code class="purple_ieR2">)</code><code class="purple_ieR2"> → </code><code class="purple_ieR2">(</code><div class="inset_uKQm"><code class="blue_P4bS">&quot;Repeat&quot;</code><code class="purple_ieR2">,</code></div><div class="inset_uKQm"><code class="blue_P4bS">&quot;Cancel&quot;</code><code class="purple_ieR2">,</code></div><div class="inset_uKQm"><code class="blue_P4bS">&quot;ForceLoad&quot;</code><code class="purple_ieR2">,</code></div><div class="inset_uKQm"><code class="blue_P4bS">&quot;Steal&quot;</code></div><code class="purple_ieR2">)</code></div><div>
+<p>A function used to determine what to do when a profile which was attempted to be loaded is session locked.</p>
+<ul>
+  <li><code>Repeat</code> will try load the profile again, potentially recalling this function.</li>
+  <li><code>Cancel</code> will return nil to the caller.</li>
+  <li><code>ForceLoad</code> will constantly try load the profile, if a session lock is present it will be released or stolen.</li>
+  <li><code>Steal</code> will load the profile regardless of the session lock, and can be used to clear dead session locks.</li>
+</ul>
+<div class="admonition admonition-caution alert alert--warning">
+  <div class="admonition-heading">
+    <h5><span class="admonition-icon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16">
+          <path d="M8.893 1.5c-.183-.31-.52-.5-.887-.5s-.703.19-.886.5L.138 13.499a.98.98 0 0 0 0 1.001c.193.31.53.501.886.501h13.964c.367 0 .704-.19.877-.5a1.03 1.03 0 0 0 .01-1.002L8.893 1.5zm.133 11.497H6.987v-2.003h2.039v2.003zm0-3.004H6.987V5.987h2.039v4.006z"></path>
+        </svg></span>caution</h5>
+  </div>
+  <div class="admonition-content">
+    <p>Steal should usually only be used when the server holding a session lock has been crashed.</p>
+  </div>
+</div>
+</div><div class="divider_rE5g"></div><h3 class="anchor anchorWithStickyNavbar_LWe7" id="global_update_handler"><code style="text-decoration:none">global_update_handler</code><a href="#global_update_handler" class="hash-link" aria-label="Direct link to global_update_handler" title="Direct link to global_update_handler">​</a></h3><div class="repositoryDetailsContainer_BPdw"><a class="sourceButton_sEho" href="https://github.com/fartshreksigma/UniversalCraftwarsDocs/blob/master/src/ProfileService.lua#L123"><div class="sourceButtonText_Vh0m">&lt;/&gt;</div></a></div><div class="memberString_GwaU"><code class="purple_ieR2">type</code> <code>global_update_handler<!-- --> = </code> <code class="purple_ieR2">(</code><code class="blue_P4bS"><a style="text-decoration:underline;color:inherit" href="/UniversalCraftwarsDocs/api/global_updates">global_updates</a></code><code class="purple_ieR2">)</code><code class="purple_ieR2"> → </code><code class="blue_P4bS">nil</code></div><div>
+<p>A function used when globally updating a <a href="/UniversalCraftwarsDocs/api/Profile">profile</a>. It is passed a global_updates object, and is expected to add the update itself.</p>
+<div class="admonition admonition-warning alert alert--danger">
+  <div class="admonition-heading">
+    <h5><span class="admonition-icon"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="16" viewBox="0 0 12 16">
+          <path d="M5.05.31c.81 2.17.41 3.38-.52 4.31C3.55 5.67 1.98 6.45.9 7.98c-1.45 2.05-1.7 6.53 3.53 7.7-2.2-1.16-2.67-4.52-.3-6.61-.61 2.03.53 3.33 1.94 2.86 1.39-.47 2.3.53 2.27 1.67-.02.78-.31 1.44-1.13 1.81 3.42-.59 4.78-3.42 4.78-5.56 0-2.84-2.53-3.22-1.25-5.61-1.52.13-2.03 1.13-1.89 2.75.09 1.08-1.02 1.8-1.86 1.33-.67-.41-.66-1.19-.06-1.78C8.18 5.31 8.68 2.45 5.05.32L5.03.3l.02.01z"></path>
+        </svg></span>warning</h5>
+  </div>
+  <div class="admonition-content">
+    <p>Yielding inside a global_update_handler will cause it to error.</p>
+  </div>
+</div>
+</div><h2 class="anchor anchorWithStickyNavbar_LWe7" id="properties">Properties<a href="#properties" class="hash-link" aria-label="Direct link to Properties" title="Direct link to Properties">​</a></h2><div class="divider_rE5g"></div><h3 class="anchor anchorWithStickyNavbar_LWe7" id="Mock"><code style="text-decoration:none">Mock</code><a href="#Mock" class="hash-link" aria-label="Direct link to Mock" title="Direct link to Mock">​</a></h3><span class="badge_Ba2I" style="color:#e74c3c"><span class="badgeTooltip_cWXP">This item is read only and cannot be modified.</span><span class="badgeToolTipTail_H9D_"><svg xmlns="http://www.w3.org/2000/svg" height="300px" width="300px" fill="#e74c3c" x="0px" y="0px" viewBox="0 0 96 96"><path d="M70.354,15.662h-7.496H25.566c-3.282,0-5.19-0.776-5.728-1.169v-1.456c0.538-0.393,2.445-1.168,5.728-1.168h46.479V8H25.566  c-4.776,0-9.594,1.468-9.594,4.747v61.458C15.972,86.645,20.328,88,37.495,88h42.535V15.662H70.354z"></path></svg> <!-- -->Read Only</span></span><div class="repositoryDetailsContainer_BPdw"><a class="sourceButton_sEho" href="https://github.com/fartshreksigma/UniversalCraftwarsDocs/blob/master/src/ProfileService.lua#L151"><div class="sourceButtonText_Vh0m">&lt;/&gt;</div></a></div><div class="memberString_GwaU"><code>ProfileStore<!-- -->.<!-- -->Mock<!-- -->:<!-- --> </code> <code class="blue_P4bS"><a style="text-decoration:underline;color:inherit" href="/UniversalCraftwarsDocs/api/ProfileStore">ProfileStore</a></code></div><div>
+<p>
+  <code>ProfileStore.Mock</code> is a mock-copy of methods available within a <code>ProfileStore</code>, with the exception that profile operations are performed on
+  "fake" DataStores, and are forgotten once the game ends. You may load profiles of the same key from <code>ProfileStore</code> and <code>ProfileStore.Mock</code>
+  in parallel, as they will be two completely different profiles since regular and mock profile stores are completely isolated from each other.
+</p>
+<p>
+  <code>ProfileStore.Mock</code> is useful for customizing your testing environment in cases when you want to
+  <a href="https://create.roblox.com/docs/cloud-services/data-stores#enabling-studio-access" target="_blank">enable Roblox API services</a> in studio, but
+  don't want ProfileService to save to live keys.
+</p>
+<pre class="language-lua"><code class="language-lua"><span class="token comment">-- Example</span>
+<span class="token keyword">local</span> RunService <span class="token operator">=</span> game<span class="token punctuation">:</span><span class="token function">GetService</span><span class="token punctuation">(</span><span class="token string">"RunService"</span><span class="token punctuation">)</span>
+<span class="token keyword">local</span> GameProfileStore <span class="token operator">=</span> ProfileService<span class="token punctuation">.</span><span class="token function">GetProfileStore</span><span class="token punctuation">(</span><span class="token string">"PlayerData"</span><span class="token punctuation">,</span> ProfileTemplate<span class="token punctuation">)</span>
+<span class="token keyword">if</span> RunService<span class="token punctuation">:</span><span class="token function">IsStudio</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">==</span> <span class="token keyword">true</span> <span class="token keyword">then</span>
+  GameProfileStore <span class="token operator">=</span> GameProfileStore<span class="token punctuation">.</span>Mock
+<span class="token keyword">end</span>
+</code></pre>
+<p>A few more things:</p>
+<ul>
+  <li>Even when Roblox API services are disabled, <code>ProfileStore</code> and <code>ProfileStore.Mock</code> will store profiles in seperate locations.</li>
+  <li>It's better to thing of <code>ProfileStore</code> and <code>ProfileStore.Mock</code> as two different <code>ProfileStore</code> instances unrelated to each other in any way.</li>
+  <li>It's possible to create a project that utilizes both live and mock profiles on live servers!</li>
+</ul>
+</div><h2 class="anchor anchorWithStickyNavbar_LWe7" id="functions">Functions<a href="#functions" class="hash-link" aria-label="Direct link to Functions" title="Direct link to Functions">​</a></h2><div class="divider_rE5g"></div><h3 class="anchor anchorWithStickyNavbar_LWe7" id="LoadProfileAsync"><code style="text-decoration:none">LoadProfileAsync</code><a href="#LoadProfileAsync" class="hash-link" aria-label="Direct link to LoadProfileAsync" title="Direct link to LoadProfileAsync">​</a></h3><span class="badge_Ba2I" style="color:#f1c40f"><span class="badgeTooltip_cWXP">This is a yielding function. When called, it will pause the Lua thread that called the function until a result is ready to be returned, without interrupting other scripts.</span><span class="badgeToolTipTail_H9D_"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" fill="#f1c40f" role="img" aria-label="This is a yielding function. When called, it will pause the Lua thread that called the function until a result is ready to be returned, without interrupting other scripts."><path d="M96.4 11.9c-1.4-2.5-4-4-6.9-4H10.8c-2.9 0-5.4 1.5-6.9 4-1.4 2.5-1.4 5.5 0 7.9L43.3 88c1.4 2.5 4 4 6.9 4 2.9 0 5.4-1.5 6.9-4l39.3-68.2c1.4-2.4 1.4-5.4 0-7.9zM46.3 54.5c1.1-1.1 2.3-1.6 3.8-1.6s2.8.5 3.8 1.6c1.1 1.1 1.6 2.3 1.6 3.8s-.5 2.8-1.6 3.8c-1.1 1.1-2.3 1.6-3.8 1.6s-2.8-.5-3.8-1.6c-1.1-1.1-1.6-2.3-1.6-3.8.1-1.5.6-2.8 1.6-3.8zm-.5-4.9V21.8h8.8v27.8h-8.8z"></path></svg> <!-- -->Yields</span></span><div class="repositoryDetailsContainer_BPdw"><a class="sourceButton_sEho" href="https://github.com/fartshreksigma/UniversalCraftwarsDocs/blob/master/src/ProfileService.lua#L189"><div class="sourceButtonText_Vh0m">&lt;/&gt;</div></a></div><div class="memberString_GwaU"><code>ProfileStore<!-- -->:</code><code class="green_DgR4">LoadProfileAsync</code><code>(</code><div class="inset_uKQm"><div><code>profile_key<!-- -->: </code><code class="blue_P4bS">string</code><code>,</code><span class="inlineDescription_G7Er">-- <span>
+<p>The key for the profile, should be unique to the player if it is being loaded for a player</p>
+</span></span></div><div><code>not_released_handler<!-- -->: </code><code class="blue_P4bS"><a style="text-decoration:underline;color:inherit" href="/UniversalCraftwarsDocs/api/ProfileStore#not_released_handler_function">not_released_handler_function</a></code><span class="inlineDescription_G7Er">-- <span>
+<p>The handler for if the profile is session locked</p>
+</span></span></div></div><code>) → </code><code class="blue_P4bS"><a style="text-decoration:underline;color:inherit" href="/UniversalCraftwarsDocs/api/Profile">Profile?</a></code><span class="inlineDescription_G7Er">-- <span>
+<p>Returns the profile which has been loaded or nil if it was canceled in the not_released_handler.</p>
+</span></span></div><div>
+<pre class="language-lua"><code class="language-lua"><span class="token keyword">local</span> Profile <span class="token operator">=</span> ProfileStore<span class="token punctuation">:</span><span class="token function">LoadProfileAsync</span><span class="token punctuation">(</span>
+    <span class="token string">"Player_2312310"</span><span class="token punctuation">,</span>
+    <span class="token keyword">function</span><span class="token punctuation">(</span>place_id<span class="token punctuation">,</span> game_job_id<span class="token punctuation">)</span>
+      <span class="token comment">-- place_id and game_job_id identify the Roblox server that has</span>
+      <span class="token comment">-- this profile currently locked. In rare cases, if the server</span>
+      <span class="token comment">-- crashes, the profile will stay locked until ForceLoaded by</span>
+      <span class="token comment">-- a new session.</span>
+      <span class="token keyword">return</span> <span class="token string">"Repeat"</span> <span class="token keyword">or</span> <span class="token string">"Cancel"</span> <span class="token keyword">or</span> <span class="token string">"ForceLoad"</span> <span class="token keyword">or</span> <span class="token string">"Steal"</span>
+    <span class="token keyword">end</span>
+  <span class="token punctuation">)</span>
+</code></pre>
+<div class="admonition admonition-info alert alert--info">
+  <div class="admonition-heading">
+    <h5><span class="admonition-icon"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="16" viewBox="0 0 14 16">
+          <path d="M7 2.3c3.14 0 5.7 2.56 5.7 5.7s-2.56 5.7-5.7 5.7A5.71 5.71 0 0 1 1.3 8c0-3.14 2.56-5.7 5.7-5.7zM7 1C3.14 1 0 4.14 0 8s3.14 7 7 7 7-3.14 7-7-3.14-7-7-7zm1 3H6v5h2V4zm0 6H6v2h2v-2z"></path>
+        </svg></span>info</h5>
+  </div>
+  <div class="admonition-content">
+    <p>
+      <a href="/UniversalCraftwarsDocs/api/ProfileService">ProfileService</a> saves <a href="/UniversalCraftwarsDocs/api/Profile">profiles</a> to live <a href="https://create.roblox.com/docs/cloud-services/data-stores" target="_blank">DataStore</a>
+      keys in <a href="https://create.roblox.com/docs/studio" target="_blank">Roblox Studio</a>
+      when <a href="https://create.roblox.com/docs/cloud-services/data-stores#enabling-studio-access" target="_blank">Roblox API services are enabled</a>. See <a href="#Mock"><code>ProfileStore.Mock</code></a> if saving to live keys during testing is not desired.
+    </p>
+  </div>
+</div>
+<div class="admonition admonition-caution alert alert--warning">
+  <div class="admonition-heading">
+    <h5><span class="admonition-icon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16">
+          <path d="M8.893 1.5c-.183-.31-.52-.5-.887-.5s-.703.19-.886.5L.138 13.499a.98.98 0 0 0 0 1.001c.193.31.53.501.886.501h13.964c.367 0 .704-.19.877-.5a1.03 1.03 0 0 0 .01-1.002L8.893 1.5zm.133 11.497H6.987v-2.003h2.039v2.003zm0-3.004H6.987V5.987h2.039v4.006z"></path>
+        </svg></span>caution</h5>
+  </div>
+  <div class="admonition-content">
+    <p>
+      <code>:LoadProfileAsync()</code> can return <code>nil</code> when another remote Roblox server attempts to load the profile at the same time.
+      This case should be extremely rare and it wouldn't be recommended to <a href="https://create.roblox.com/docs/reference/engine/classes/Player#Kick" target="_blank"><code>:Kick()</code></a>
+      the player if <code>:LoadProfileAsync()</code> doesn't return a <a href="/UniversalCraftwarsDocs/api/Profile">Profile</a>.
+    </p>
+  </div>
+</div>
+<div class="admonition admonition-warning alert alert--danger">
+  <div class="admonition-heading">
+    <h5><span class="admonition-icon"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="16" viewBox="0 0 12 16">
+          <path d="M5.05.31c.81 2.17.41 3.38-.52 4.31C3.55 5.67 1.98 6.45.9 7.98c-1.45 2.05-1.7 6.53 3.53 7.7-2.2-1.16-2.67-4.52-.3-6.61-.61 2.03.53 3.33 1.94 2.86 1.39-.47 2.3.53 2.27 1.67-.02.78-.31 1.44-1.13 1.81 3.42-.59 4.78-3.42 4.78-5.56 0-2.84-2.53-3.22-1.25-5.61-1.52.13-2.03 1.13-1.89 2.75.09 1.08-1.02 1.8-1.86 1.33-.67-.41-.66-1.19-.06-1.78C8.18 5.31 8.68 2.45 5.05.32L5.03.3l.02.01z"></path>
+        </svg></span>warning</h5>
+  </div>
+  <div class="admonition-content">
+    <p>
+      Trying to load a <a href="/UniversalCraftwarsDocs/api/Profile">profile</a> that has already been session-locked on the same server will result in an error. You may,
+      however, instantly load the profile again after releasing it with <a href="/UniversalCraftwarsDocs/api/Profile#Release"><code>Profile:Release()</code></a>.
+    </p>
+  </div>
+</div>
+</div><div class="divider_rE5g"></div><h3 class="anchor anchorWithStickyNavbar_LWe7" id="GlobalUpdateProfileAsync"><code style="text-decoration:none">GlobalUpdateProfileAsync</code><a href="#GlobalUpdateProfileAsync" class="hash-link" aria-label="Direct link to GlobalUpdateProfileAsync" title="Direct link to GlobalUpdateProfileAsync">​</a></h3><span class="badge_Ba2I" style="color:#f1c40f"><span class="badgeTooltip_cWXP">This is a yielding function. When called, it will pause the Lua thread that called the function until a result is ready to be returned, without interrupting other scripts.</span><span class="badgeToolTipTail_H9D_"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" fill="#f1c40f" role="img" aria-label="This is a yielding function. When called, it will pause the Lua thread that called the function until a result is ready to be returned, without interrupting other scripts."><path d="M96.4 11.9c-1.4-2.5-4-4-6.9-4H10.8c-2.9 0-5.4 1.5-6.9 4-1.4 2.5-1.4 5.5 0 7.9L43.3 88c1.4 2.5 4 4 6.9 4 2.9 0 5.4-1.5 6.9-4l39.3-68.2c1.4-2.4 1.4-5.4 0-7.9zM46.3 54.5c1.1-1.1 2.3-1.6 3.8-1.6s2.8.5 3.8 1.6c1.1 1.1 1.6 2.3 1.6 3.8s-.5 2.8-1.6 3.8c-1.1 1.1-2.3 1.6-3.8 1.6s-2.8-.5-3.8-1.6c-1.1-1.1-1.6-2.3-1.6-3.8.1-1.5.6-2.8 1.6-3.8zm-.5-4.9V21.8h8.8v27.8h-8.8z"></path></svg> <!-- -->Yields</span></span><div class="repositoryDetailsContainer_BPdw"><a class="sourceButton_sEho" href="https://github.com/fartshreksigma/UniversalCraftwarsDocs/blob/master/src/ProfileService.lua#L221"><div class="sourceButtonText_Vh0m">&lt;/&gt;</div></a></div><div class="memberString_GwaU"><code>ProfileStore<!-- -->:</code><code class="green_DgR4">GlobalUpdateProfileAsync</code><code>(</code><div class="inset_uKQm"><div><code>profile_key<!-- -->: </code><code class="blue_P4bS">string</code><code>,</code><span class="inlineDescription_G7Er">-- <span>
+<p>The key used to identify the profile</p>
+</span></span></div><div><code>update_handler<!-- -->: </code><code class="blue_P4bS"><a style="text-decoration:underline;color:inherit" href="/UniversalCraftwarsDocs/api/ProfileStore#global_update_handler">global_update_handler</a></code><span class="inlineDescription_G7Er">-- <span>
+<p>The global_update_handler used to update the Profile</p>
+</span></span></div></div><code>) → </code><code class="blue_P4bS"><a style="text-decoration:underline;color:inherit" href="/UniversalCraftwarsDocs/api/global_updates">global_updates?</a></code><span class="inlineDescription_G7Er">-- <span>
+<p>Returns either a global_updates object or nil</p>
+</span></span></div><div>
+<p>
+  Used to create and manage <code>active</code> global updates for profiles. It can be called on any Roblox server and updates can be expected within 30 seconds, regardless of whether it was called on the same server the profile is on or not.
+  Refer to <a href="https://madstudioroblox.github.io/ProfileService/api/#global-updates" target="_blank">Global Updates</a> for more info.
+</p>
+<pre class="language-lua"><code class="language-lua"><span class="token comment">-- Example usage</span>
+ProfileStore<span class="token punctuation">:</span><span class="token function">GlobalUpdateProfileAsync</span><span class="token punctuation">(</span>
+    <span class="token string">"Player_2312310"</span><span class="token punctuation">,</span>
+    <span class="token keyword">function</span><span class="token punctuation">(</span>global_updates<span class="token punctuation">)</span>
+      global_updates<span class="token punctuation">:</span><span class="token function">AddActiveUpdate</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+        Type <span class="token operator">=</span> <span class="token string">"AdminGift"</span><span class="token punctuation">,</span>
+        Item <span class="token operator">=</span> <span class="token string">"Coins"</span><span class="token punctuation">,</span>
+        Amount <span class="token operator">=</span> <span class="token number">1000</span><span class="token punctuation">,</span>
+      <span class="token punctuation">}</span><span class="token punctuation">)</span>
+    <span class="token keyword">end</span>
+  <span class="token punctuation">)</span>
+</code></pre>
+<div class="admonition admonition-warning alert alert--danger">
+  <div class="admonition-heading">
+    <h5><span class="admonition-icon"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="16" viewBox="0 0 12 16">
+          <path d="M5.05.31c.81 2.17.41 3.38-.52 4.31C3.55 5.67 1.98 6.45.9 7.98c-1.45 2.05-1.7 6.53 3.53 7.7-2.2-1.16-2.67-4.52-.3-6.61-.61 2.03.53 3.33 1.94 2.86 1.39-.47 2.3.53 2.27 1.67-.02.78-.31 1.44-1.13 1.81 3.42-.59 4.78-3.42 4.78-5.56 0-2.84-2.53-3.22-1.25-5.61-1.52.13-2.03 1.13-1.89 2.75.09 1.08-1.02 1.8-1.86 1.33-.67-.41-.66-1.19-.06-1.78C8.18 5.31 8.68 2.45 5.05.32L5.03.3l.02.01z"></path>
+        </svg></span>warning</h5>
+  </div>
+  <div class="admonition-content">
+    <p>
+      Avoid rapid usage of this function as it can cause dead session locks and loss of data. Read <a href="https://madstudioroblox.github.io/ProfileService/api/#profilestoreglobalupdateprofileasync" target="_blank">The Official Documentation</a>
+      for more info
+    </p>
+  </div>
+</div>
+</div><div class="divider_rE5g"></div><h3 class="anchor anchorWithStickyNavbar_LWe7" id="ViewProfileAsync"><code style="text-decoration:none">ViewProfileAsync</code><a href="#ViewProfileAsync" class="hash-link" aria-label="Direct link to ViewProfileAsync" title="Direct link to ViewProfileAsync">​</a></h3><span class="badge_Ba2I" style="color:#f1c40f"><span class="badgeTooltip_cWXP">This is a yielding function. When called, it will pause the Lua thread that called the function until a result is ready to be returned, without interrupting other scripts.</span><span class="badgeToolTipTail_H9D_"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" fill="#f1c40f" role="img" aria-label="This is a yielding function. When called, it will pause the Lua thread that called the function until a result is ready to be returned, without interrupting other scripts."><path d="M96.4 11.9c-1.4-2.5-4-4-6.9-4H10.8c-2.9 0-5.4 1.5-6.9 4-1.4 2.5-1.4 5.5 0 7.9L43.3 88c1.4 2.5 4 4 6.9 4 2.9 0 5.4-1.5 6.9-4l39.3-68.2c1.4-2.4 1.4-5.4 0-7.9zM46.3 54.5c1.1-1.1 2.3-1.6 3.8-1.6s2.8.5 3.8 1.6c1.1 1.1 1.6 2.3 1.6 3.8s-.5 2.8-1.6 3.8c-1.1 1.1-2.3 1.6-3.8 1.6s-2.8-.5-3.8-1.6c-1.1-1.1-1.6-2.3-1.6-3.8.1-1.5.6-2.8 1.6-3.8zm-.5-4.9V21.8h8.8v27.8h-8.8z"></path></svg> <!-- -->Yields</span></span><div class="repositoryDetailsContainer_BPdw"><a class="sourceButton_sEho" href="https://github.com/fartshreksigma/UniversalCraftwarsDocs/blob/master/src/ProfileService.lua#L240"><div class="sourceButtonText_Vh0m">&lt;/&gt;</div></a></div><div class="memberString_GwaU"><code>ProfileStore<!-- -->:</code><code class="green_DgR4">ViewProfileAsync</code><code>(</code><div class="inset_uKQm"><div><code>profile_key<!-- -->: </code><code class="blue_P4bS">string</code><code>,</code><span class="inlineDescription_G7Er">-- <span>
+<p>The key used to identify the profile</p>
+</span></span></div><div><code>version<!-- -->: </code><code class="blue_P4bS">string?</code><span class="inlineDescription_G7Er">-- <span>
+<p>The version to view, or nil for the current version</p>
+</span></span></div></div><code>) → </code><code class="blue_P4bS"><a style="text-decoration:underline;color:inherit" href="/UniversalCraftwarsDocs/api/Profile">Profile?</a></code><span class="inlineDescription_G7Er">-- <span>
+<p>Returns either a profile or nil</p>
+</span></span></div><div>
+<div class="admonition admonition-info alert alert--info">
+  <div class="admonition-heading">
+    <h5><span class="admonition-icon"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="16" viewBox="0 0 14 16">
+          <path d="M7 2.3c3.14 0 5.7 2.56 5.7 5.7s-2.56 5.7-5.7 5.7A5.71 5.71 0 0 1 1.3 8c0-3.14 2.56-5.7 5.7-5.7zM7 1C3.14 1 0 4.14 0 8s3.14 7 7 7 7-3.14 7-7-3.14-7-7-7zm1 3H6v5h2V4zm0 6H6v2h2v-2z"></path>
+        </svg></span>info</h5>
+  </div>
+  <div class="admonition-content">
+    <p>Passing <code>version</code> to a mock or offline profile will throw an error as Mock versioning isn't supported.</p>
+  </div>
+</div>
+<p>
+  Attempts to load either the latest version of a profile or the specified version if one is passed without creating a session-lock. Returns <code>nil</code> if the specified version doesn't exist. The returned <a href="/UniversalCraftwarsDocs/api/Profile"><code>Profile</code></a>
+  won't auto-save, and releasing won't do anything. The data in the returned <a href="/UniversalCraftwarsDocs/api/Profile"><code>Profile</code></a> can be changed to create a payload for <a href="/UniversalCraftwarsDocs/api/Profile#OverwriteAsync"><code>Profile:OverwriteAsync()</code></a>.
+</p>
+<p><code>:ViewProfileAsync()</code> is the prefered way of viewing profile data without editing it.</p>
+</div><div class="divider_rE5g"></div><h3 class="anchor anchorWithStickyNavbar_LWe7" id="ProfileVersionQuery"><code style="text-decoration:none">ProfileVersionQuery</code><a href="#ProfileVersionQuery" class="hash-link" aria-label="Direct link to ProfileVersionQuery" title="Direct link to ProfileVersionQuery">​</a></h3><span class="badge_Ba2I" style="color:#f1c40f"><span class="badgeTooltip_cWXP">This is a yielding function. When called, it will pause the Lua thread that called the function until a result is ready to be returned, without interrupting other scripts.</span><span class="badgeToolTipTail_H9D_"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" fill="#f1c40f" role="img" aria-label="This is a yielding function. When called, it will pause the Lua thread that called the function until a result is ready to be returned, without interrupting other scripts."><path d="M96.4 11.9c-1.4-2.5-4-4-6.9-4H10.8c-2.9 0-5.4 1.5-6.9 4-1.4 2.5-1.4 5.5 0 7.9L43.3 88c1.4 2.5 4 4 6.9 4 2.9 0 5.4-1.5 6.9-4l39.3-68.2c1.4-2.4 1.4-5.4 0-7.9zM46.3 54.5c1.1-1.1 2.3-1.6 3.8-1.6s2.8.5 3.8 1.6c1.1 1.1 1.6 2.3 1.6 3.8s-.5 2.8-1.6 3.8c-1.1 1.1-2.3 1.6-3.8 1.6s-2.8-.5-3.8-1.6c-1.1-1.1-1.6-2.3-1.6-3.8.1-1.5.6-2.8 1.6-3.8zm-.5-4.9V21.8h8.8v27.8h-8.8z"></path></svg> <!-- -->Yields</span></span><div class="repositoryDetailsContainer_BPdw"><a class="sourceButton_sEho" href="https://github.com/fartshreksigma/UniversalCraftwarsDocs/blob/master/src/ProfileService.lua#L256"><div class="sourceButtonText_Vh0m">&lt;/&gt;</div></a></div><div class="memberString_GwaU"><code>ProfileStore<!-- -->:</code><code class="green_DgR4">ProfileVersionQuery</code><code>(</code><div class="inset_uKQm"><div><code>profile_key<!-- -->: </code><code class="blue_P4bS">string</code><code>,</code><span class="inlineDescription_G7Er">-- <span>
+<p>The key used to identify the profile</p>
+</span></span></div><div><code>sort_direction<!-- -->: </code><code class="blue_P4bS"><a style="text-decoration:underline;color:inherit" href="https://developer.roblox.com/en-us/api-reference/enum/SortDirection" target="_blank" rel="noopener noreferrer">SortDirection<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound" style="color:gray;vertical-align:middle;margin-left:2px"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></code><code>,</code><span class="inlineDescription_G7Er">-- <span>
+<p>The sort direction to use, defaults to <a href="https://create.roblox.com/docs/reference/engine/enums/SortDirection" target="_blank">Enum.SortDirection.Ascending</a></p>
+</span></span></div><div><code>min_date<!-- -->: </code><code class="blue_P4bS">DateTime?</code><code class="op_lSLc"> | </code><code class="blue_P4bS">number?</code><code>,</code><span class="inlineDescription_G7Er">-- <span>
+<p>The minimum date used, when number is provided it is assumed to be in milliseconds</p>
+</span></span></div><div><code>max_date<!-- -->: </code><code class="blue_P4bS">DateTime?</code><code class="op_lSLc"> | </code><code class="blue_P4bS">number?</code><span class="inlineDescription_G7Er">-- <span>
+<p>the maximum date used, when number is provided it is assumed to be in milliseconds</p>
+</span></span></div></div><code>) → </code><code class="blue_P4bS">ProfileVersionQuery</code><span class="inlineDescription_G7Er">-- <span>
+<p>Returns a <a href="https://madstudioroblox.github.io/ProfileService/api/#profilestoreprofileversionquery" target="_blank">profile version query</a> (I will not be documenting this myself)</p>
+</span></span></div><div>
+<p>
+  Creates a ProfileVersionQuery for the specified profile, please refer to the <a href="https://madstudioroblox.github.io/ProfileService/api/#profilestoreprofileversionquery" target="_blank">official documentation</a>
+  for a more indepth explanation of this function
+</p>
+</div><div class="divider_rE5g"></div><h3 class="anchor anchorWithStickyNavbar_LWe7" id="WipeProfileAsync"><code style="text-decoration:none">WipeProfileAsync</code><a href="#WipeProfileAsync" class="hash-link" aria-label="Direct link to WipeProfileAsync" title="Direct link to WipeProfileAsync">​</a></h3><span class="badge_Ba2I" style="color:#f1c40f"><span class="badgeTooltip_cWXP">This is a yielding function. When called, it will pause the Lua thread that called the function until a result is ready to be returned, without interrupting other scripts.</span><span class="badgeToolTipTail_H9D_"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" fill="#f1c40f" role="img" aria-label="This is a yielding function. When called, it will pause the Lua thread that called the function until a result is ready to be returned, without interrupting other scripts."><path d="M96.4 11.9c-1.4-2.5-4-4-6.9-4H10.8c-2.9 0-5.4 1.5-6.9 4-1.4 2.5-1.4 5.5 0 7.9L43.3 88c1.4 2.5 4 4 6.9 4 2.9 0 5.4-1.5 6.9-4l39.3-68.2c1.4-2.4 1.4-5.4 0-7.9zM46.3 54.5c1.1-1.1 2.3-1.6 3.8-1.6s2.8.5 3.8 1.6c1.1 1.1 1.6 2.3 1.6 3.8s-.5 2.8-1.6 3.8c-1.1 1.1-2.3 1.6-3.8 1.6s-2.8-.5-3.8-1.6c-1.1-1.1-1.6-2.3-1.6-3.8.1-1.5.6-2.8 1.6-3.8zm-.5-4.9V21.8h8.8v27.8h-8.8z"></path></svg> <!-- -->Yields</span></span><div class="repositoryDetailsContainer_BPdw"><a class="sourceButton_sEho" href="https://github.com/fartshreksigma/UniversalCraftwarsDocs/blob/master/src/ProfileService.lua#L270"><div class="sourceButtonText_Vh0m">&lt;/&gt;</div></a></div><div class="memberString_GwaU"><code>ProfileStore<!-- -->:</code><code class="green_DgR4">WipeProfileAsync</code><code>(</code><div class="inset_uKQm"><div><code>profile_key<!-- -->: </code><code class="blue_P4bS">string</code><span class="inlineDescription_G7Er">-- <span>
+<p>The key used to identify the profile</p>
+</span></span></div></div><code>) → </code><code class="blue_P4bS">boolean</code><span class="inlineDescription_G7Er">-- <span>
+<p>Returns a boolean indicating whether the wipe was successful or not</p>
+</span></span></div><div>
+<p>
+  Use <code>:WipeProfileASync()</code> to erase user data when complying with right of erasure requests. In live roblox servers, <code>:WipeProfileAsync()</code> must be used on profiles created through
+  <a href="#Mock"><code>ProfileStore.Mock</code></a> after <a href="/UniversalCraftwarsDocs/api/Profile/Release"><code>Profile:Release()</code></a>
+  and it's known the Profile will no longer be loaded again.
+</p>
+</div></div></article></div><details><summary>Show raw api</summary><pre style="max-width:100%;white-space:pre-wrap">{
+    &quot;functions&quot;: [
+        {
+            &quot;name&quot;: &quot;LoadProfileAsync&quot;,
+            &quot;desc&quot;: &quot;```lua\nlocal Profile = ProfileStore:LoadProfileAsync(\n    \&quot;Player_2312310\&quot;,\n    function(place_id, game_job_id)\n      -- place_id and game_job_id identify the Roblox server that has\n      -- this profile currently locked. In rare cases, if the server\n      -- crashes, the profile will stay locked until ForceLoaded by\n      -- a new session.\n      return \&quot;Repeat\&quot; or \&quot;Cancel\&quot; or \&quot;ForceLoad\&quot; or \&quot;Steal\&quot;\n    end\n  )\n```\n:::info\n[ProfileService](/api/ProfileService) saves [profiles](/api/Profile) to live [DataStore](https://create.roblox.com/docs/cloud-services/data-stores)\n keys in [Roblox Studio](https://create.roblox.com/docs/studio)\n when [Roblox API services are enabled](https://create.roblox.com/docs/cloud-services/data-stores#enabling-studio-access). See [```ProfileStore.Mock```](#Mock) if saving to live keys during testing is not desired.\n:::\n:::caution\n```:LoadProfileAsync()``` can return ```nil``` when another remote Roblox server attempts to load the profile at the same time.\n This case should be extremely rare and it wouldn&#x27;t be recommended to [```:Kick()```](https://create.roblox.com/docs/reference/engine/classes/Player#Kick)\n the player if ```:LoadProfileAsync()``` doesn&#x27;t return a [Profile](/api/Profile).\n:::\n:::warning\nTrying to load a [profile](/api/Profile) that has already been session-locked on the same server will result in an error. You may, \nhowever, instantly load the profile again after releasing it with [```Profile:Release()```](/api/Profile#Release).\n:::&quot;,
+            &quot;params&quot;: [
+                {
+                    &quot;name&quot;: &quot;profile_key&quot;,
+                    &quot;desc&quot;: &quot;The key for the profile, should be unique to the player if it is being loaded for a player&quot;,
+                    &quot;lua_type&quot;: &quot;string&quot;
+                },
+                {
+                    &quot;name&quot;: &quot;not_released_handler&quot;,
+                    &quot;desc&quot;: &quot;The handler for if the profile is session locked&quot;,
+                    &quot;lua_type&quot;: &quot;not_released_handler_function&quot;
+                }
+            ],
+            &quot;returns&quot;: [
+                {
+                    &quot;desc&quot;: &quot;Returns the profile which has been loaded or nil if it was canceled in the not_released_handler.&quot;,
+                    &quot;lua_type&quot;: &quot;Profile?&quot;
+                }
+            ],
+            &quot;function_type&quot;: &quot;method&quot;,
+            &quot;yields&quot;: true,
+            &quot;source&quot;: {
+                &quot;line&quot;: 189,
+                &quot;path&quot;: &quot;src/ProfileService.lua&quot;
+            }
+        },
+        {
+            &quot;name&quot;: &quot;GlobalUpdateProfileAsync&quot;,
+            &quot;desc&quot;: &quot;Used to create and manage ```active``` global updates for profiles. It can be called on any Roblox server and updates can be expected within 30 seconds, regardless of whether it was called on the same server the profile is on or not.\n Refer to [Global Updates](https://madstudioroblox.github.io/ProfileService/api/#global-updates) for more info.\n\n```lua\n-- Example usage\nProfileStore:GlobalUpdateProfileAsync(\n    \&quot;Player_2312310\&quot;,\n    function(global_updates)\n      global_updates:AddActiveUpdate({\n        Type = \&quot;AdminGift\&quot;,\n        Item = \&quot;Coins\&quot;,\n        Amount = 1000,\n      })\n    end\n  )\n```\n:::warning\nAvoid rapid usage of this function as it can cause dead session locks and loss of data. Read [The Official Documentation](https://madstudioroblox.github.io/ProfileService/api/#profilestoreglobalupdateprofileasync)\n for more info\n:::&quot;,
+            &quot;params&quot;: [
+                {
+                    &quot;name&quot;: &quot;profile_key&quot;,
+                    &quot;desc&quot;: &quot;The key used to identify the profile&quot;,
+                    &quot;lua_type&quot;: &quot;string&quot;
+                },
+                {
+                    &quot;name&quot;: &quot;update_handler&quot;,
+                    &quot;desc&quot;: &quot;The global_update_handler used to update the Profile&quot;,
+                    &quot;lua_type&quot;: &quot;global_update_handler&quot;
+                }
+            ],
+            &quot;returns&quot;: [
+                {
+                    &quot;desc&quot;: &quot;Returns either a global_updates object or nil&quot;,
+                    &quot;lua_type&quot;: &quot;global_updates?&quot;
+                }
+            ],
+            &quot;function_type&quot;: &quot;method&quot;,
+            &quot;yields&quot;: true,
+            &quot;source&quot;: {
+                &quot;line&quot;: 221,
+                &quot;path&quot;: &quot;src/ProfileService.lua&quot;
+            }
+        },
+        {
+            &quot;name&quot;: &quot;ViewProfileAsync&quot;,
+            &quot;desc&quot;: &quot;:::info\nPassing ```version``` to a mock or offline profile will throw an error as Mock versioning isn&#x27;t supported.\n:::\n\nAttempts to load either the latest version of a profile or the specified version if one is passed without creating a session-lock. Returns ```nil``` if the specified version doesn&#x27;t exist. The returned [```Profile```](/api/Profile)\n won&#x27;t auto-save, and releasing won&#x27;t do anything. The data in the returned [```Profile```](/api/Profile) can be changed to create a payload for [```Profile:OverwriteAsync()```](/api/Profile#OverwriteAsync).\n\n```:ViewProfileAsync()``` is the prefered way of viewing profile data without editing it.&quot;,
+            &quot;params&quot;: [
+                {
+                    &quot;name&quot;: &quot;profile_key&quot;,
+                    &quot;desc&quot;: &quot;The key used to identify the profile&quot;,
+                    &quot;lua_type&quot;: &quot;string&quot;
+                },
+                {
+                    &quot;name&quot;: &quot;version&quot;,
+                    &quot;desc&quot;: &quot;The version to view, or nil for the current version&quot;,
+                    &quot;lua_type&quot;: &quot;string?&quot;
+                }
+            ],
+            &quot;returns&quot;: [
+                {
+                    &quot;desc&quot;: &quot;Returns either a profile or nil&quot;,
+                    &quot;lua_type&quot;: &quot;Profile?&quot;
+                }
+            ],
+            &quot;function_type&quot;: &quot;method&quot;,
+            &quot;yields&quot;: true,
+            &quot;source&quot;: {
+                &quot;line&quot;: 240,
+                &quot;path&quot;: &quot;src/ProfileService.lua&quot;
+            }
+        },
+        {
+            &quot;name&quot;: &quot;ProfileVersionQuery&quot;,
+            &quot;desc&quot;: &quot;Creates a ProfileVersionQuery for the specified profile, please refer to the [official documentation](https://madstudioroblox.github.io/ProfileService/api/#profilestoreprofileversionquery)\n for a more indepth explanation of this function&quot;,
+            &quot;params&quot;: [
+                {
+                    &quot;name&quot;: &quot;profile_key&quot;,
+                    &quot;desc&quot;: &quot;The key used to identify the profile&quot;,
+                    &quot;lua_type&quot;: &quot;string&quot;
+                },
+                {
+                    &quot;name&quot;: &quot;sort_direction&quot;,
+                    &quot;desc&quot;: &quot;The sort direction to use, defaults to [Enum.SortDirection.Ascending](https://create.roblox.com/docs/reference/engine/enums/SortDirection)&quot;,
+                    &quot;lua_type&quot;: &quot;SortDirection&quot;
+                },
+                {
+                    &quot;name&quot;: &quot;min_date&quot;,
+                    &quot;desc&quot;: &quot;The minimum date used, when number is provided it is assumed to be in milliseconds&quot;,
+                    &quot;lua_type&quot;: &quot;DateTime? | number?&quot;
+                },
+                {
+                    &quot;name&quot;: &quot;max_date&quot;,
+                    &quot;desc&quot;: &quot;the maximum date used, when number is provided it is assumed to be in milliseconds&quot;,
+                    &quot;lua_type&quot;: &quot;DateTime? | number?&quot;
+                }
+            ],
+            &quot;returns&quot;: [
+                {
+                    &quot;desc&quot;: &quot;Returns a [profile version query](https://madstudioroblox.github.io/ProfileService/api/#profilestoreprofileversionquery) (I will not be documenting this myself)&quot;,
+                    &quot;lua_type&quot;: &quot;ProfileVersionQuery&quot;
+                }
+            ],
+            &quot;function_type&quot;: &quot;method&quot;,
+            &quot;yields&quot;: true,
+            &quot;source&quot;: {
+                &quot;line&quot;: 256,
+                &quot;path&quot;: &quot;src/ProfileService.lua&quot;
+            }
+        },
+        {
+            &quot;name&quot;: &quot;WipeProfileAsync&quot;,
+            &quot;desc&quot;: &quot;Use ```:WipeProfileASync()``` to erase user data when complying with right of erasure requests. In live roblox servers, ```:WipeProfileAsync()``` must be used on profiles created through\n [```ProfileStore.Mock```](#Mock) after [```Profile:Release()```](/api/Profile/Release)\n and it&#x27;s known the Profile will no longer be loaded again.&quot;,
+            &quot;params&quot;: [
+                {
+                    &quot;name&quot;: &quot;profile_key&quot;,
+                    &quot;desc&quot;: &quot;The key used to identify the profile&quot;,
+                    &quot;lua_type&quot;: &quot;string&quot;
+                }
+            ],
+            &quot;returns&quot;: [
+                {
+                    &quot;desc&quot;: &quot;Returns a boolean indicating whether the wipe was successful or not&quot;,
+                    &quot;lua_type&quot;: &quot;boolean&quot;
+                }
+            ],
+            &quot;function_type&quot;: &quot;method&quot;,
+            &quot;yields&quot;: true,
+            &quot;source&quot;: {
+                &quot;line&quot;: 270,
+                &quot;path&quot;: &quot;src/ProfileService.lua&quot;
+            }
+        }
+    ],
+    &quot;properties&quot;: [
+        {
+            &quot;name&quot;: &quot;Mock&quot;,
+            &quot;desc&quot;: &quot;```ProfileStore.Mock``` is a mock-copy of methods available within a ```ProfileStore```, with the exception that profile operations are performed on\n \&quot;fake\&quot; DataStores, and are forgotten once the game ends. You may load profiles of the same key from ```ProfileStore``` and ```ProfileStore.Mock```\n in parallel, as they will be two completely different profiles since regular and mock profile stores are completely isolated from each other.\n\n```ProfileStore.Mock``` is useful for customizing your testing environment in cases when you want to\n [enable Roblox API services](https://create.roblox.com/docs/cloud-services/data-stores#enabling-studio-access) in studio, but\n don&#x27;t want ProfileService to save to live keys.\n\n```lua\n-- Example\nlocal RunService = game:GetService(\&quot;RunService\&quot;)\nlocal GameProfileStore = ProfileService.GetProfileStore(\&quot;PlayerData\&quot;, ProfileTemplate)\nif RunService:IsStudio() == true then\n  GameProfileStore = GameProfileStore.Mock\nend\n```\n\nA few more things:\n- Even when Roblox API services are disabled, ```ProfileStore``` and ```ProfileStore.Mock``` will store profiles in seperate locations.\n- It&#x27;s better to thing of ```ProfileStore``` and ```ProfileStore.Mock``` as two different ```ProfileStore``` instances unrelated to each other in any way.\n- It&#x27;s possible to create a project that utilizes both live and mock profiles on live servers!&quot;,
+            &quot;lua_type&quot;: &quot;ProfileStore&quot;,
+            &quot;readonly&quot;: true,
+            &quot;source&quot;: {
+                &quot;line&quot;: 151,
+                &quot;path&quot;: &quot;src/ProfileService.lua&quot;
+            }
+        }
+    ],
+    &quot;types&quot;: [
+        {
+            &quot;name&quot;: &quot;not_released_handler_function&quot;,
+            &quot;desc&quot;: &quot;A function used to determine what to do when a profile which was attempted to be loaded is session locked.\n- ```Repeat``` will try load the profile again, potentially recalling this function.\n- ```Cancel``` will return nil to the caller.\n- ```ForceLoad``` will constantly try load the profile, if a session lock is present it will be released or stolen.\n- ```Steal``` will load the profile regardless of the session lock, and can be used to clear dead session locks.\n\n:::caution\nSteal should usually only be used when the server holding a session lock has been crashed.\n:::&quot;,
+            &quot;lua_type&quot;: &quot;(place_id: number, game_job_id: number) -&gt; (\&quot;Repeat\&quot;, \&quot;Cancel\&quot;, \&quot;ForceLoad\&quot;, \&quot;Steal\&quot;)&quot;,
+            &quot;source&quot;: {
+                &quot;line&quot;: 113,
+                &quot;path&quot;: &quot;src/ProfileService.lua&quot;
+            }
+        },
+        {
+            &quot;name&quot;: &quot;global_update_handler&quot;,
+            &quot;desc&quot;: &quot;A function used when globally updating a [profile](/api/Profile). It is passed a global_updates object, and is expected to add the update itself.\n:::warning\nYielding inside a global_update_handler will cause it to error.\n:::&quot;,
+            &quot;lua_type&quot;: &quot;(global_updates) -&gt; nil&quot;,
+            &quot;source&quot;: {
+                &quot;line&quot;: 123,
+                &quot;path&quot;: &quot;src/ProfileService.lua&quot;
+            }
+        }
+    ],
+    &quot;name&quot;: &quot;ProfileStore&quot;,
+    &quot;desc&quot;: &quot;The ProfileService equivalent of a DataStore, allowing you to interact with [Profiles](/api/Profile) under the ProfileStore&quot;,
+    &quot;source&quot;: {
+        &quot;line&quot;: 98,
+        &quot;path&quot;: &quot;src/ProfileService.lua&quot;
+    }
+}</pre></details></div><div class="col col--3"><div class="tableOfContents_bqdL thin-scrollbar"><ul class="table-of-contents table-of-contents__left-border"><li><a href="#types" class="table-of-contents__link toc-highlight">Types</a><ul><li><a href="#global_update_handler" class="table-of-contents__link toc-highlight">global_update_handler</a></li><li><a href="#not_released_handler_function" class="table-of-contents__link toc-highlight">not_released_handler_function</a></li></ul></li><li><a href="#properties" class="table-of-contents__link toc-highlight">Properties</a><ul><li><a href="#Mock" class="table-of-contents__link toc-highlight">Mock</a></li></ul></li><li><a href="#functions" class="table-of-contents__link toc-highlight">Functions</a><ul><li><a href="#GlobalUpdateProfileAsync" class="table-of-contents__link toc-highlight">:GlobalUpdateProfileAsync</a></li><li><a href="#LoadProfileAsync" class="table-of-contents__link toc-highlight">:LoadProfileAsync</a></li><li><a href="#ProfileVersionQuery" class="table-of-contents__link toc-highlight">:ProfileVersionQuery</a></li><li><a href="#ViewProfileAsync" class="table-of-contents__link toc-highlight">:ViewProfileAsync</a></li><li><a href="#WipeProfileAsync" class="table-of-contents__link toc-highlight">:WipeProfileAsync</a></li></ul></li></ul></div></div></div></div></main></div></div><footer class="footer footer--dark"><div class="container container-fluid"><div class="footer__bottom text--center"><div class="footer__copyright">Copyright © 2024 fartshreksigma. Built with Moonwave and Docusaurus.</div></div></div></footer></div>
+<script src="/UniversalCraftwarsDocs/assets/js/runtime~main.11f5bce8.js"></script>
+<script src="/UniversalCraftwarsDocs/assets/js/main.178a2ad6.js"></script>
+</body>
+</html>
